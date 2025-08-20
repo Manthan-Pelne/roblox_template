@@ -1,0 +1,38 @@
+  .outfit {
+    font-family: "Outfit", sans-serif;
+  }
+
+  .smooth-hidden {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
+    margin-top: 0 !important;
+    /* Prevents spacing from margins */
+    margin-bottom: 0 !important;
+  }
+
+  .display-none {
+    display: none;
+  }
+
+  .smooth-show {
+    opacity: 1;
+    max-height: 1000px;
+    /* Adjust this value as needed to be larger than the content */
+    transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
+  }
+
+
+
+    .shadowbox{
+   box-shadow:
+  /* Your original first shadow */
+  #f8d4ea 0px 20px 15px -12px inset,
+  /* Your original second shadow */
+  #c390ec 12px 12px 36px -28px inset,
+  /* Additional inner glow color */
+  rgb(181, 235, 250) 0px 0px 30px 0px inset,
+  /* Another inner glow color for more variety */
+  #c390ec 2px 0px 10px -2px inset;
+   }

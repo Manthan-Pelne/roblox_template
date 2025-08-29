@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<section class="max-w-[1450px] mx-auto px-4 md:px-6">
+
+<div class="mt-10  px-12 rounded-3xl shadowbox py-5 flex items-center justify-between">
+           <div class="">
+             <h1 class="text-6xl">FAQ's</h1>
+             <p class="w-2/3 pt-4 text-[gray]">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo ipsam eligendi quod temporibus cumque iure.</p>
+           </div>
+
+            <img class="w-62 h-62" src="/imgs/roblox.png" alt="">
+      </div>
+
+
+       <div class="mt-20 bg-gradient-to-br from-rose-100 via-purple-50 rounded-3xl p-10 flex gap-20">
+          <div>
+            <h1 class=" text-4xl mb-4 pt-5">Frequently Asked <br> Questions</h1>
+            <p class="text-gray-400 mb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit aliquam, ratione placeat nisi pariatur repellendus numquam maxime dolore eveniet ipsum.</p>
+            <img class="w-1/2 mx-auto" src="/imgs/roblox.png" alt="">
+          </div>
+
+          <div class=" w-[80%] bg-white cardShadow rounded-3xl border-gray-300 flex flex-col gap-10 p-10">
+                 <div id="faqContainer" class="space-y-5">
+                 </div>
+          </div>
+      </div>
+
+</section>
+
+<script>
+    //faq script
+      // Array of FAQ objects
+  const faqs = [
+    {
+      id: 'faq1',
+      question: "Lorem ipsum dolor sit amet?",
+      answer: 'ng elit. Tempore odit blanditiis totam? Velit in, eos hic similique recusandae ex perspiciatis quas voluptas consequatur!'
+    },
+    {
+      id: 'faq2',
+     question: "Lorem ipsum dolor sit amet?",
+      answer: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv. Tempore odit blanditiis totam? Velit in, eos hic similique recusandae ex perspiciatis quas voluptas consequatur!'
+    },
+     {
+      id: 'faq3',
+     question: "Lorem ipsum dolor sit amet?",
+      answer: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore odit blanditiis totam? Velit in, eos hic similique recusandae ex perspiciatis quas voluptas consequatur!'
+    },
+     {
+      id: 'faq4',
+     question: "Lorem ipsum dolor sit amet?",
+      answer: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore odit blanditiis totam? Velit in, eos hic similique recusandae ex perspiciatis quas voluptas consequatur!'
+    }
+  ];
+
+ // Function to toggle the FAQ visibility smoothly
+function toggleFAQ(id) {
+  const faq = document.getElementById(id);
+  const arrow = document.getElementById('arrow-' + id);
+
+  // Toggle the 'open' class on the answer container to trigger the transition
+  faq.classList.toggle('open');
+  
+  // Toggle the 'rotate-180' class on the arrow
+  arrow.classList.toggle('rotate-180');
+}
+
+// Function to render FAQs
+function renderFAQs() {
+  const faqContainer = document.getElementById('faqContainer');
+  faqs.forEach(faq => {
+    const faqItem = `
+      <div class="rounded-2xl cardShadow overflow-hidden">
+        <button class="w-full cursor-pointer text-left p-4 focus:outline-none" onclick="toggleFAQ('${faq.id}')">
+          <div class="flex justify-between">
+            <span class="text-lg">${faq.question}</span>
+            <svg id="arrow-${faq.id}" class="h-6 w-6 transition-all transform duration-00 faq-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+        </button>
+        <div id="${faq.id}" class="px-4 faq-answer">
+          <p class="text-[gray] pb-5">${faq.answer}</p>
+        </div>
+      </div>
+    `;
+    faqContainer.innerHTML += faqItem;
+  });
+}
+
+  // Call renderFAQs when the DOM is loaded
+  document.addEventListener('DOMContentLoaded', renderFAQs);
+</script>
+      
+{% endblock body %}

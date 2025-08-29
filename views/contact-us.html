@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<section class="max-w-[1450px] mx-auto px-4 md:px-6">
+
+
+   
+   <div class="mt-10  px-12 rounded-3xl shadowbox py-5 flex items-center justify-between">
+           <div class="">
+             <h1 class="text-6xl">Contact Us</h1>
+             <p class="w-2/3 pt-4 text-[gray]">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo ipsam eligendi quod temporibus cumque iure.</p>
+           </div>
+
+            <img class="w-62 h-62" src="/imgs/roblox.png" alt="">
+      </div>
+
+
+      <div class="mt-20 bg-gradient-to-br from-rose-100 via-purple-50 rounded-3xl p-10 flex gap-20">
+          <div>
+            <h1 class=" text-4xl mb-4 pt-5">CONNECT WITH US</h1>
+            <p class="text-gray-400 mb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit aliquam, ratione placeat nisi pariatur repellendus numquam maxime dolore eveniet ipsum.</p>
+            <img class="w-1/2 mx-auto" src="/imgs/roblox.png" alt="">
+          </div>
+
+          <div class=" w-[80%] bg-white cardShadow rounded-3xl border-gray-300 flex flex-col gap-10 p-10">
+            <div class="w-[80%] py-5 flex flex-col gap-10 mx-auto">
+            <div class="flex w-full justify-between gap-5">
+              <label class="w-[200px] text-lg" for="">Name</label>
+              <input class="border-b w-full focus:outline-none focus:ring-0 transition-all duration-400 hover:translate-y-1" type="text">
+            </div>
+             <div class="flex w-full mb-5 justify-between gap-5">
+              <label class="w-[200px] text-lg" for="">Email</label>
+              <input class="border-b w-full focus:outline-none focus:ring-0 transition-all duration-400 hover:translate-y-1" type="text">
+            </div>
+             <div class="flex w-full justify-between mb-5 gap-5">
+              <label class="w-[200px] text-lg" for="">Message</label>
+             <textarea class="border rounded-2xl  h-40 w-full border-gray-400 focus:outline-none focus:ring-0 transition-all duration-400 hover:translate-y-1 p-4" name="" id=""></textarea>
+            </div>
+              <button class="border py-2 rounded-xl bg-gradient-to-b from-[#DF437B] to-[#A542AA] hover:bg-gradient-to-br hover:from-[#c82e65] hover:to-[#8e2b93] text-white text-lg">Send</button>
+            </div>
+          </div>
+      </div>
+
+</section>
+
+
+  {% endblock body %}

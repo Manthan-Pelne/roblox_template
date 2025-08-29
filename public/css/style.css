@@ -16,6 +16,34 @@
     display: none;
   }
 
+  /* Base styles for the FAQ answer container */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+/* Class to show the FAQ answer */
+.faq-answer.open {
+  max-height: 700px; /* Adjust this value to be larger than your largest possible answer */
+  opacity: 1;
+}
+
+
+
+   .shadowbox{
+   box-shadow:
+  /* Your original first shadow */
+  rgb(255, 230, 207) 0px 20px 15px -12px inset,
+  /* Your original second shadow */
+  #eddafd 12px 12px 36px -28px inset,
+  /* Additional inner glow color */
+  rgb(255, 221, 225) 0px 0px 30px 0px inset,
+  /* Another inner glow color for more variety */
+  #c390ec 2px 0px 10px -2px inset;
+   }
+
   .smooth-show {
     opacity: 1;
     max-height: 1000px;
@@ -23,16 +51,15 @@
     transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
   }
 
+  .cardShadow{
+box-shadow: rgba(149, 157, 165, 0.2) 0px 1px 15px;
+  }
 
+   /* Styles for the custom dropdown icon */
+        .select-arrow {
+            transition: transform 0.2s;
+        }
 
-    .shadowbox{
-   box-shadow:
-  /* Your original first shadow */
-  #f8d4ea 0px 20px 15px -12px inset,
-  /* Your original second shadow */
-  #c390ec 12px 12px 36px -28px inset,
-  /* Additional inner glow color */
-  rgb(181, 235, 250) 0px 0px 30px 0px inset,
-  /* Another inner glow color for more variety */
-  #c390ec 2px 0px 10px -2px inset;
-   }
+        .select-arrow.open {
+            transform: rotate(180deg);
+        }

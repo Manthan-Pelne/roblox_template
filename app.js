@@ -4,12 +4,14 @@ import nunjucks from "nunjucks";
 import minify from "express-minify";
 import minifyHTML from "express-minify-html-2";
 import routes from "./routes/index.js";
+import connection from "./db.js";
 
 import dotenv from "dotenv";
 
 
 dotenv.config();
 const app = express();
+app.use(express.json())
 const PORT = 3000;
   
 // Static files
@@ -59,7 +61,8 @@ app.use("/", routes);
 
 // Start the server
 const start = async () => {
-    app.listen(PORT, () => {
+  app.listen(PORT, async() => {
+      await connection
       console.log(`Listening on port: ${PORT}`);
     });
 };

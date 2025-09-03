@@ -1,13 +1,21 @@
 import mongoose from 'mongoose';
+import slugify from 'slugify';
 
-const cardSchema = new mongoose.Schema({
-  id: { type: Number },
+const AllCardSchema = new mongoose.Schema({
   name: { type: String, required: true },
   slug: { type: String },
   code: { type: String },
-  url: { type: String }
+  url: { type: String },
+  fileKey: { type: String },
+})
+
+// Auto-generate slug before saving
+AllCardSchema.pre('save', function (next) {
+  if (this.isModified('name')) {
+    this.slug = slugify(this.name, { lower: true, strict: true });
+  }
+  next();
 });
 
- const Card = mongoose.model('card', cardSchema);
 
- export default Card
+export default mongoose.models.card || mongoose.model('card', AllCardSchema)

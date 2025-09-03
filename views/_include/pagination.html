@@ -1,0 +1,42 @@
+<div class="m-auto mt-[40px] flex flex-wrap sm:justify-center items-center gap-4">
+    {# Previous Button #}
+    <a href="/{{ currentPage - 1 if currentPage > 1 else 1 }}"
+        class="bg-rose-200 text-gray-500 py-2 px-4 rounded-lg font-semibold
+        {% if currentPage == 1 %} opacity-30 border-[2px] backdrop-blur-md cursor-not-allowed pointer-events-none {% endif %}">
+        Prev
+    </a>
+    {# Pagination Numbers #}
+    <div id="paginationNumbers" class="flex flex-wrap gap-2">
+        {% set start_page = currentPage - 1 %}
+        {% set end_page = currentPage + 1 %}
+        {# Adjust start_page and end_page to consistently show 3 numbers if totalPages allows #}
+        {% if totalPages < 3 %}
+            {# If there are fewer than 3 total pages, just show all of them #}
+            {% set start_page = 1 %}
+            {% set end_page = totalPages %}
+        {% elif currentPage == 1 %}
+            {# If on the first page, show pages 1, 2, 3 #}
+            {% set start_page = 1 %}
+            {% set end_page = 3 %}
+        {% elif currentPage == totalPages %}
+            {# If on the last page, show the last 3 pages #}
+            {% set start_page = totalPages - 2 %}
+            {% set end_page = totalPages %}
+        {% endif %}
+        {% for i in range(start_page, end_page + 1) %}
+            {% if i >= 1 and i <= totalPages %} {# Ensure we don't go out of bounds #}
+                <a href="/{{i}}"
+                    class="page-number-btn py-2 px-4 rounded-lg font-semibold
+                    {% if i == currentPage %}bg-[#E5446C] text-white{% else %}bg-gray-200 bg-rose-200 text-gray-200{% endif %}">
+                    {{ i }}
+                </a>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {# Next Button #}
+    <a href="/{{ currentPage + 1 }}"
+        class="bg-gray-200 bg-rose-200 text-gray-500 py-2 px-4 rounded-lg font-semibold
+        {% if currentPage >= totalPages %} opacity-30 border-[2px] backdrop-blur-md cursor-not-allowed pointer-events-none {% endif %}">
+        Next
+    </a>
+</div>

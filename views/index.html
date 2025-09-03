@@ -2,6 +2,130 @@
 {% block body %}
 
 
+<aside class="hidden shrink-0 flex-col justify-between gap-4 overflow-hidden transition-all sm:flex sm:w-[72px] py-4 bg-neutral-50 group/sidebar md:w-[230px]" data-open="true">
+   <div class="no-scrollbar flex min-h-[100px] flex-1 flex-col gap-5 overflow-y-auto overflow-x-hidden">
+      <div class="px-5">
+         <div class="flex grow-0 md:shrink-0 max-w-36">
+            <a aria-label="Go to Home page" href="/">
+               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="fill-current h-8 w-8 text-orange-500 md:hidden" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9998 11.9999C21.9998 17.5227 17.5227 21.9999 11.9998 21.9999C6.47697 21.9999 1.99982 17.5227 1.99982 11.9999C1.99982 6.47703 6.47697 1.99988 11.9998 1.99988C17.5227 1.99988 21.9998 6.47703 21.9998 11.9999ZM16.3955 16.8993C15.4496 17.9141 13.9711 18.4999 11.9998 18.4999C10.0285 18.4999 8.55007 17.9141 7.60413 16.8993C6.56944 15.7886 6.47135 14.4043 6.50521 13.6782C6.57523 12.1736 7.20137 11.2841 7.70565 10.5677L7.7069 10.5659H7.70807C7.72063 10.5493 7.73391 10.5318 7.74781 10.5134C7.93941 10.2606 8.24758 9.85391 8.37606 9.59665C8.39038 9.56651 8.40434 9.53797 8.41776 9.51051C8.55439 9.23103 8.63671 9.06264 8.49635 8.45905C7.86456 8.25795 7.30634 7.76456 7.30634 7.0654C7.30634 6.20021 8.00703 5.49988 8.87005 5.49988C9.73307 5.49988 10.4092 6.17683 10.4092 7.04084C10.4092 7.51903 10.2177 7.88498 9.88022 8.1726C9.90474 8.50347 10.1406 8.73848 10.3322 8.81214C10.9815 8.64494 11.6728 8.61338 11.9998 8.61104C12.3268 8.61571 13.0182 8.64494 13.6675 8.81214C13.859 8.73848 14.0961 8.50347 14.1194 8.1726C13.7807 7.88615 13.5904 7.51903 13.5904 7.04084C13.5904 6.17683 14.2666 5.49988 15.1296 5.49988C15.9938 5.49988 16.6933 6.20138 16.6933 7.0654C16.6933 7.76456 16.1351 8.25795 15.5033 8.45905C15.3629 9.06264 15.4452 9.23103 15.5819 9.51051C15.5953 9.53797 15.6093 9.56651 15.6236 9.59665C15.7479 9.84558 16.0405 10.2344 16.2329 10.4901C16.2537 10.5178 16.2734 10.544 16.2916 10.5682H16.2927C16.7972 11.2826 17.4243 12.1723 17.4944 13.6782C17.5283 14.4043 17.4302 15.7886 16.3955 16.8993Z"></path>
+               </svg>
+               <div class="max-md:hidden">
+                  <div class="mt-0.5">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" width="100%" height="auto" preserveAspectRatio="xMinYMid meet">
+  <!-- Gradient background text -->
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4B0082"/>
+      <stop offset="100%" stop-color="#8200DB"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Roblox Square Icon -->
+  <rect x="20" y="80" width="120" height="120" fill="url(#grad)" transform="rotate(15 80 140)"/>
+  <rect x="55" y="115" width="50" height="50" fill="white" transform="rotate(15 80 140)"/>
+  
+  <!-- Text -->
+  <text x="180" y="180" font-family="Arial, sans-serif" font-weight="900" font-size="130" fill="url(#grad)">
+    Rbx Studio
+  </text>
+</svg>
+
+
+                  </div>
+               </div>
+            </a>
+         </div>
+      </div>
+      <ul class="flex h-full flex-col gap-1">
+         <div class="flex flex-col gap-1 px-2">
+            <li>
+               <a href="/">
+                  <div data-active="false" class="group p-2 shrink-0 md:group-data-[open=true]/sidebar:p-3 text-gray-600 font-medium rounded-xl hover:bg-gray-100 focus-visible:outline-4 border-[0.5px] border-transparent focus-visible:outline-primary-new-200 w-full flex grow items-center text-sm transition-all group-data-[open=false]/sidebar:justify-center max-md:justify-center h-11 md:group-data-[open=true]/sidebar:px-4">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon" class="size-5 text-gray-600 group-data-[active=true]:hidden">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"></path>
+                     </svg>
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon" class="hidden size-5 text-gray-600 group-data-[active=true]:block">
+                        <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z"></path>
+                        <path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z"></path>
+                     </svg>
+                     <span class="invisible w-0 whitespace-nowrap opacity-0 transition-all md:group-data-[open=true]/sidebar:visible md:group-data-[open=true]/sidebar:w-max md:group-data-[open=true]/sidebar:pl-2 md:group-data-[open=true]/sidebar:opacity-100">Home</span>
+                  </div>
+               </a>
+            </li>
+            <li>
+               <a href="/discover">
+                  <div data-active="true" class="group p-2 shrink-0 md:group-data-[open=true]/sidebar:p-3 text-gray-600 font-medium rounded-xl focus-visible:outline-4 border-[0.5px] focus-visible:outline-primary-new-200 w-full flex grow items-center text-sm transition-all group-data-[open=false]/sidebar:justify-center max-md:justify-center h-11 md:group-data-[open=true]/sidebar:px-4 bg-white border-neutral-200 hover:bg-white shadow-sm">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon" class="size-5 text-gray-600 group-data-[active=true]:hidden">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 0 0 2.25-2.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v2.25A2.25 2.25 0 0 0 6 10.5Zm0 9.75h2.25A2.25 2.25 0 0 0 10.5 18v-2.25a2.25 2.25 0 0 0-2.25-2.25H6a2.25 2.25 0 0 0-2.25 2.25V18A2.25 2.25 0 0 0 6 20.25Zm9.75-9.75H18a2.25 2.25 0 0 0 2.25-2.25V6A2.25 2.25 0 0 0 18 3.75h-2.25A2.25 2.25 0 0 0 13.5 6v2.25a2.25 2.25 0 0 0 2.25 2.25Z"></path>
+                     </svg>
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon" class="hidden size-5 text-gray-600 group-data-[active=true]:block">
+                        <path d="M6 3a3 3 0 0 0-3 3v2.25a3 3 0 0 0 3 3h2.25a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3H6ZM15.75 3a3 3 0 0 0-3 3v2.25a3 3 0 0 0 3 3H18a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3h-2.25ZM6 12.75a3 3 0 0 0-3 3V18a3 3 0 0 0 3 3h2.25a3 3 0 0 0 3-3v-2.25a3 3 0 0 0-3-3H6ZM17.625 13.5a.75.75 0 0 0-1.5 0v2.625H13.5a.75.75 0 0 0 0 1.5h2.625v2.625a.75.75 0 0 0 1.5 0v-2.625h2.625a.75.75 0 0 0 0-1.5h-2.625V13.5Z"></path>
+                     </svg>
+                     <span class="invisible w-0 whitespace-nowrap opacity-0 transition-all md:group-data-[open=true]/sidebar:visible md:group-data-[open=true]/sidebar:w-max md:group-data-[open=true]/sidebar:pl-2 md:group-data-[open=true]/sidebar:opacity-100">Templates</span>
+                  </div>
+               </a>
+            </li>
+            <li>
+               <a href="/explore">
+                  <div data-active="false" class="group p-2 shrink-0 md:group-data-[open=true]/sidebar:p-3 text-gray-600 font-medium rounded-xl hover:bg-gray-100 focus-visible:outline-4 border-[0.5px] border-transparent focus-visible:outline-primary-new-200 w-full flex grow items-center text-sm transition-all group-data-[open=false]/sidebar:justify-center max-md:justify-center h-11 md:group-data-[open=true]/sidebar:px-4">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-compass size-5 stroke-[1.5] text-gray-600 group-data-[active=true]:hidden" aria-hidden="true">
+                        <path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"></path>
+                        <circle cx="12" cy="12" r="10"></circle>
+                     </svg>
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" class="hidden size-5 group-data-[active=true]:block fill-current">
+                        <path d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92491 23 1.00005 18.0751 1 12C1 5.92488 5.92488 1.00002 12 1ZM16.7705 7.22949C16.5697 7.02876 16.2723 6.95824 16.0029 7.04785L10.5918 8.85254C10.1868 8.98755 9.81846 9.21475 9.5166 9.5166C9.21477 9.81848 8.98752 10.1868 8.85254 10.5918L7.04785 16.0029C6.95831 16.2723 7.02879 16.5698 7.22949 16.7705C7.43033 16.9712 7.72772 17.0409 7.99707 16.9512L13.4082 15.1475C13.8131 15.0125 14.1816 14.7852 14.4834 14.4834C14.7852 14.1816 15.0124 13.8131 15.1475 13.4082L16.9512 7.99707C17.041 7.72767 16.9712 7.43037 16.7705 7.22949ZM13.7246 12.9336C13.6632 13.1177 13.5591 13.2847 13.4219 13.4219C13.3189 13.5248 13.1995 13.6095 13.0684 13.6709L12.9336 13.7246L8.94531 15.0537L10.2754 11.0664V11.0654C10.3368 10.8816 10.4401 10.7142 10.5771 10.5771C10.7142 10.4401 10.8816 10.3368 11.0654 10.2754H11.0664L15.0537 8.94531L13.7246 12.9336Z"></path>
+                     </svg>
+                     <span class="invisible w-0 whitespace-nowrap opacity-0 transition-all md:group-data-[open=true]/sidebar:visible md:group-data-[open=true]/sidebar:w-max md:group-data-[open=true]/sidebar:pl-2 md:group-data-[open=true]/sidebar:opacity-100">Explore</span>
+                  </div>
+               </a>
+            </li>
+         </div>
+         <div class="mt-auto flex w-full flex-col gap-2 px-2">
+            <button class="relative flex w-full p-2 cursor-pointer whitespace-nowrap items-center justify-center transition-all duration-[0.2s] ease-[ease] text-white bg-primary-new-500 focus:outline-primary-new-200 hover:bg-[#EF4D00] active:bg-primary-new-700 disabled:!bg-primary-new-500/70 disabled:cursor-auto shadow-[inset_0px_1px_0px_0px_rgba(255,255,255,0.16),inset_0px_-2px_0px_0px_rgba(0,0,0,0.12)] h-11 px-3 rounded-xl text-[13px] font-semibold" type="button">
+               <span class="text-nowrap flex items-center gap-2 opacity-100 transition-opacity">
+                  <div class="flex items-center gap-2">
+                     <svg class="fill-white" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.5923 5.76286C11.6322 5.69033 11.6909 5.62984 11.7622 5.58772C11.8335 5.5456 11.9147 5.52338 11.9975 5.52338C12.0803 5.52338 12.1616 5.5456 12.2329 5.58772C12.3042 5.62984 12.3628 5.69033 12.4028 5.76286L15.1339 10.9476C15.199 11.0676 15.2899 11.1718 15.4001 11.2526C15.5102 11.3333 15.6369 11.3887 15.771 11.4147C15.9051 11.4407 16.0433 11.4367 16.1756 11.403C16.308 11.3692 16.4312 11.3066 16.5365 11.2196L20.4935 7.82972C20.5695 7.76794 20.6631 7.73185 20.7609 7.72666C20.8586 7.72146 20.9555 7.74742 21.0376 7.8008C21.1197 7.85419 21.1827 7.93224 21.2176 8.02372C21.2525 8.11521 21.2575 8.2154 21.2318 8.30989L18.6098 17.7893C18.5563 17.9833 18.441 18.1546 18.2814 18.2771C18.1218 18.3997 17.9266 18.4668 17.7254 18.4684H6.27063C6.06925 18.467 5.87383 18.3999 5.71403 18.2774C5.55424 18.1548 5.43879 17.9835 5.38523 17.7893L2.76418 8.31082C2.73851 8.21633 2.74347 8.11613 2.77837 8.02465C2.81327 7.93316 2.8763 7.85511 2.95838 7.80173C3.04046 7.74835 3.13736 7.72238 3.23514 7.72758C3.33291 7.73278 3.42652 7.76886 3.50248 7.83065L7.45857 11.2205C7.56386 11.3075 7.6871 11.3701 7.81945 11.4039C7.9518 11.4376 8.08998 11.4416 8.22407 11.4156C8.35815 11.3896 8.48482 11.3342 8.59497 11.2535C8.70512 11.1727 8.79602 11.0686 8.86115 10.9485L11.5923 5.76286Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                     </svg>
+                     <span class="hidden md:group-data-[open=true]/sidebar:block">Try Pro</span>
+                  </div>
+               </span>
+            </button>
+            <div class="flex w-full flex-col gap-1">
+               <a href="/learn/category/tutorials">
+                  <div data-active="false" class="group p-2 shrink-0 md:group-data-[open=true]/sidebar:p-3 text-gray-600 font-medium rounded-xl hover:bg-gray-100 focus-visible:outline-4 border-[0.5px] border-transparent focus-visible:outline-primary-new-200 w-full flex grow items-center text-sm transition-all group-data-[open=false]/sidebar:justify-center max-md:justify-center h-11 md:group-data-[open=true]/sidebar:px-4">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon" class="size-5 text-gray-600 group-data-[active=true]:hidden">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"></path>
+                     </svg>
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon" class="hidden size-5 text-gray-600 group-data-[active=true]:block">
+                        <path d="M11.25 4.533A9.707 9.707 0 0 0 6 3a9.735 9.735 0 0 0-3.25.555.75.75 0 0 0-.5.707v14.25a.75.75 0 0 0 1 .707A8.237 8.237 0 0 1 6 18.75c1.995 0 3.823.707 5.25 1.886V4.533ZM12.75 20.636A8.214 8.214 0 0 1 18 18.75c.966 0 1.89.166 2.75.47a.75.75 0 0 0 1-.708V4.262a.75.75 0 0 0-.5-.707A9.735 9.735 0 0 0 18 3a9.707 9.707 0 0 0-5.25 1.533v16.103Z"></path>
+                     </svg>
+                     <span class="invisible w-0 whitespace-nowrap opacity-0 transition-all md:group-data-[open=true]/sidebar:visible md:group-data-[open=true]/sidebar:w-max md:group-data-[open=true]/sidebar:pl-2 md:group-data-[open=true]/sidebar:opacity-100">Tutorials</span>
+                  </div>
+               </a>
+               <div class="flex flex-col">
+                  <button data-state="closed" class="" aria-expanded="false" aria-haspopup="dialog">
+                     <div data-active="false" class="group p-2 shrink-0 md:group-data-[open=true]/sidebar:p-3 text-gray-600 font-medium rounded-xl hover:bg-gray-100 focus-visible:outline-4 border-[0.5px] border-transparent focus-visible:outline-primary-new-200 w-full flex grow items-center text-sm transition-all group-data-[open=false]/sidebar:justify-center max-md:justify-center h-11 md:group-data-[open=true]/sidebar:px-4">
+                        <div class="relative">
+                           <span class="sr-only">View notifications</span>
+                           <div class="flex size-5 items-center justify-center" style="opacity: 1; transform: none;">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" class="size-5 stroke-current">
+                                 <path d="M14.8557 17.082C16.7189 16.8614 18.5496 16.4217 20.3097 15.772C18.8191 14.1208 17.9954 11.9745 17.9987 9.75V9C17.9987 7.4087 17.3666 5.88258 16.2414 4.75736C15.1161 3.63214 13.59 3 11.9987 3C10.4074 3 8.8813 3.63214 7.75608 4.75736C6.63086 5.88258 5.99872 7.4087 5.99872 9V9.75C6.00174 11.9746 5.17771 14.121 3.68672 15.772C5.41972 16.412 7.24672 16.857 9.14172 17.082M14.8557 17.082C12.9577 17.3071 11.0397 17.3071 9.14172 17.082M14.8557 17.082C14.9998 17.5319 15.0357 18.0094 14.9603 18.4757C14.885 18.9421 14.7006 19.384 14.4221 19.7656C14.1437 20.1472 13.779 20.4576 13.3579 20.6716C12.9368 20.8856 12.4711 20.9972 11.9987 20.9972C11.5263 20.9972 11.0606 20.8856 10.6395 20.6716C10.2184 20.4576 9.85379 20.1472 9.57534 19.7656C9.29689 19.384 9.11249 18.9421 9.03714 18.4757C8.96178 18.0094 8.99762 17.5319 9.14172 17.082" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                              </svg>
+                           </div>
+                        </div>
+                        <span class="invisible w-0 whitespace-nowrap opacity-0 transition-all md:group-data-[open=true]/sidebar:visible md:group-data-[open=true]/sidebar:w-max md:group-data-[open=true]/sidebar:pl-2 md:group-data-[open=true]/sidebar:opacity-100">Notifications</span>
+                     </div>
+                  </button>
+               </div>
+            </div>
+         </div>
+      </ul>
+   </div>
+</aside>
+
+
   <section class="max-w-[1450px] mx-auto px-4 md:px-6">
     
   <div class="relative py-10 md:py-20 flex flex-col items-center justify-center">
@@ -68,7 +192,7 @@
           class="w-[80%] md:w-[500px] border border-rose-400 rounded-2xl mt-10 p-4 smooth-hidden display-none">
           <h2 class="bg-rose-100 text-rose-500 rounded-md text-lg p-2">Preview</h2>
           <div id="previewContent">
-            <img class="max-w-[250px] mx-auto mt-5" src="/imgs/r6.png" alt="Template Preview">
+            <img id="tempimg" class="max-w-[250px] mx-auto mt-5" src="/imgs/r6.png" alt="Template Preview">
             <button id="downloadBtn"
               class="border shadow-xl mt-5 tracking-wide rounded-lg px-5 py-2 bg-gradient-to-b from-[#DF437B] to-[#A542AA] hover:bg-gradient-to-br hover:from-[#c82e65] hover:to-[#8e2b93] text-white font-bold cursor-pointer duration-300 transition-all active:scale-95 active:shadow-none ">
               Download Template
@@ -99,6 +223,8 @@
           class="w-20 drop-shadow-xl absolute top-[45%] left-[10%] transform rotate-12">
       </div>
     </div>
+
+    
 
 
 
@@ -143,24 +269,12 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 mt-36">
 
         {% for item in cards %}
-        <div
-          class="card w-full md:max-w-[350px] h-[400px] relative group cardShadow rounded-2xl flex flex-col justify-between p-4">
-          <div
-            class="w-full h-1/2 opacity-40 group-hover:opacity-100 group-hover:top-1/2 transition-all duration-300 bg-gradient-to-b from-orange-200 via-[#E34176] absolute -z-10 top-0 left-0 shadow-2xl rounded-2xl px-4 flex flex-col items-center justify-center text-3xl font-semibold group-hover:pt-4 text-[#ED86A8] group-hover:text-white group-hover:text-[16px]">
-            {{item.name}}</div>
-          <p class="text-end -z-10"><span class=" bg-rose-100 text-rose-400 border font-semibold text-sm px-4 py-0.5 rounded-full">Shirt</span></p>
-          <img class="w-2/3 transition-all duration-400 group-hover:-translate-y-2 mx-auto drop-shadow-2xl"
-            src="{{item.url}}" alt={{item.name}}>
-          <div class="flex px-2 py-2 rounded-xl bg-rose-50 border border-rose-200 shadow-md gap-2 items-center justify-between">
-            <p class="text-rose-400 font-semibold">Code: <span
-                class="item-id text-gray-600 tracking-widest font-semibold">{{item.code}}</span></p>
-            <span class="copy-btn cursor-pointer px-3 border-rose-300 text-rose-600 shadow-xl border rounded-lg pb-0.5"
-              onclick="copyCode(this)">copy</span>
-          </div>
-        </div>
+         {% include '_include/card.html' %}
       {% endfor %}
 
       </div>
+
+        {% include '_include/pagination.html' %}
     </div>
  </div>
 
@@ -208,16 +322,30 @@
 
      const generateBtn = document.getElementById('generateBtn');
     const itemIdInput = document.getElementById('itemIdInput');
+    const itemIdValue = itemIdInput;
     const previewSection = document.getElementById('previewSection');
     const previewContent = document.getElementById('previewContent');
+    const tempimg = document.getElementById('tempimg');
     const loader = document.getElementById('loader');
     const downloadBtn = document.getElementById('downloadBtn');
 
-    generateBtn.addEventListener('click', () => {
+
+
+    generateBtn.addEventListener('click', async () => {
+          const itemIdValue = itemIdInput.value;
       if (itemIdInput.value.trim() === '') {
         alert('Please enter an Item ID.');
         return;
       }
+
+       try {
+    const res = await fetch(`/fetchtemplate/${itemIdValue}`);
+    const data = await res.json()
+    url = data.cards[0].url
+    tempimg.setAttribute('src', url)
+
+  } catch(err){ console.error(err); }
+
 
       // Show the preview section smoothly
       previewSection.classList.remove('display-none');
@@ -245,7 +373,8 @@
 
     //code copy script
 function copyCode(button) {
-  // Find the closest parent card to the clicked button
+    const generateBtn = document.getElementById('generateBtn');
+       const itemIdInput = document.getElementById('itemIdInput');
   const card = button.closest('.card');
   // Find the element with the item code within that specific card
   const codeElement = card.querySelector('.item-id');
@@ -255,9 +384,11 @@ function copyCode(button) {
     .then(() => {
       button.innerText = "copied!";
       button.classList.add("opacity-60");
+      itemIdInput.value = code
       setTimeout(() => {
         button.innerText = "copy";
         button.classList.remove("opacity-60");
+        generateBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }, 2000);
     })
     .catch(err => {

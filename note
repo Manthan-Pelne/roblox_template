@@ -1,2 +1,28 @@
-npm install tailwindcss postcss autoprefixer
-npx tailwindcss init
+item category
+
+melee
+accessories
+back
+body part
+buildings
+clothing
+explosive
+face
+faces
+front
+gear
+hair 
+hats
+heads
+musical 
+navigation 
+neck 
+pant 
+power up
+ranged
+shirts
+shoulder
+social 
+t-shirt
+transport
+waist

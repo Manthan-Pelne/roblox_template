@@ -2,174 +2,21 @@
 {% block body %}
 
 
-<aside class="hidden shrink-0 flex-col justify-between gap-4 overflow-hidden transition-all sm:flex sm:w-[72px] py-4 bg-neutral-50 group/sidebar md:w-[230px]" data-open="true">
-   <div class="no-scrollbar flex min-h-[100px] flex-1 flex-col gap-5 overflow-y-auto overflow-x-hidden">
-      <div class="px-5">
-         <div class="flex grow-0 md:shrink-0 max-w-36">
-            <a aria-label="Go to Home page" href="/">
-               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="fill-current h-8 w-8 text-orange-500 md:hidden" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9998 11.9999C21.9998 17.5227 17.5227 21.9999 11.9998 21.9999C6.47697 21.9999 1.99982 17.5227 1.99982 11.9999C1.99982 6.47703 6.47697 1.99988 11.9998 1.99988C17.5227 1.99988 21.9998 6.47703 21.9998 11.9999ZM16.3955 16.8993C15.4496 17.9141 13.9711 18.4999 11.9998 18.4999C10.0285 18.4999 8.55007 17.9141 7.60413 16.8993C6.56944 15.7886 6.47135 14.4043 6.50521 13.6782C6.57523 12.1736 7.20137 11.2841 7.70565 10.5677L7.7069 10.5659H7.70807C7.72063 10.5493 7.73391 10.5318 7.74781 10.5134C7.93941 10.2606 8.24758 9.85391 8.37606 9.59665C8.39038 9.56651 8.40434 9.53797 8.41776 9.51051C8.55439 9.23103 8.63671 9.06264 8.49635 8.45905C7.86456 8.25795 7.30634 7.76456 7.30634 7.0654C7.30634 6.20021 8.00703 5.49988 8.87005 5.49988C9.73307 5.49988 10.4092 6.17683 10.4092 7.04084C10.4092 7.51903 10.2177 7.88498 9.88022 8.1726C9.90474 8.50347 10.1406 8.73848 10.3322 8.81214C10.9815 8.64494 11.6728 8.61338 11.9998 8.61104C12.3268 8.61571 13.0182 8.64494 13.6675 8.81214C13.859 8.73848 14.0961 8.50347 14.1194 8.1726C13.7807 7.88615 13.5904 7.51903 13.5904 7.04084C13.5904 6.17683 14.2666 5.49988 15.1296 5.49988C15.9938 5.49988 16.6933 6.20138 16.6933 7.0654C16.6933 7.76456 16.1351 8.25795 15.5033 8.45905C15.3629 9.06264 15.4452 9.23103 15.5819 9.51051C15.5953 9.53797 15.6093 9.56651 15.6236 9.59665C15.7479 9.84558 16.0405 10.2344 16.2329 10.4901C16.2537 10.5178 16.2734 10.544 16.2916 10.5682H16.2927C16.7972 11.2826 17.4243 12.1723 17.4944 13.6782C17.5283 14.4043 17.4302 15.7886 16.3955 16.8993Z"></path>
-               </svg>
-               <div class="max-md:hidden">
-                  <div class="mt-0.5">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" width="100%" height="auto" preserveAspectRatio="xMinYMid meet">
-  <!-- Gradient background text -->
-  <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#4B0082"/>
-      <stop offset="100%" stop-color="#8200DB"/>
-    </linearGradient>
-  </defs>
-  
-  <!-- Roblox Square Icon -->
-  <rect x="20" y="80" width="120" height="120" fill="url(#grad)" transform="rotate(15 80 140)"/>
-  <rect x="55" y="115" width="50" height="50" fill="white" transform="rotate(15 80 140)"/>
-  
-  <!-- Text -->
-  <text x="180" y="180" font-family="Arial, sans-serif" font-weight="900" font-size="130" fill="url(#grad)">
-    Rbx Studio
-  </text>
-</svg>
+<div class="bg-white">
+  <section class=" max-w-screen-2xl mx-auto px-4 md:px-10 md:pt-5 -z-10">
 
-
-                  </div>
-               </div>
-            </a>
-         </div>
-      </div>
-      <ul class="flex h-full flex-col gap-1">
-         <div class="flex flex-col gap-1 px-2">
-            <li>
-               <a href="/">
-                  <div data-active="false" class="group p-2 shrink-0 md:group-data-[open=true]/sidebar:p-3 text-gray-600 font-medium rounded-xl hover:bg-gray-100 focus-visible:outline-4 border-[0.5px] border-transparent focus-visible:outline-primary-new-200 w-full flex grow items-center text-sm transition-all group-data-[open=false]/sidebar:justify-center max-md:justify-center h-11 md:group-data-[open=true]/sidebar:px-4">
-                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon" class="size-5 text-gray-600 group-data-[active=true]:hidden">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"></path>
-                     </svg>
-                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon" class="hidden size-5 text-gray-600 group-data-[active=true]:block">
-                        <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z"></path>
-                        <path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z"></path>
-                     </svg>
-                     <span class="invisible w-0 whitespace-nowrap opacity-0 transition-all md:group-data-[open=true]/sidebar:visible md:group-data-[open=true]/sidebar:w-max md:group-data-[open=true]/sidebar:pl-2 md:group-data-[open=true]/sidebar:opacity-100">Home</span>
-                  </div>
-               </a>
-            </li>
-            <li>
-               <a href="/discover">
-                  <div data-active="true" class="group p-2 shrink-0 md:group-data-[open=true]/sidebar:p-3 text-gray-600 font-medium rounded-xl focus-visible:outline-4 border-[0.5px] focus-visible:outline-primary-new-200 w-full flex grow items-center text-sm transition-all group-data-[open=false]/sidebar:justify-center max-md:justify-center h-11 md:group-data-[open=true]/sidebar:px-4 bg-white border-neutral-200 hover:bg-white shadow-sm">
-                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon" class="size-5 text-gray-600 group-data-[active=true]:hidden">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 0 0 2.25-2.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v2.25A2.25 2.25 0 0 0 6 10.5Zm0 9.75h2.25A2.25 2.25 0 0 0 10.5 18v-2.25a2.25 2.25 0 0 0-2.25-2.25H6a2.25 2.25 0 0 0-2.25 2.25V18A2.25 2.25 0 0 0 6 20.25Zm9.75-9.75H18a2.25 2.25 0 0 0 2.25-2.25V6A2.25 2.25 0 0 0 18 3.75h-2.25A2.25 2.25 0 0 0 13.5 6v2.25a2.25 2.25 0 0 0 2.25 2.25Z"></path>
-                     </svg>
-                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon" class="hidden size-5 text-gray-600 group-data-[active=true]:block">
-                        <path d="M6 3a3 3 0 0 0-3 3v2.25a3 3 0 0 0 3 3h2.25a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3H6ZM15.75 3a3 3 0 0 0-3 3v2.25a3 3 0 0 0 3 3H18a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3h-2.25ZM6 12.75a3 3 0 0 0-3 3V18a3 3 0 0 0 3 3h2.25a3 3 0 0 0 3-3v-2.25a3 3 0 0 0-3-3H6ZM17.625 13.5a.75.75 0 0 0-1.5 0v2.625H13.5a.75.75 0 0 0 0 1.5h2.625v2.625a.75.75 0 0 0 1.5 0v-2.625h2.625a.75.75 0 0 0 0-1.5h-2.625V13.5Z"></path>
-                     </svg>
-                     <span class="invisible w-0 whitespace-nowrap opacity-0 transition-all md:group-data-[open=true]/sidebar:visible md:group-data-[open=true]/sidebar:w-max md:group-data-[open=true]/sidebar:pl-2 md:group-data-[open=true]/sidebar:opacity-100">Templates</span>
-                  </div>
-               </a>
-            </li>
-            <li>
-               <a href="/explore">
-                  <div data-active="false" class="group p-2 shrink-0 md:group-data-[open=true]/sidebar:p-3 text-gray-600 font-medium rounded-xl hover:bg-gray-100 focus-visible:outline-4 border-[0.5px] border-transparent focus-visible:outline-primary-new-200 w-full flex grow items-center text-sm transition-all group-data-[open=false]/sidebar:justify-center max-md:justify-center h-11 md:group-data-[open=true]/sidebar:px-4">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-compass size-5 stroke-[1.5] text-gray-600 group-data-[active=true]:hidden" aria-hidden="true">
-                        <path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"></path>
-                        <circle cx="12" cy="12" r="10"></circle>
-                     </svg>
-                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" class="hidden size-5 group-data-[active=true]:block fill-current">
-                        <path d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92491 23 1.00005 18.0751 1 12C1 5.92488 5.92488 1.00002 12 1ZM16.7705 7.22949C16.5697 7.02876 16.2723 6.95824 16.0029 7.04785L10.5918 8.85254C10.1868 8.98755 9.81846 9.21475 9.5166 9.5166C9.21477 9.81848 8.98752 10.1868 8.85254 10.5918L7.04785 16.0029C6.95831 16.2723 7.02879 16.5698 7.22949 16.7705C7.43033 16.9712 7.72772 17.0409 7.99707 16.9512L13.4082 15.1475C13.8131 15.0125 14.1816 14.7852 14.4834 14.4834C14.7852 14.1816 15.0124 13.8131 15.1475 13.4082L16.9512 7.99707C17.041 7.72767 16.9712 7.43037 16.7705 7.22949ZM13.7246 12.9336C13.6632 13.1177 13.5591 13.2847 13.4219 13.4219C13.3189 13.5248 13.1995 13.6095 13.0684 13.6709L12.9336 13.7246L8.94531 15.0537L10.2754 11.0664V11.0654C10.3368 10.8816 10.4401 10.7142 10.5771 10.5771C10.7142 10.4401 10.8816 10.3368 11.0654 10.2754H11.0664L15.0537 8.94531L13.7246 12.9336Z"></path>
-                     </svg>
-                     <span class="invisible w-0 whitespace-nowrap opacity-0 transition-all md:group-data-[open=true]/sidebar:visible md:group-data-[open=true]/sidebar:w-max md:group-data-[open=true]/sidebar:pl-2 md:group-data-[open=true]/sidebar:opacity-100">Explore</span>
-                  </div>
-               </a>
-            </li>
-         </div>
-         <div class="mt-auto flex w-full flex-col gap-2 px-2">
-            <button class="relative flex w-full p-2 cursor-pointer whitespace-nowrap items-center justify-center transition-all duration-[0.2s] ease-[ease] text-white bg-primary-new-500 focus:outline-primary-new-200 hover:bg-[#EF4D00] active:bg-primary-new-700 disabled:!bg-primary-new-500/70 disabled:cursor-auto shadow-[inset_0px_1px_0px_0px_rgba(255,255,255,0.16),inset_0px_-2px_0px_0px_rgba(0,0,0,0.12)] h-11 px-3 rounded-xl text-[13px] font-semibold" type="button">
-               <span class="text-nowrap flex items-center gap-2 opacity-100 transition-opacity">
-                  <div class="flex items-center gap-2">
-                     <svg class="fill-white" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.5923 5.76286C11.6322 5.69033 11.6909 5.62984 11.7622 5.58772C11.8335 5.5456 11.9147 5.52338 11.9975 5.52338C12.0803 5.52338 12.1616 5.5456 12.2329 5.58772C12.3042 5.62984 12.3628 5.69033 12.4028 5.76286L15.1339 10.9476C15.199 11.0676 15.2899 11.1718 15.4001 11.2526C15.5102 11.3333 15.6369 11.3887 15.771 11.4147C15.9051 11.4407 16.0433 11.4367 16.1756 11.403C16.308 11.3692 16.4312 11.3066 16.5365 11.2196L20.4935 7.82972C20.5695 7.76794 20.6631 7.73185 20.7609 7.72666C20.8586 7.72146 20.9555 7.74742 21.0376 7.8008C21.1197 7.85419 21.1827 7.93224 21.2176 8.02372C21.2525 8.11521 21.2575 8.2154 21.2318 8.30989L18.6098 17.7893C18.5563 17.9833 18.441 18.1546 18.2814 18.2771C18.1218 18.3997 17.9266 18.4668 17.7254 18.4684H6.27063C6.06925 18.467 5.87383 18.3999 5.71403 18.2774C5.55424 18.1548 5.43879 17.9835 5.38523 17.7893L2.76418 8.31082C2.73851 8.21633 2.74347 8.11613 2.77837 8.02465C2.81327 7.93316 2.8763 7.85511 2.95838 7.80173C3.04046 7.74835 3.13736 7.72238 3.23514 7.72758C3.33291 7.73278 3.42652 7.76886 3.50248 7.83065L7.45857 11.2205C7.56386 11.3075 7.6871 11.3701 7.81945 11.4039C7.9518 11.4376 8.08998 11.4416 8.22407 11.4156C8.35815 11.3896 8.48482 11.3342 8.59497 11.2535C8.70512 11.1727 8.79602 11.0686 8.86115 10.9485L11.5923 5.76286Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                     </svg>
-                     <span class="hidden md:group-data-[open=true]/sidebar:block">Try Pro</span>
-                  </div>
-               </span>
-            </button>
-            <div class="flex w-full flex-col gap-1">
-               <a href="/learn/category/tutorials">
-                  <div data-active="false" class="group p-2 shrink-0 md:group-data-[open=true]/sidebar:p-3 text-gray-600 font-medium rounded-xl hover:bg-gray-100 focus-visible:outline-4 border-[0.5px] border-transparent focus-visible:outline-primary-new-200 w-full flex grow items-center text-sm transition-all group-data-[open=false]/sidebar:justify-center max-md:justify-center h-11 md:group-data-[open=true]/sidebar:px-4">
-                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon" class="size-5 text-gray-600 group-data-[active=true]:hidden">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"></path>
-                     </svg>
-                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon" class="hidden size-5 text-gray-600 group-data-[active=true]:block">
-                        <path d="M11.25 4.533A9.707 9.707 0 0 0 6 3a9.735 9.735 0 0 0-3.25.555.75.75 0 0 0-.5.707v14.25a.75.75 0 0 0 1 .707A8.237 8.237 0 0 1 6 18.75c1.995 0 3.823.707 5.25 1.886V4.533ZM12.75 20.636A8.214 8.214 0 0 1 18 18.75c.966 0 1.89.166 2.75.47a.75.75 0 0 0 1-.708V4.262a.75.75 0 0 0-.5-.707A9.735 9.735 0 0 0 18 3a9.707 9.707 0 0 0-5.25 1.533v16.103Z"></path>
-                     </svg>
-                     <span class="invisible w-0 whitespace-nowrap opacity-0 transition-all md:group-data-[open=true]/sidebar:visible md:group-data-[open=true]/sidebar:w-max md:group-data-[open=true]/sidebar:pl-2 md:group-data-[open=true]/sidebar:opacity-100">Tutorials</span>
-                  </div>
-               </a>
-               <div class="flex flex-col">
-                  <button data-state="closed" class="" aria-expanded="false" aria-haspopup="dialog">
-                     <div data-active="false" class="group p-2 shrink-0 md:group-data-[open=true]/sidebar:p-3 text-gray-600 font-medium rounded-xl hover:bg-gray-100 focus-visible:outline-4 border-[0.5px] border-transparent focus-visible:outline-primary-new-200 w-full flex grow items-center text-sm transition-all group-data-[open=false]/sidebar:justify-center max-md:justify-center h-11 md:group-data-[open=true]/sidebar:px-4">
-                        <div class="relative">
-                           <span class="sr-only">View notifications</span>
-                           <div class="flex size-5 items-center justify-center" style="opacity: 1; transform: none;">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" class="size-5 stroke-current">
-                                 <path d="M14.8557 17.082C16.7189 16.8614 18.5496 16.4217 20.3097 15.772C18.8191 14.1208 17.9954 11.9745 17.9987 9.75V9C17.9987 7.4087 17.3666 5.88258 16.2414 4.75736C15.1161 3.63214 13.59 3 11.9987 3C10.4074 3 8.8813 3.63214 7.75608 4.75736C6.63086 5.88258 5.99872 7.4087 5.99872 9V9.75C6.00174 11.9746 5.17771 14.121 3.68672 15.772C5.41972 16.412 7.24672 16.857 9.14172 17.082M14.8557 17.082C12.9577 17.3071 11.0397 17.3071 9.14172 17.082M14.8557 17.082C14.9998 17.5319 15.0357 18.0094 14.9603 18.4757C14.885 18.9421 14.7006 19.384 14.4221 19.7656C14.1437 20.1472 13.779 20.4576 13.3579 20.6716C12.9368 20.8856 12.4711 20.9972 11.9987 20.9972C11.5263 20.9972 11.0606 20.8856 10.6395 20.6716C10.2184 20.4576 9.85379 20.1472 9.57534 19.7656C9.29689 19.384 9.11249 18.9421 9.03714 18.4757C8.96178 18.0094 8.99762 17.5319 9.14172 17.082" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                              </svg>
-                           </div>
-                        </div>
-                        <span class="invisible w-0 whitespace-nowrap opacity-0 transition-all md:group-data-[open=true]/sidebar:visible md:group-data-[open=true]/sidebar:w-max md:group-data-[open=true]/sidebar:pl-2 md:group-data-[open=true]/sidebar:opacity-100">Notifications</span>
-                     </div>
-                  </button>
-               </div>
-            </div>
-         </div>
-      </ul>
-   </div>
-</aside>
-
-
-  <section class="max-w-[1450px] mx-auto px-4 md:px-6">
-    
-  <div class="relative py-10 md:py-20 flex flex-col items-center justify-center">
+    <div class="relative py-10 flex flex-col items-center justify-center">
       <div class="z-10 text-center flex flex-col justify-center items-center gap-4">
-        <h1
-          class="text-5xl md:text-8xl font-extrabold bg-gradient-to-br from-orange-400 via-[#E34176] to-[#6F09A0] bg-clip-text text-transparent drop-shadow-xl">
-          Roblox Studio.</h1>
+        <h1 class="text-7xl font-extrabold ">
+          Roblox <span class="text-purple-700">Studio.</span></h1>
         <h2 class="text-2xl mb-3 font-bold text-gray-800">Your Roblox Template Downloader</h2>
-        <p class="text-xl w-full max-w-2xl mx-auto text-[gray] mb-2 md:mb-6">
+        <p class="text-lg w-full max-w-2xl mx-auto text-[gray] mb-2">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse minima saepe quibusdam possimus ipsa ad, maiores
           voluptatem in molestias culpa.
         </p>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm mb-4">
-          <p class="border cardShadow rounded-full px-3 py-1  bg-rose-50 text-rose-500 flex items-center gap-1">shirts <span><svg
-                class="w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M6 4h3s0 3 3 3s3-3 3-3h3m0 7v8.4a.6.6 0 0 1-.6.6H6.6a.6.6 0 0 1-.6-.6V11m12-7l4.443 1.777a.6.6 0 0 1 .334.78l-1.626 4.066a.6.6 0 0 1-.557.377H18M6 4L1.557 5.777a.6.6 0 0 0-.334.78l1.626 4.066a.6.6 0 0 0 .557.377H6" />
-              </svg></span></p>
-          <p class="border cardShadow rounded-full px-3  py-1 bg-rose-50 text-rose-500 flex items-center gap-1">Jeans <span><svg
-                class="w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                <g fill="currentColor">
-                  <path d="M16.01 4.62a.51.51 0 1 0 0-1.02a.51.51 0 0 0 0 1.02" />
-                  <path
-                    d="M15.322 29.067a1 1 0 0 0-.587-1.082l1.384-9.697l1.775 9.652a1 1 0 0 0-.716 1.127l.17 1.017a1 1 0 0 0 1.076.832l9.167-.833a1 1 0 0 0 .909-.996v-.996a1 1 0 0 0-.566-.902a3.4 3.4 0 0 0-.033-.566l-3.087-23.06A2.93 2.93 0 0 0 21.918 1H9.95l-.05.002a2.92 2.92 0 0 0-2.76 2.624l-2.492 23.53A1 1 0 0 0 4 28.09v.996a1 1 0 0 0 .91.996l9.166.833a1 1 0 0 0 1.077-.832zm10.607-1.843l-6.037.524L17.01 12.07l.134-.061a.85.85 0 0 0 .86-.85l.009-5.146H20c-.023 1.088.33 2.23 1 3.088a5 5 0 0 0 1.833 1.193c.148.056.56.165.897.25L25.92 26.9q.024.163.01.324M15 12h-.003l-2.25 15.76l-6.094-.53l1.783-16.85l.169-.023c.185-.023.38-.047.519-.1A5 5 0 0 0 10.92 9.08c.688-.849 1.066-1.976 1.07-3.068h5.012v4.732a.26.26 0 0 1-.24.26H15.69s-.7.004-.7.844zM8.546 9.35l.353-3.338H11c-.002.855-.294 1.752-.83 2.418a4 4 0 0 1-1.46.92a.6.6 0 0 1-.164 0m.46-4.346l.124-1.175a.92.92 0 0 1 .87-.83h11.91a.93.93 0 0 1 .92.82l.159 1.185zm14.118 1.008l.46 3.446a9 9 0 0 1-.311-.081A4 4 0 0 1 21.8 8.45c-.529-.676-.81-1.58-.8-2.438z" />
-                </g>
-              </svg></span></p>
-          <p class="border cardShadow rounded-full px-3 py-1  bg-rose-50 text-rose-500 flex items-center gap-1">Accessories
-            <span><svg class="w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
-                <path fill="currentColor" d="M16.4 15.4h3.2v5.2h-3.2z" class="clr-i-solid clr-i-solid-path-1" />
-                <path fill="currentColor"
-                  d="M21 21a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-2H2v9a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2v-9H21Z"
-                  class="clr-i-solid clr-i-solid-path-2" />
-                <path fill="currentColor"
-                  d="m33.71 12.38l-4.09-4.09a1 1 0 0 0-.7-.29h-5V6.05A2 2 0 0 0 22 4h-8.16A1.92 1.92 0 0 0 12 6.05V8H7.08a1 1 0 0 0-.71.29l-4.08 4.09a1 1 0 0 0-.29.71V17h13v-2a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2h13v-3.92a1 1 0 0 0-.29-.7M22 8h-8V6h8Z"
-                  class="clr-i-solid clr-i-solid-path-3" />
-                <path fill="none" d="M0 0h36v36H0z" />
-              </svg></span>
-          </p>
-          <p class="border cardShadow rounded-full px-3 py-1  bg-rose-50 text-rose-500 flex items-center gap-1">And more...
-          </p>
-        </div>
-
+        <a href="" class="py-2 px-5 border border-black text-black rounded-xl">Get Started For Free</a>
+        <!-- 
         <div
           class="max-w-[500px] mx-auto mb-4 flex justify-between gap-2 items-center px-2.5 py-2 border border-rose-200 rounded-lg">
           <input id="itemIdInput" type="text" placeholder="Enter Item ID (eg.. 234338503303)"
@@ -186,13 +33,13 @@
               <path fill="#DB437D"
                 d="M2 334.5c-3.8 8.8-2 19 4.6 26l136 144c4.5 4.8 10.8 7.5 17.4 7.5s12.9-2.7 17.4-7.5l136-144c6.6-7 8.4-17.2 4.6-26S305.5 320 296 320h-72V32c0-17.7-14.3-32-32-32h-64c-17.7 0-32 14.3-32 32v288H24c-9.6 0-18.2 5.7-22 14.5" />
             </svg></span>
-        </div>
+        </div> -->
 
-        <div id="previewSection"
+        <!-- <div id="previewSection"
           class="w-[80%] md:w-[500px] border border-rose-400 rounded-2xl mt-10 p-4 smooth-hidden display-none">
           <h2 class="bg-rose-100 text-rose-500 rounded-md text-lg p-2">Preview</h2>
           <div id="previewContent">
-            <img id="tempimg" class="max-w-[250px] mx-auto mt-5" src="/imgs/r6.png" alt="Template Preview">
+            <img class="max-w-[250px] mx-auto mt-5" src="/imgs/r6.png" alt="Template Preview">
             <button id="downloadBtn"
               class="border shadow-xl mt-5 tracking-wide rounded-lg px-5 py-2 bg-gradient-to-b from-[#DF437B] to-[#A542AA] hover:bg-gradient-to-br hover:from-[#c82e65] hover:to-[#8e2b93] text-white font-bold cursor-pointer duration-300 transition-all active:scale-95 active:shadow-none ">
               Download Template
@@ -203,206 +50,169 @@
             </div>
             <p class="mt-2 text-gray-600">Generating...</p>
           </div>
-        </div>
+        </div> -->
       </div>
 
-      <div class="absolute inset-0 opacity-10 -z-10">
-        <img src="/imgs/rb1.png" alt="random-image-1"
-          class="w-10 md:w-20 drop-shadow-xl absolute top-[10%] left-[5%] md:left-[15%] transform -rotate-12">
-        <img src="/imgs/rb2.png" alt="random-image-2"
-          class="w-5 md:w-20 drop-shadow-xl absolute top-[70%] left-[20%] transform rotate-45">
-        <img src="/imgs/rb3.png" alt="random-image-3"
-          class="w-10 md:w-20 drop-shadow-xl absolute top-[15%] right-[5%] md:right-[20%] transform rotate-12">
-        <img src="/imgs/rb4.png" alt="random-image-4"
-          class="w-20 drop-shadow-xl absolute top-[5%] left-[40%] transform -rotate-30">
-        <img src="/imgs/rb5.png" alt="random-image-5"
-          class="w-20 drop-shadow-xl absolute bottom-[18%] right-[20%] transform rotate-20">
-        <img src="/imgs/r6.png" alt="random-image-3"
-          class="w-20 drop-shadow-xl absolute top-[45%] right-[10%] transform rotate-12">
-        <img src="/imgs/r7.png" alt="random-image-3"
-          class="w-20 drop-shadow-xl absolute top-[45%] left-[10%] transform rotate-12">
-      </div>
     </div>
 
-    
-
-
-
-  <div class="mt-10 relative">
+    <div class="mt-12 relative">
 
       <div class="flex">
         <div class="w-1/2 bg-gradient-to-bl from-purple-200 via-white  py-20"></div>
         <div class="w-1/2 bg-gradient-to-br from-purple-200 via-white py-20 "></div>
       </div>
-  
 
-    <div class=" py-20 ">
-     <div class="absolute  w-full top-52 left-1/2 -translate-x-1/2 -translate-y-1/2">
-      <h1 class="text-center mb-3 text-4xl  md:text-6xl font-bold tracking-wide">Templates</h1>
-      <p class=" text-center md:w-1/2 mx-auto text-lg text-[gray]">Lorem Lorem ipsum dolor sit. ipsum dolor sit amet
-        consectetur adipisicing elit. Impedit velit iure omnis quo architecto sequi temporibus facere.</p>
 
-     <div class="mt-5 md:mt-10 py-5 md:flex justify-center gap-6 ">
-        <input
-          class="border py-2 w-full  md:w-1/2 border-rose-300 focus:outline-none focus:ring-1 transition-all duration-300 focus:ring-rose-400 placeholder:text-rose-200 bg-rose-50 px-4 rounded-md"
-          placeholder="search items... eg. (police shirt, track jeans)" type="text">
+      <div class=" py-10">
 
-          <!-- <div class="w-full my-6 md:my-0 max-w-sm relative">
-              <button id="selectButton" class="w-full px-4 py-3 text-rose-400 bg-rose-50 border border-rose-300 rounded-lg focus:outline-none focus:ring focus:ring-rose-200 focus:border-rose-400 cursor-pointer flex justify-between items-center transition-all duration-200">
-                  <span id="selectedValue">Sort By Categories</span>
-                  <svg class="select-arrow h-5 w-5 text-rose-300" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                  </svg>
-              </button>
-              <div id="dropdownMenu" class="absolute hidden top-full mt-2 w-full bg-rose-50 border border-rose-300 rounded-lg shadow-lg z-50 overflow-hidden">
-               
-                  <div class="py-1">
-                      <div class="option-item px-4 py-2 text-rose-400 hover:bg-rose-100 cursor-pointer" data-value="shirts">shirts</div>
-                      <div class="option-item px-4 py-2 text-rose-400 hover:bg-rose-100 cursor-pointer" data-value="jeans">jeans</div>
-                      <div class="option-item px-4 py-2 text-rose-400 hover:bg-rose-100 cursor-pointer" data-value="masks">masks</div>
-                  </div>
-              </div>
-            </div> -->
-      </div>
-    </div>
+        <div class="absolute w-full top-32 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <h1 class="text-center mb-3 text-4xl font-semibold tracking-wide">Browse Templates</h1>
+          <p class=" text-center md:w-1/2 mx-auto text-[gray]">Lorem Lorem ipsum dolor sit. ipsum dolor sit amet
+            consectetur adipisicing elit. Impedit velit iure omnis quo architecto sequi temporibus facere.</p>
+        </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 mt-36">
+        
+          <div class="flex justify-between mt-14 items-center ">
+           <h2 class="text-lg sm:text-xl">Shirts Collection</h2>
+          <a href="/get-single-category/" class="text-purple-500 rounded-2xl bg-purple-50 border border-purple-200 px-3 py-0.5">View All</a>
+        </div>
 
-        {% for item in cards %}
+        <div class="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 mt-6">
+          {% for item in cards %}
          {% include '_include/card.html' %}
-      {% endfor %}
+          {% endfor %}
+        </div>
+
+             <div class="flex justify-between mt-14 items-center ">
+           <h2 class="text-lg sm:text-xl">Shirts Collection</h2>
+          <a href="/get-single-category/" class="text-purple-500 rounded-2xl bg-purple-50 border border-purple-200 px-3 py-0.5">View All</a>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 mt-6">
+          {% for item in cards %}
+         {% include '_include/card.html' %}
+          {% endfor %}
+        </div>
+
+          <div class="flex justify-between mt-14 items-center ">
+           <h2 class="text-lg sm:text-xl">Shirts Collection</h2>
+          <a href="/get-single-category/" class="text-purple-500 rounded-2xl bg-purple-50 border border-purple-200 px-3 py-0.5">View All</a>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 mt-6">
+          {% for item in cards %}
+         {% include '_include/card.html' %}
+          {% endfor %}
+        </div>
+
+         <div class="flex justify-between mt-14 items-center ">
+           <h2 class="text-lg sm:text-xl">Shirts Collection</h2>
+          <a href="/get-single-category/" class="text-purple-500 rounded-2xl bg-purple-50 border border-purple-200 px-3 py-0.5">View All</a>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 mt-6">
+          {% for item in cards %}
+         {% include '_include/card.html' %}
+          {% endfor %}
+        </div>
+
+          <div class="flex justify-between mt-14 items-center ">
+           <h2 class="text-lg sm:text-xl">Shirts Collection</h2>
+          <a href="/get-single-category/" class="text-purple-500 rounded-2xl bg-purple-50 border border-purple-200 px-3 py-0.5">View All</a>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 mt-6">
+          {% for item in cards %}
+         {% include '_include/card.html' %}
+          {% endfor %}
+        </div>
 
       </div>
 
-        {% include '_include/pagination.html' %}
+
+      <h2 class="text-4xl font-semibold mt-20">Trending Templates</h2>
+      <div class="py-5">
+         <!-- Scroller Container -->
+        <div class="horizontal-scroller flex space-x-8 py-6 px-4 text-black/80 overflow-x-auto snap-x snap-mandatory">
+          {% for item in trending %}
+               {% include '_include/card.html' %}
+          {% endfor %}
+  
+        </div>
+      </div>
+
     </div>
- </div>
 
   </section>
+</div>
 
 
-  
+
 <script>
-   //dropdown input sorting script
-    //  const selectButton = document.getElementById('selectButton');
-    //     const selectedValueSpan = document.getElementById('selectedValue');
-    //     const dropdownMenu = document.getElementById('dropdownMenu');
-    //     const selectArrow = document.querySelector('.select-arrow');
-    //     const optionItems = document.querySelectorAll('.option-item');
 
-    //     // Function to toggle the dropdown's visibility and arrow rotation
-    //     const toggleDropdown = () => {
-    //         dropdownMenu.classList.toggle('hidden');
-    //         selectArrow.classList.toggle('open');
-    //     };
+  const generateBtn = document.getElementById('generateBtn');
+  const itemIdInput = document.getElementById('itemIdInput');
+  const previewSection = document.getElementById('previewSection');
+  const previewContent = document.getElementById('previewContent');
+  const loader = document.getElementById('loader');
+  const downloadBtn = document.getElementById('downloadBtn');
 
-    //     // Add event listener to the select button to toggle the dropdown
-    //     selectButton.addEventListener('click', toggleDropdown);
+  generateBtn.addEventListener('click', () => {
+    if (itemIdInput.value.trim() === '') {
+      alert('Please enter an Item ID.');
+      return;
+    }
 
-    //     // Add event listeners to each option
-    //     optionItems.forEach(item => {
-    //         item.addEventListener('click', () => {
-    //             // Get the value of the clicked option
-    //             const value = item.getAttribute('data-value');
-    //             // Update the displayed value in the button
-    //             selectedValueSpan.textContent = value;
-    //             // Close the dropdown after an option is selected
-    //             toggleDropdown();
-    //         });
-    //     });
+    // Show the preview section smoothly
+    previewSection.classList.remove('display-none');
+    previewSection.classList.remove('smooth-hidden');
+    previewSection.classList.add('smooth-show');
 
-    //     // Close the dropdown if the user clicks outside of the component
-    //     window.addEventListener('click', (event) => {
-    //         if (!selectButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
-    //             dropdownMenu.classList.add('hidden');
-    //             selectArrow.classList.remove('open');
-    //         }
-    //     });
+    // Scroll down smoothly to the entire preview section
+    previewSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
+    // Hide the preview content and show the loader
+    previewContent.style.display = 'none';
+    loader.classList.remove('hidden');
 
-     const generateBtn = document.getElementById('generateBtn');
-    const itemIdInput = document.getElementById('itemIdInput');
-    const itemIdValue = itemIdInput;
-    const previewSection = document.getElementById('previewSection');
-    const previewContent = document.getElementById('previewContent');
-    const tempimg = document.getElementById('tempimg');
-    const loader = document.getElementById('loader');
-    const downloadBtn = document.getElementById('downloadBtn');
+    // Simulate loading for 3 seconds
+    setTimeout(() => {
+      // After 3 seconds, hide the loader and show the preview content
+      loader.classList.add('hidden');
+      previewContent.style.display = 'block';
+
+      // Scroll down to the download button to make it visible
+      //downloadBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 3000);
+  });
 
 
+  //code copy script
+  function copyCode(button) {
+    // Find the closest parent card to the clicked button
+    const card = button.closest('.card');
+    // Find the element with the item code within that specific card
+    const codeElement = card.querySelector('.item-id');
+    const code = codeElement.innerText;
 
-    generateBtn.addEventListener('click', async () => {
-          const itemIdValue = itemIdInput.value;
-      if (itemIdInput.value.trim() === '') {
-        alert('Please enter an Item ID.');
-        return;
-      }
-
-       try {
-    const res = await fetch(`/fetchtemplate/${itemIdValue}`);
-    const data = await res.json()
-    url = data.cards[0].url
-    tempimg.setAttribute('src', url)
-
-  } catch(err){ console.error(err); }
-
-
-      // Show the preview section smoothly
-      previewSection.classList.remove('display-none');
-      previewSection.classList.remove('smooth-hidden');
-      previewSection.classList.add('smooth-show');
-
-      // Scroll down smoothly to the entire preview section
-      previewSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-      // Hide the preview content and show the loader
-      previewContent.style.display = 'none';
-      loader.classList.remove('hidden');
-
-      // Simulate loading for 3 seconds
-      setTimeout(() => {
-        // After 3 seconds, hide the loader and show the preview content
-        loader.classList.add('hidden');
-        previewContent.style.display = 'block';
-
-        // Scroll down to the download button to make it visible
-        //downloadBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 3000);
-    });
-
-
-    //code copy script
-function copyCode(button) {
-    const generateBtn = document.getElementById('generateBtn');
-       const itemIdInput = document.getElementById('itemIdInput');
-  const card = button.closest('.card');
-  // Find the element with the item code within that specific card
-  const codeElement = card.querySelector('.item-id');
-  const code = codeElement.innerText;
-
-  navigator.clipboard.writeText(code)
-    .then(() => {
-      button.innerText = "copied!";
-      button.classList.add("opacity-60");
-      itemIdInput.value = code
-      setTimeout(() => {
-        button.innerText = "copy";
-        button.classList.remove("opacity-60");
+    navigator.clipboard.writeText(code)
+      .then(() => {
+        button.innerText = "copied!";
         generateBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 2000);
-    })
-    .catch(err => {
-      console.error('Failed to copy ID:', err);
-    });
-}
+        button.classList.add("opacity-60");
+        setTimeout(() => {
+          button.innerText = "copy";
+          button.classList.remove("opacity-60");
+        }, 2000);
+      })
+      .catch(err => {
+        console.error('Failed to copy ID:', err);
+      });
+  }
 </script>
 
 
-<script>
-  //rendering cards
-  
 
-</script>
 
 
 {% endblock body %}

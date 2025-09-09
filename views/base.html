@@ -18,7 +18,8 @@
 <body class="min-h-screen outfit">
 
       {% include '_include/header.html' %} 
-      <main>
+      {% include '_include/sidebar.html' %} 
+      <main class="sm:ml-[230px] pb-40 bg-white pt-12 md:pt-0">
         {% block body %} 
         
         {% endblock body %} 
@@ -27,3 +28,26 @@
 </body>
 
 </html>
+
+
+    <script>
+      //for desktop view
+    const currentLocation = window.location.pathname;
+  const navLinks = document.querySelectorAll(".navBtn");
+  //console.log(currentLocation)
+
+navLinks.forEach(link => {
+  let x = link.getAttribute("href") 
+  if (currentLocation == '/'+ x){
+    //console.log(x)
+    link.classList.add("activate");
+    link.classList.remove("navBtn")
+  }else if (x === currentLocation){
+    link.classList.add("activate");
+    link.classList.remove("navBtn")
+  }
+});
+
+
+  </script>
+

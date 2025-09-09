@@ -1,0 +1,173 @@
+<section class="border-r border-gray-200 pt-5 fixed z-10 bg-[#fcf9ff] h-screen">
+  <aside
+    class="hidden shrink-0 flex-col justify-between gap-4 overflow-hidden transition-all sm:flex py-4 group/sidebar sm:w-[230px]"
+    data-open="true">
+    <div class="no-scrollbar flex min-h-[100px] flex-1 flex-col gap-5 overflow-y-auto overflow-x-hidden">
+
+      <ul class="flex h-full flex-col gap-1">
+        <a href="/" class="font-extrabold px-5  mb-5 text-xl flex items-center gap-1 shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+            <path fill="#7E22CE" d="M12 12.3L3.5 7.05L12 1.8l8.5 5.25z" />
+            <path fill="#b27fdf" d="M12 22.2v-9.9l8.5-5.25v9.9z" opacity="0.25" />
+            <path fill="#b27fdf" d="m12 22.2l-8.5-5.25v-9.9L12 12.3z" opacity="0.5" />
+          </svg>
+          Roblox<span class="text-purple-600">Studio.</span>
+        </a>
+
+        <div class="flex flex-col gap-2 px-5 mt-1">
+          <li><a href="/"
+              class=" navBtn flex gap-2  py-2 px-2 font-medium items-center text-black/80 rounded-xl hover:bg-purple-200">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" aria-hidden="true" data-slot="icon"
+                class="size-5 text-black/80 group-data-[active=true]:hidden">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25">
+                </path>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                data-slot="icon" class="hidden size-5 group-data-[active=true]:block">
+                <path
+                  d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z">
+                </path>
+                <path
+                  d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z">
+                </path>
+              </svg><span class="">Home
+            </a></li>
+          <li>
+            <div>
+              <div
+                class="group py-2 px-2  shrink-0  text-black/80 font-medium rounded-xl hover:bg-purple-200 focus-visible:outline-4 border-[0.5px] border-transparent focus-visible:outline-primary-new-200 w-full flex gap-2 grow items-center transition-all group-data-[open=false]/sidebar:justify-center max-md:justify-center h-11 md:group-data-[open=true]/sidebar: categories-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path fill="currentColor"
+                    d="M4 11h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1m10 0h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1M4 21h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1m13 0c2.206 0 4-1.794 4-4s-1.794-4-4-4s-4 1.794-4 4s1.794 4 4 4" />
+                </svg>
+                <span class="">Categories</span>
+                <svg class="ml-auto w-4 h-4 transition-transform duration-300 transform rotate-0" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+            </div>
+            <ul class="ml-8 mt-2 overflow-hidden transition-all max-h-0 duration-300 ease-in-out subcategories-list">
+              <li><a href="#" class="block p-2 text-sm text-gray-500 hover:bg-purple-200 rounded-md">Subcategory 1</a>
+              </li>
+              <li><a href="#" class="block p-2 text-sm text-gray-500 hover:bg-purple-200 rounded-md">Subcategory 2</a>
+              </li>
+              <li><a href="#" class="block p-2 text-sm text-gray-500 hover:bg-purple-200 rounded-md">Subcategory 3</a>
+              </li>
+            </ul>
+          </li>
+
+             <hr class="border border-black/10 my-2" />
+
+          <li><a href="/explore/"
+              class="navBtn flex gap-2  py-2 px-2 font-medium items-center text-black/80 rounded-xl hover:bg-purple-200">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-compass size-5 stroke-[1.5] text-black/80 group-data-[active=true]:hidden"
+                aria-hidden="true">
+                <path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z">
+                </path>
+                <circle cx="12" cy="12" r="10"></circle>
+              </svg><svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                class="hidden size-5 group-data-[active=true]:block fill-current">
+                <path
+                  d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92491 23 1.00005 18.0751 1 12C1 5.92488 5.92488 1.00002 12 1ZM16.7705 7.22949C16.5697 7.02876 16.2723 6.95824 16.0029 7.04785L10.5918 8.85254C10.1868 8.98755 9.81846 9.21475 9.5166 9.5166C9.21477 9.81848 8.98752 10.1868 8.85254 10.5918L7.04785 16.0029C6.95831 16.2723 7.02879 16.5698 7.22949 16.7705C7.43033 16.9712 7.72772 17.0409 7.99707 16.9512L13.4082 15.1475C13.8131 15.0125 14.1816 14.7852 14.4834 14.4834C14.7852 14.1816 15.0124 13.8131 15.1475 13.4082L16.9512 7.99707C17.041 7.72767 16.9712 7.43037 16.7705 7.22949ZM13.7246 12.9336C13.6632 13.1177 13.5591 13.2847 13.4219 13.4219C13.3189 13.5248 13.1995 13.6095 13.0684 13.6709L12.9336 13.7246L8.94531 15.0537L10.2754 11.0664V11.0654C10.3368 10.8816 10.4401 10.7142 10.5771 10.5771C10.7142 10.4401 10.8816 10.3368 11.0654 10.2754H11.0664L15.0537 8.94531L13.7246 12.9336Z">
+                </path>
+              </svg>Explore
+            </a></li>
+          <hr class="border border-black/10 my-2" />
+          <li><a href="/frequently-asked-questions/"
+              class="navBtn flex gap-2  py-2 px-2 font-medium items-center text-black/80 rounded-xl hover:bg-purple-200">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" aria-hidden="true" data-slot="icon"
+                class="size-5 text-black/80 group-data-[active=true]:hidden">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25">
+                </path>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                data-slot="icon" class="hidden size-5 text-black/80 group-data-[active=true]:block">
+                <path
+                  d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z">
+                </path>
+                <path
+                  d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z">
+                </path>
+              </svg>
+              FAQ's
+
+            </a></li>
+          <li><a href="/about-us/"
+              class="navBtn flex gap-2  py-2 px-2 font-medium items-center text-black/80 rounded-xl hover:bg-purple-200">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" aria-hidden="true" data-slot="icon"
+                class="size-5 text-black/80 group-data-[active=true]:hidden">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25">
+                </path>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                data-slot="icon" class="hidden size-5 text-black/80 group-data-[active=true]:block">
+                <path
+                  d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z">
+                </path>
+                <path
+                  d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z">
+                </path>
+              </svg><span class="">About Us
+            </a></li>
+          <li><a href="/contact-us/"
+              class="navBtn flex gap-2  py-2 px-2 font-medium items-center text-black/80 rounded-xl hover:bg-purple-200">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" aria-hidden="true" data-slot="icon"
+                class="size-5 text-black/80 group-data-[active=true]:hidden">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25">
+                </path>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                data-slot="icon" class="hidden size-5 text-black/80 group-data-[active=true]:block">
+                <path
+                  d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z">
+                </path>
+                <path
+                  d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z">
+                </path>
+              </svg><span class="">Contact Us
+            </a></li>
+
+        </div>
+      </ul>
+    </div>
+  </aside>
+</section>
+
+
+<script>
+
+  //  onclick="copyCode(this)">copy</span>
+
+  //sidebar script
+  document.addEventListener('DOMContentLoaded', () => {
+    const categoriesToggle = document.querySelector('.categories-toggle');
+    const subcategoriesList = document.querySelector('.subcategories-list');
+    const dropdownIcon = categoriesToggle.querySelector('svg:last-of-type');
+
+    categoriesToggle.addEventListener('click', (event) => {
+      event.preventDefault(); // Prevent the default link behavior
+
+      // Toggle the 'active' state on the list
+      if (subcategoriesList.classList.contains('max-h-0')) {
+        subcategoriesList.classList.remove('max-h-0');
+        subcategoriesList.classList.add('max-h-screen');
+        dropdownIcon.classList.add('rotate-180');
+      } else {
+        subcategoriesList.classList.remove('max-h-screen');
+        subcategoriesList.classList.add('max-h-0');
+        dropdownIcon.classList.remove('rotate-180');
+      }
+    });
+  });
+</script>

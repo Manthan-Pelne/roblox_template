@@ -30,16 +30,24 @@
   opacity: 1;
 }
 
+  .activate{
+     background-color: #f6eaff;
+     border: 1px solid #e0bbfb;
+  }
+  
+    .mobile-menu {
+            transition: transform 0.3s ease-in-out;
+     }
 
 
    .shadowbox{
    box-shadow:
   /* Your original first shadow */
-  rgb(255, 230, 207) 0px 20px 15px -12px inset,
+  #c390ec 0px 10px 5px -12px inset,
   /* Your original second shadow */
-  #eddafd 12px 12px 36px -28px inset,
+  #c390ec 12px 12px 36px -28px inset,
   /* Additional inner glow color */
-  rgb(255, 221, 225) 0px 0px 30px 0px inset,
+  #c390ec 0px 0px 30px 0px inset,
   /* Another inner glow color for more variety */
   #c390ec 2px 0px 10px -2px inset;
    }
@@ -55,6 +63,7 @@
 box-shadow: rgba(149, 157, 165, 0.2) 0px 1px 15px;
   }
 
+
    /* Styles for the custom dropdown icon */
         .select-arrow {
             transition: transform 0.2s;
@@ -63,3 +72,28 @@ box-shadow: rgba(149, 157, 165, 0.2) 0px 1px 15px;
         .select-arrow.open {
             transform: rotate(180deg);
         }
+
+
+         .horizontal-scroller::-webkit-scrollbar {
+            height: 6px;
+        }
+        .horizontal-scroller::-webkit-scrollbar-thumb {
+            background-color: #c084fc;
+            border-radius: 4px;
+        }
+        .horizontal-scroller::-webkit-scrollbar-track {
+            background-color: #f3e8ff;
+            border-radius: 4px;
+        }
+
+
+   .card h2 {
+  /* This prevents the text from wrapping to the next line. */
+  white-space: nowrap;
+
+  /* This hides any content that overflows the container. */
+  overflow: hidden;
+
+  /* This adds the ellipsis (...) to the end of the truncated text. */
+  text-overflow: ellipsis;
+}

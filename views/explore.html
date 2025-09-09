@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="relative bg-cover py-10" style="background-image: url('/imgs/exploreBg.png');">
+    <div class="absolute inset-0  bg-gradient-to-t from-purple-800 to-black/80 opacity-80"></div>
+    <div class="relative flex items-center justify-center h-full">
+        <div class="text-white text-center p-12">
+            <h1 class="text-4xl md:text-7xl font-bold mb-4 drop-shadow-2xl bg-gradient-to-t from-purple-300 via-white to-white bg-clip-text text-transparent">Explore Templates</h1>
+            <p class="text-xl mb-12 text-[#c6c4c4]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab maiores perspiciatis nulla?</p>
+            <input class="p-3 rounded-lg w-full max-w-md text-gray-800" placeholder="search templates (eg. Skins, shirts, Jeans, Masks, etc)..." type="text">
+        </div>
+    </div>
+</div>
+
+<div class="bg-white">
+<section class=" max-w-screen-2xl mx-auto px-4 md:px-10 pt-16">
+
+    <div class="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6 mt-6">
+          {% for item in cards %}
+         {% include '_include/card.html' %}
+          {% endfor %}
+        </div>
+
+         {% include '_include/pagination.html' %}
+
+</section>
+</div>
+
+
+{% endblock body %}

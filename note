@@ -26,3 +26,5 @@ social
 t-shirt
 transport
 waist
+
+npm install @tiptap/core@latest @tiptap/extension-horizontal-rule@latest

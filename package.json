@@ -16,8 +16,6 @@
     "@adminjs/mongoose": "^4.1.0",
     "@adminjs/themes": "^1.0.1",
     "@adminjs/upload": "^4.0.2",
-    "@tiptap/core": "^3.3.0",
-    "@tiptap/extension-horizontal-rule": "^3.3.0",
     "adminjs": "^7.8.13",
     "concurrently": "^9.0.1",
     "connect-flash": "^0.1.1",

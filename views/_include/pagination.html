@@ -1,7 +1,7 @@
 <div class="m-auto mt-[40px] flex flex-wrap sm:justify-center items-center gap-4">
     {# Previous Button #}
     <a href="/{{ currentPage - 1 if currentPage > 1 else 1 }}"
-        class="bg-rose-200 text-gray-500 py-2 px-4 rounded-lg font-semibold
+        class="bg-purple-200 text-gray-500 py-2 px-4 rounded-lg font-semibold
         {% if currentPage == 1 %} opacity-30 border-[2px] backdrop-blur-md cursor-not-allowed pointer-events-none {% endif %}">
         Prev
     </a>
@@ -27,7 +27,7 @@
             {% if i >= 1 and i <= totalPages %} {# Ensure we don't go out of bounds #}
                 <a href="/{{i}}"
                     class="page-number-btn py-2 px-4 rounded-lg font-semibold
-                    {% if i == currentPage %}bg-[#E5446C] text-white{% else %}bg-gray-200 bg-rose-200 text-gray-200{% endif %}">
+                    {% if i == currentPage %} bg-purple-500 text-white{% else %}bg-purple-200 text-gray-800{% endif %}">
                     {{ i }}
                 </a>
             {% endif %}
@@ -35,7 +35,7 @@
     </div>
     {# Next Button #}
     <a href="/{{ currentPage + 1 }}"
-        class="bg-gray-200 bg-rose-200 text-gray-500 py-2 px-4 rounded-lg font-semibold
+        class="bg-purple-200  text-gray-800 py-2 px-4 rounded-lg font-semibold
         {% if currentPage >= totalPages %} opacity-30 border-[2px] backdrop-blur-md cursor-not-allowed pointer-events-none {% endif %}">
         Next
     </a>

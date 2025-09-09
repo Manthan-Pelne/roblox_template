@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="bg-white">
+<section class=" max-w-screen-2xl mx-auto px-4 md:px-10 pt-10">
+      {% for item in card %}
+               {% include '_include/singleCard.html' %}
+          {% endfor %}
+
+          <hr class="mt-10">
+
+      <h2 class="text-lg mt-10 px-10">More Like This</h2>
+      <p class="text-[gray] px-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, magni! Sequi, temporibus.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-10">
+
+          {% for item in cards %}
+               {% include '_include/card.html' %}
+          {% endfor %}
+        </div>
+</section>
+</div>
+
+
+{% endblock body %}

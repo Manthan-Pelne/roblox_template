@@ -244,7 +244,7 @@ import routes from './routes/index.js'
 app.use('/', routes)
 
 // Start the server
-app.listen(8000, () => {
+app.listen(3000, () => {
   console.log('Listening on port 8000')
 })
 

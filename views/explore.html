@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block body %}
 
-<div class="relative mt-16 bg-cover py-10" style="background-image: url('/imgs/exploreBg.png');">
+<div class="relative  bg-cover py-10" style="background-image: url('/imgs/exploreBg.png');">
     <div class="absolute inset-0  bg-gradient-to-t from-purple-800 to-black/80 opacity-80"></div>
     <div class="relative flex items-center justify-center h-full">
         <div class="text-white text-center p-12">
@@ -12,10 +12,10 @@
     </div>
 </div>
 
-<div class="bg-white">
-<section class=" max-w-screen-2xl mx-auto px-4 md:px-10 pt-16">
+<div class="">
+<section class="p-10">
 
-    <div class="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6 mt-6">
+    <div class="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
           {% for item in cards %}
          {% include '_include/card.html' %}
           {% endfor %}

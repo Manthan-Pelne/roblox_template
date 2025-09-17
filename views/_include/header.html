@@ -1,30 +1,28 @@
-    <header class="bg-white/70 backdrop-blur-lg fixed top-0 w-full z-50 border-b border-gray-200 shadow-sm">
+    <header class="bg-white shadow-sm ml-[230px] px-5 py-1.5">
 
-        <div class="max-w-8xl mx-auto flex items-center justify-between py-4 px-4 lg:px-6">
+        <div class="max-w-8xl mx-auto flex items-center justify-between">
 
-
-            <a href="/" class="font-extrabold text-xl flex items-center gap-1 shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
-                    <path fill="#F14D87" d="M12 12.3L3.5 7.05L12 1.8l8.5 5.25z"/>
-                    <path fill="#ffb4cd" d="M12 22.2v-9.9l8.5-5.25v9.9z" opacity="0.25"/>
-                    <path fill="#ffb4cd" d="m12 22.2l-8.5-5.25v-9.9L12 12.3z" opacity="0.5"/>
-                </svg>
-                Roblox<span class="text-[#F14D87]">Studio.</span>
-            </a>
-         
             <div class="hidden sm:block ">
-            <div class="flex items-center gap-2 w-[300px] md:w-[350px] ">
-              <span><svg class="w-6 h-6 opacity-25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="4"><path d="M21 38c9.389 0 17-7.611 17-17S30.389 4 21 4S4 11.611 4 21s7.611 17 17 17Z"/><path stroke-linecap="round" d="M26.657 14.343A7.98 7.98 0 0 0 21 12a7.98 7.98 0 0 0-5.657 2.343m17.879 18.879l8.485 8.485"/></g></svg></span>
-              <input type="text" class="shadow-sm border border-black/10 bg-white/30 w-full rounded-xl p-2  placeholder:text-black/20  backdrop-blur-2xl" placeholder="Search templates...">
-            </div>
+              <div class="space-x-2 text-gray-600">
+              <button class="bg-gray-200 p-1.5 rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 " viewBox="0 0 24 24"><path fill="currentColor" d="M20.04 2.323c1.016-.355 1.992.621 1.637 1.637l-5.925 16.93c-.385 1.098-1.915 1.16-2.387.097l-2.859-6.432l4.024-4.025a.75.75 0 0 0-1.06-1.06l-4.025 4.024l-6.432-2.859c-1.063-.473-1-2.002.097-2.387z"/></svg>
+              </button>
+                <button class="bg-gray-200 p-1.5 rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 " viewBox="0 0 24 24"><path fill="currentColor" d="M22 5.8a8.5 8.5 0 0 1-2.36.64a4.13 4.13 0 0 0 1.81-2.27a8.2 8.2 0 0 1-2.61 1a4.1 4.1 0 0 0-7 3.74a11.64 11.64 0 0 1-8.45-4.29a4.16 4.16 0 0 0-.55 2.07a4.09 4.09 0 0 0 1.82 3.41a4.05 4.05 0 0 1-1.86-.51v.05a4.1 4.1 0 0 0 3.3 4a4 4 0 0 1-1.1.17a5 5 0 0 1-.77-.07a4.11 4.11 0 0 0 3.83 2.84A8.22 8.22 0 0 1 3 18.34a8 8 0 0 1-1-.06a11.57 11.57 0 0 0 6.29 1.85A11.59 11.59 0 0 0 20 8.45v-.53a8.4 8.4 0 0 0 2-2.12"/></svg>
+              </button>
               </div>
-            <!-- Desktop Navigation -->
-            <!-- <div class="hidden md:flex justify-center m-auto gap-12 font-bold">
-                <a href="/" class="navBtn hover:text-purple-600 hover:underline underline-offset-4">Home</a>
-                <a href="/frequently-asked-questions/" class="navBtn hover:text-purple-600 hover:underline underline-offset-4">FAQ's</a>
-                <a href="/about-us/" class="navBtn hover:text-purple-600 hover:underline underline-offset-4">About Us</a>
-                <a href="/contact-us/" class="navBtn hover:text-purple-600 hover:underline underline-offset-4">Contact Us</a>
-            </div> -->
+            </div>
+          
+                 <button  class=" cursor-pointer p-2 relative transition-transform duration-300">
+                <!-- Hamburger Icon -->
+                <svg id="hamburger-icon" class="h-6 w-6 text-black/70 transition-opacity duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+                <!-- Close Icon -->
+                <svg id="close-icon" class="h-6 w-6 text-black/70 hidden absolute top-2 transition-opacity duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
 
             <!-- Mobile Menu Toggle Button -->
             <button id="mobile-menu-toggle" class="md:hidden cursor-pointer p-2 relative transition-transform duration-300">

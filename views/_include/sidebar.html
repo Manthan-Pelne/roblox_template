@@ -1,22 +1,51 @@
-<section class="border-r border-gray-200 pt-20 fixed z-10 bg-white/50 backdrop-blur-xl h-screen">
+<section class="border-r border-gray-200 fixed z-50 bg-[#E5E8EE] backdrop-blur-xl h-screen shadow-sm">
   <aside
     class="hidden shrink-0 flex-col justify-between gap-4 overflow-hidden transition-all sm:flex py-4 group/sidebar sm:w-[230px]"
     data-open="true">
-    <div class="no-scrollbar flex min-h-[100px] flex-1 flex-col gap-5 overflow-y-auto overflow-x-hidden">
+    <div class="no-scrollbar flex min-h-screen flex-1 flex-col overflow-y-auto overflow-x-hidden px-5">
+      <div class="">
+          <a href="/" class="font-extrabold text-xl flex items-center gap-1 shrink-0 mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+                    <path fill="#F14D87" d="M12 12.3L3.5 7.05L12 1.8l8.5 5.25z"/>
+                    <path fill="#ffb4cd" d="M12 22.2v-9.9l8.5-5.25v9.9z" opacity="0.25"/>
+                    <path fill="#ffb4cd" d="m12 22.2l-8.5-5.25v-9.9L12 12.3z" opacity="0.5"/>
+                </svg>
+                Roblox
+                <span class="text-[#F14D87]">Studio.</span>
+          </a>
+      </div>
+
+      <p class="text-gray-600 mb-3 text-sm font-semibold">Link</p>
+      <div class="space-y-3 mb-5">
+        <div class="flex space-x-2 bg-white px-3 py-2 rounded-md">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c-.5 0-1 .19-1.41.59l-3.3 3.29l4.71 4.7l4.71-4.7l-3.3-3.29C13 2.19 12.5 2 12 2M5.88 7.29l-3.29 3.3c-.79.78-.79 2.04 0 2.82l3.29 3.3l4.7-4.71zm12.24 0L13.42 12l4.7 4.71l3.29-3.3c.79-.78.79-2.04 0-2.82zM12 13.42l-4.71 4.7l3.3 3.29c.78.79 2.04.79 2.82 0l3.3-3.29z"/></svg>
+          <span class="font-semibold">Collections</span>
+        </div>
+         <div class="flex space-x-2 hover:bg-white px-3 py-2 rounded-md">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c-.5 0-1 .19-1.41.59l-3.3 3.29l4.71 4.7l4.71-4.7l-3.3-3.29C13 2.19 12.5 2 12 2M5.88 7.29l-3.29 3.3c-.79.78-.79 2.04 0 2.82l3.29 3.3l4.7-4.71zm12.24 0L13.42 12l4.7 4.71l3.29-3.3c.79-.78.79-2.04 0-2.82zM12 13.42l-4.71 4.7l3.3 3.29c.78.79 2.04.79 2.82 0l3.3-3.29z"/></svg>
+          <span class="font-semibold">Explore</span>
+        </div>
+      </div>
+
+      <p class="text-gray-600 mb-3 text-sm font-semibold">Link</p>
+      <div class="space-y-3 mb-5">
+        <div class="flex space-x-2 hover:bg-white px-3 py-2 rounded-md">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c-.5 0-1 .19-1.41.59l-3.3 3.29l4.71 4.7l4.71-4.7l-3.3-3.29C13 2.19 12.5 2 12 2M5.88 7.29l-3.29 3.3c-.79.78-.79 2.04 0 2.82l3.29 3.3l4.7-4.71zm12.24 0L13.42 12l4.7 4.71l3.29-3.3c.79-.78.79-2.04 0-2.82zM12 13.42l-4.71 4.7l3.3 3.29c.78.79 2.04.79 2.82 0l3.3-3.29z"/></svg>
+          <span class="font-semibold">Collections</span>
+        </div>
+         <div class="flex space-x-2 hover:bg-white px-3 py-2 rounded-md">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c-.5 0-1 .19-1.41.59l-3.3 3.29l4.71 4.7l4.71-4.7l-3.3-3.29C13 2.19 12.5 2 12 2M5.88 7.29l-3.29 3.3c-.79.78-.79 2.04 0 2.82l3.29 3.3l4.7-4.71zm12.24 0L13.42 12l4.7 4.71l3.29-3.3c.79-.78.79-2.04 0-2.82zM12 13.42l-4.71 4.7l3.3 3.29c.78.79 2.04.79 2.82 0l3.3-3.29z"/></svg>
+          <span class="font-semibold">Explore</span>
+        </div>
+      </div>
+     
 
       <ul class="flex h-full flex-col gap-1">
-        <!-- <a href="/" class="font-extrabold px-5  mb-5 text-xl flex items-center gap-1 shrink-0">
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
-            <path fill="#7E22CE" d="M12 12.3L3.5 7.05L12 1.8l8.5 5.25z" />
-            <path fill="#b27fdf" d="M12 22.2v-9.9l8.5-5.25v9.9z" opacity="0.25" />
-            <path fill="#b27fdf" d="m12 22.2l-8.5-5.25v-9.9L12 12.3z" opacity="0.5" />
-          </svg>
-          Roblox<span class="text-purple-600">Studio.</span>
-        </a> -->
 
         <div class="flex flex-col gap-2 px-5">
+           
           <li><a href="/"
-              class=" navBtn flex gap-2  py-2 px-2 font-medium items-center text-black/80 rounded-xl hover:bg-[#F6F0FF]">
+              class=" navBtn flex gap-2  py-2 px-2 font-medium items-center text-black/80 rounded-md hover:bg-[#FFFFFF]">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" aria-hidden="true" data-slot="icon"
                 class="size-5 text-black/80 group-data-[active=true]:hidden">
@@ -37,7 +66,7 @@
           <li>
             <div>
               <div
-                class="group py-2 px-2  shrink-0  text-black/80 font-medium rounded-xl hover:bg-[#F6F0FF] focus-visible:outline-4 border-[0.5px] border-transparent focus-visible:outline-primary-new-200 w-full flex gap-2 grow items-center transition-all group-data-[open=false]/sidebar:justify-center max-md:justify-center h-11 md:group-data-[open=true]/sidebar: categories-toggle">
+                class="group py-2 px-2  shrink-0  text-black/80 font-medium rounded-md hover:bg-[#FFFFFF] focus-visible:outline-4 border-[0.5px] border-transparent focus-visible:outline-primary-new-200 w-full flex gap-2 grow items-center transition-all group-data-[open=false]/sidebar:justify-center max-md:justify-center h-11 md:group-data-[open=true]/sidebar: categories-toggle">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                   <path fill="currentColor"
                     d="M4 11h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1m10 0h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1M4 21h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1m13 0c2.206 0 4-1.794 4-4s-1.794-4-4-4s-4 1.794-4 4s1.794 4 4 4" />
@@ -51,7 +80,7 @@
             </div>
             <ul class="ml-8 mt-2 overflow-hidden transition-all max-h-0 duration-300 ease-in-out subcategories-list">
                 {% for item in categories %}
-              <li><a href="#" class="block p-2 text-gray-500 hover:bg-[#F6F0FF] rounded-md">{{item.title}}</a>
+              <li><a href="#" class="block p-2 text-gray-500 hover:bg-[#FFFFFF] rounded-md">{{item.title}}</a>
               </li>
             
                 {% endfor %}
@@ -61,7 +90,7 @@
              <hr class="border border-black/10 my-2" />
 
           <li><a href="/explore/"
-              class="navBtn flex gap-2  py-2 px-2 font-medium items-center text-black/80 rounded-xl hover:bg-[#F6F0FF]">
+              class="navBtn flex gap-2  py-2 px-2 font-medium items-center text-black/80 rounded-md hover:bg-[#FFFFFF]">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 class="lucide lucide-compass size-5 stroke-[1.5] text-black/80 group-data-[active=true]:hidden"
@@ -69,7 +98,8 @@
                 <path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z">
                 </path>
                 <circle cx="12" cy="12" r="10"></circle>
-              </svg><svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none"
                 class="hidden size-5 group-data-[active=true]:block fill-current">
                 <path
                   d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92491 23 1.00005 18.0751 1 12C1 5.92488 5.92488 1.00002 12 1ZM16.7705 7.22949C16.5697 7.02876 16.2723 6.95824 16.0029 7.04785L10.5918 8.85254C10.1868 8.98755 9.81846 9.21475 9.5166 9.5166C9.21477 9.81848 8.98752 10.1868 8.85254 10.5918L7.04785 16.0029C6.95831 16.2723 7.02879 16.5698 7.22949 16.7705C7.43033 16.9712 7.72772 17.0409 7.99707 16.9512L13.4082 15.1475C13.8131 15.0125 14.1816 14.7852 14.4834 14.4834C14.7852 14.1816 15.0124 13.8131 15.1475 13.4082L16.9512 7.99707C17.041 7.72767 16.9712 7.43037 16.7705 7.22949ZM13.7246 12.9336C13.6632 13.1177 13.5591 13.2847 13.4219 13.4219C13.3189 13.5248 13.1995 13.6095 13.0684 13.6709L12.9336 13.7246L8.94531 15.0537L10.2754 11.0664V11.0654C10.3368 10.8816 10.4401 10.7142 10.5771 10.5771C10.7142 10.4401 10.8816 10.3368 11.0654 10.2754H11.0664L15.0537 8.94531L13.7246 12.9336Z">
@@ -78,7 +108,7 @@
             </a></li>
           <hr class="border border-black/10 my-2" />
           <li><a href="/frequently-asked-questions/"
-              class="navBtn flex gap-2  py-2 px-2 font-medium items-center text-black/80 rounded-xl hover:bg-[#F6F0FF]">
+              class="navBtn flex gap-2  py-2 px-2 font-medium items-center text-black/80 rounded-md hover:bg-[#FFFFFF]">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" aria-hidden="true" data-slot="icon"
                 class="size-5 text-black/80 group-data-[active=true]:hidden">
@@ -99,7 +129,7 @@
 
             </a></li>
           <li><a href="/about-us/"
-              class="navBtn flex gap-2  py-2 px-2 font-medium items-center text-black/80 rounded-xl hover:bg-[#F6F0FF]">
+              class="navBtn flex gap-2  py-2 px-2 font-medium items-center text-black/80 rounded-md hover:bg-[#FFFFFF]">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" aria-hidden="true" data-slot="icon"
                 class="size-5 text-black/80 group-data-[active=true]:hidden">
@@ -118,7 +148,7 @@
               </svg><span class="">About Us
             </a></li>
           <li><a href="/contact-us/"
-              class="navBtn flex gap-2  py-2 px-2 font-medium items-center text-black/80 rounded-xl hover:bg-[#F6F0FF]">
+              class="navBtn flex gap-2  py-2 px-2 font-medium items-center text-black/80 rounded-md hover:bg-[#FFFFFF]">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" aria-hidden="true" data-slot="icon"
                 class="size-5 text-black/80 group-data-[active=true]:hidden">

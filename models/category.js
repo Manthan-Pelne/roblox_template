@@ -26,4 +26,4 @@ categorySchema.pre('save', function (next) {
 });
 
 // Export the model
-export default mongoose.model('category', categorySchema);
+export default mongoose.models.Category || mongoose.model("Category", categorySchema);

@@ -31,8 +31,8 @@
 }
 
   .activate{
-     background-color: #f6eaff;
-     border: 1px solid #e0bbfb;
+     background-color: #F6F0FF;
+     border: 1px solid #d2bbf5;
   }
   
     .mobile-menu {
@@ -41,15 +41,16 @@
 
 
    .shadowbox{
+    background-color: white;
    box-shadow:
   /* Your original first shadow */
-  #c390ec 0px 10px 5px -12px inset,
+  #e1c5f8 0px 10px 5px -12px inset,
   /* Your original second shadow */
-  #c390ec 12px 12px 36px -28px inset,
+  #e9d2fb 12px 12px 36px -28px inset,
   /* Additional inner glow color */
-  #c390ec 0px 0px 30px 0px inset,
+  #e6cff9 0px 0px 30px 0px inset,
   /* Another inner glow color for more variety */
-  #c390ec 2px 0px 10px -2px inset;
+  #e8d2f9 2px 0px 10px -2px inset;
    }
 
   .smooth-show {
@@ -88,12 +89,7 @@ box-shadow: rgba(149, 157, 165, 0.2) 0px 1px 15px;
 
 
    .card h2 {
-  /* This prevents the text from wrapping to the next line. */
   white-space: nowrap;
-
-  /* This hides any content that overflows the container. */
   overflow: hidden;
-
-  /* This adds the ellipsis (...) to the end of the truncated text. */
   text-overflow: ellipsis;
-}
+} 

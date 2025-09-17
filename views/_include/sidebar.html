@@ -1,22 +1,22 @@
-<section class="border-r border-gray-200 pt-5 fixed z-10 bg-[#fcf9ff] h-screen">
+<section class="border-r border-gray-200 pt-20 fixed z-10 bg-white/50 backdrop-blur-xl h-screen">
   <aside
     class="hidden shrink-0 flex-col justify-between gap-4 overflow-hidden transition-all sm:flex py-4 group/sidebar sm:w-[230px]"
     data-open="true">
     <div class="no-scrollbar flex min-h-[100px] flex-1 flex-col gap-5 overflow-y-auto overflow-x-hidden">
 
       <ul class="flex h-full flex-col gap-1">
-        <a href="/" class="font-extrabold px-5  mb-5 text-xl flex items-center gap-1 shrink-0">
+        <!-- <a href="/" class="font-extrabold px-5  mb-5 text-xl flex items-center gap-1 shrink-0">
           <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
             <path fill="#7E22CE" d="M12 12.3L3.5 7.05L12 1.8l8.5 5.25z" />
             <path fill="#b27fdf" d="M12 22.2v-9.9l8.5-5.25v9.9z" opacity="0.25" />
             <path fill="#b27fdf" d="m12 22.2l-8.5-5.25v-9.9L12 12.3z" opacity="0.5" />
           </svg>
           Roblox<span class="text-purple-600">Studio.</span>
-        </a>
+        </a> -->
 
-        <div class="flex flex-col gap-2 px-5 mt-1">
+        <div class="flex flex-col gap-2 px-5">
           <li><a href="/"
-              class=" navBtn flex gap-2  py-2 px-2 font-medium items-center text-black/80 rounded-xl hover:bg-purple-200">
+              class=" navBtn flex gap-2  py-2 px-2 font-medium items-center text-black/80 rounded-xl hover:bg-[#F6F0FF]">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" aria-hidden="true" data-slot="icon"
                 class="size-5 text-black/80 group-data-[active=true]:hidden">
@@ -37,7 +37,7 @@
           <li>
             <div>
               <div
-                class="group py-2 px-2  shrink-0  text-black/80 font-medium rounded-xl hover:bg-purple-200 focus-visible:outline-4 border-[0.5px] border-transparent focus-visible:outline-primary-new-200 w-full flex gap-2 grow items-center transition-all group-data-[open=false]/sidebar:justify-center max-md:justify-center h-11 md:group-data-[open=true]/sidebar: categories-toggle">
+                class="group py-2 px-2  shrink-0  text-black/80 font-medium rounded-xl hover:bg-[#F6F0FF] focus-visible:outline-4 border-[0.5px] border-transparent focus-visible:outline-primary-new-200 w-full flex gap-2 grow items-center transition-all group-data-[open=false]/sidebar:justify-center max-md:justify-center h-11 md:group-data-[open=true]/sidebar: categories-toggle">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                   <path fill="currentColor"
                     d="M4 11h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1m10 0h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1M4 21h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1m13 0c2.206 0 4-1.794 4-4s-1.794-4-4-4s-4 1.794-4 4s1.794 4 4 4" />
@@ -50,19 +50,18 @@
               </div>
             </div>
             <ul class="ml-8 mt-2 overflow-hidden transition-all max-h-0 duration-300 ease-in-out subcategories-list">
-              <li><a href="#" class="block p-2 text-sm text-gray-500 hover:bg-purple-200 rounded-md">Subcategory 1</a>
+                {% for item in categories %}
+              <li><a href="#" class="block p-2 text-gray-500 hover:bg-[#F6F0FF] rounded-md">{{item.title}}</a>
               </li>
-              <li><a href="#" class="block p-2 text-sm text-gray-500 hover:bg-purple-200 rounded-md">Subcategory 2</a>
-              </li>
-              <li><a href="#" class="block p-2 text-sm text-gray-500 hover:bg-purple-200 rounded-md">Subcategory 3</a>
-              </li>
+            
+                {% endfor %}
             </ul>
           </li>
 
              <hr class="border border-black/10 my-2" />
 
           <li><a href="/explore/"
-              class="navBtn flex gap-2  py-2 px-2 font-medium items-center text-black/80 rounded-xl hover:bg-purple-200">
+              class="navBtn flex gap-2  py-2 px-2 font-medium items-center text-black/80 rounded-xl hover:bg-[#F6F0FF]">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 class="lucide lucide-compass size-5 stroke-[1.5] text-black/80 group-data-[active=true]:hidden"
@@ -79,7 +78,7 @@
             </a></li>
           <hr class="border border-black/10 my-2" />
           <li><a href="/frequently-asked-questions/"
-              class="navBtn flex gap-2  py-2 px-2 font-medium items-center text-black/80 rounded-xl hover:bg-purple-200">
+              class="navBtn flex gap-2  py-2 px-2 font-medium items-center text-black/80 rounded-xl hover:bg-[#F6F0FF]">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" aria-hidden="true" data-slot="icon"
                 class="size-5 text-black/80 group-data-[active=true]:hidden">
@@ -100,7 +99,7 @@
 
             </a></li>
           <li><a href="/about-us/"
-              class="navBtn flex gap-2  py-2 px-2 font-medium items-center text-black/80 rounded-xl hover:bg-purple-200">
+              class="navBtn flex gap-2  py-2 px-2 font-medium items-center text-black/80 rounded-xl hover:bg-[#F6F0FF]">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" aria-hidden="true" data-slot="icon"
                 class="size-5 text-black/80 group-data-[active=true]:hidden">
@@ -119,7 +118,7 @@
               </svg><span class="">About Us
             </a></li>
           <li><a href="/contact-us/"
-              class="navBtn flex gap-2  py-2 px-2 font-medium items-center text-black/80 rounded-xl hover:bg-purple-200">
+              class="navBtn flex gap-2  py-2 px-2 font-medium items-center text-black/80 rounded-xl hover:bg-[#F6F0FF]">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" aria-hidden="true" data-slot="icon"
                 class="size-5 text-black/80 group-data-[active=true]:hidden">

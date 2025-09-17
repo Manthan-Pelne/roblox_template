@@ -1,21 +1,31 @@
 import Card from "../models/AllCard.js";
+import Category from "../models/category.js";
 
 
+const getAllCategories = async (req,res)=>{
+  try {
+      const categories = await Category.find()
+      return categories
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 
 export const getIndex = async (req, res) => {
   try {
     const page = parseInt(req.params.page) || 1;
-    const limit = 5;
+    const limit = 6;
     const skip = (page - 1) * limit;
     const cards = await Card.find().skip(skip).limit(limit).sort({ createdAt: -1 });
     const trending = await Card.find().limit(12)
-    //console.log("trending",trending)
+    const categories = await getAllCategories(req)
     const totalTests = await Card.countDocuments();
     // Calculate total pages
     const totalPages = Math.ceil(totalTests / limit);
     res.render("index", {
       cards,
+      categories,
       trending,
       totalPages,
       currentPage : page
@@ -30,15 +40,17 @@ export const getSingleCard = async (req, res) => {
   try {
     const id = req.params.id
      const page = parseInt(req.params.page) || 1;
-    const limit = 12;
+    const limit = 18;
     const skip = (page - 1) * limit;
     const cards = await Card.find().skip(skip).limit(limit).sort({ createdAt: -1 });
+     const categories = await getAllCategories(req)
     const totalTests = await Card.countDocuments();
     // Calculate total pages
     const totalPages = Math.ceil(totalTests / limit);
     const card = await Card.find({_id : id });
        res.render("getSingleCard", {
       card,
+      categories,
       cards,
       totalPages,
       currentPage : page
@@ -56,11 +68,13 @@ export const getExplore = async(req,res)=>{
     const limit = 20;
     const skip = (page - 1) * limit;
     const cards = await Card.find().skip(skip).limit(limit).sort({ createdAt: -1 });
+     const categories = await getAllCategories(req)
     const totalTests = await Card.countDocuments();
     // Calculate total pages
     const totalPages = Math.ceil(totalTests / limit);
     res.render("explore", {
       cards,
+      categories,
       totalPages,
       currentPage : page
     });
@@ -77,11 +91,13 @@ export const getCategory = async(req,res)=>{
     const limit = 12;
     const skip = (page - 1) * limit;
     const cards = await Card.find().skip(skip).limit(limit).sort({ createdAt: -1 });
+     const categories = await getAllCategories(req)
     const totalTests = await Card.countDocuments();
     // Calculate total pages
     const totalPages = Math.ceil(totalTests / limit);
     res.render("singleCategoryPage", {
       cards,
+      categories,
       totalPages,
       currentPage : page
     });

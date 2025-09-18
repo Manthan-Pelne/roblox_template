@@ -66,7 +66,7 @@ export class R2Client extends BaseProvider {
       console.warn('Invalid key provided to path():', key);
       return '';
     }
-    return `${this.cdnUrl}${key}`;
+    return `${this.cdnUrl}/${key}`;
   }
 
   // This method is used by AdminJS to get file URLs

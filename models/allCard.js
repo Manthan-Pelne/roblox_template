@@ -1,21 +1,21 @@
-import mongoose from 'mongoose';
-import slugify from 'slugify';
+import mongoose from "mongoose";
+import slugify from "slugify";
+import Category from "./Category.js";
 
 const AllCardSchema = new mongoose.Schema({
   name: { type: String, required: true },
   slug: { type: String },
   code: { type: String },
-  url: { type: String },
-  fileKey: { type: String },
-})
+  image: { type: Object },
+  category: { type: mongoose.Schema.Types.ObjectId, ref: "Category" },
+});
 
 // Auto-generate slug before saving
-AllCardSchema.pre('save', function (next) {
-  if (this.isModified('name')) {
+AllCardSchema.pre("save", function (next) {
+  if (this.isModified("name")) {
     this.slug = slugify(this.name, { lower: true, strict: true });
   }
   next();
 });
 
-
-export default mongoose.models.card || mongoose.model('card', AllCardSchema)
+export default mongoose.models.card || mongoose.model("card", AllCardSchema);

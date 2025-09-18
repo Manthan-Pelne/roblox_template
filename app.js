@@ -178,7 +178,7 @@ const admin = new AdminJS({
           },
           validation: { mimeTypes: ["image/png", "image/jpg", "image/jpeg"] },
           uploadPath: (record, filename) =>
-            `/uploads/files/${Date.now()}-${filename.replace(/\s+/g, "-")}`,
+            `uploads/files/${Date.now()}-${filename.replace(/\s+/g, "-")}`,
         }),
 
         // MULTIPLE IMAGES EXMAPLE
@@ -196,7 +196,7 @@ const admin = new AdminJS({
         //     filesToDelete: "images.toDelete",
         //   },
         //   validation: { mimeTypes: ["image/png", "image/jpg", "image/jpeg"] },
-        //   uploadPath: (record, filename) => `/uploads/files/${Date.now()}-${filename.replace(/\s+/g, "-")}`,
+        //   uploadPath: (record, filename) => `uploads/files/${Date.now()}-${filename.replace(/\s+/g, "-")}`,
         // }),
       ],
     },

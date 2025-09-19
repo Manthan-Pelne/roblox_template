@@ -30,10 +30,10 @@
   opacity: 1;
 }
 
-  .activate{
+  /* .activate{
      background-color: #FFF;
-     /* border: 1px solid #d2bbf5; */
-  }
+     border: 1px solid #d2bbf5;
+  } */
   
     .mobile-menu {
             transition: transform 0.3s ease-in-out;

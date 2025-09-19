@@ -66,8 +66,9 @@ export const getExplore = async(req,res)=>{
   try {
     const page = parseInt(req.params.page) || 1;
     const limit = 20;
-    const skip = (page - 1) * limit;
-    const cards = await Card.find().skip(skip).limit(limit).sort({ createdAt: -1 });
+    // const skip = (page - 1) * limit;
+    // const cards = await Card.find().skip(skip).limit(limit).sort({ createdAt: -1 });
+    const cards = await Card.find();
      const categories = await getAllCategories(req)
     const totalTests = await Card.countDocuments();
     // Calculate total pages

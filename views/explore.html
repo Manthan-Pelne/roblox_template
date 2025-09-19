@@ -1,30 +1,30 @@
 {% extends 'base.html' %}
 {% block body %}
 
-<div class="relative  bg-cover py-10" style="background-image: url('/imgs/exploreBg.png');">
-    <div class="absolute inset-0  bg-gradient-to-t from-purple-800 to-black/80 opacity-80"></div>
+
+  <section class="mx-auto p-5 pt-1.5 -z-10">
+    <div class="relative bg-cover py-10 rounded-3xl overflow-hidden" style="background-image: url('/imgs/exploreBg.png');">
+    <div class="absolute inset-0  bg-gradient-to-t from-[#f14d87a6] to-black/80 opacity-80"></div>
     <div class="relative flex items-center justify-center h-full">
-        <div class="text-white text-center p-12">
-            <h1 class="text-4xl md:text-7xl font-bold mb-4 drop-shadow-2xl bg-gradient-to-t from-purple-300 via-white to-white bg-clip-text text-transparent">Explore Templates</h1>
-            <p class="text-xl mb-12 text-[#c6c4c4]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab maiores perspiciatis nulla?</p>
-            <input class="p-3 rounded-lg w-full max-w-md text-gray-800" placeholder="search templates (eg. Skins, shirts, Jeans, Masks, etc)..." type="text">
+            <div class="text-white text-center p-12">
+                <h1 class="text-4xl md:text-7xl font-bold mb-4 drop-shadow-2xl bg-gradient-to-t from-rose-300 via-white to-white bg-clip-text text-transparent">Explore Templates</h1>
+                <p class="text-xl mb-12 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab maiores perspiciatis nulla?</p>
+                <input class="p-3 rounded-lg w-full max-w-md text-gray-800" placeholder="search templates (eg. Skins, shirts, Jeans, Masks, etc)..." type="text">
+            </div>
         </div>
     </div>
-</div>
 
-<div class="">
-<section class="p-10">
-
-    <div class="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+    <div class="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4 mt-5">
           {% for item in cards %}
          {% include '_include/card.html' %}
           {% endfor %}
-        </div>
+    </div>
 
-         {% include '_include/pagination.html' %}
+    {% include '_include/pagination.html' %}
 
 </section>
-</div>
+
+
 
 
 {% endblock body %}

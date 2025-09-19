@@ -3,6 +3,7 @@ import slugify from 'slugify';
 
 const AllCardSchema = new mongoose.Schema({
   name: { type: String, required: true },
+  category: {type: String},
   slug: { type: String },
   code: { type: String },
   url: { type: String },

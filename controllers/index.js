@@ -1,6 +1,6 @@
 import Card from "../models/AllCard.js";
+import category from "../models/category.js";
 import Category from "../models/category.js";
-
 
 const getAllCategories = async (req,res)=>{
   try {
@@ -21,6 +21,11 @@ export const getIndex = async (req, res) => {
     const trending = await Card.find().limit(12)
     const categories = await getAllCategories(req)
     const totalTests = await Card.countDocuments();
+    // const tshirt = await Card.find({category : 't-shirts'}).sort({createdAt: -1 }).limit(6);
+    // const shirt = await Card.find({category : 'shirts'}).sort({createdAt: -1 }).limit(6);
+    // const pant = await Card.find({category : 'Pant'}).sort({createdAt: -1 }).limit(6);
+    const mostdownloads = await Card.find().sort({ downloads: -1, createdAt: -1 }).limit(18);
+
     // Calculate total pages
     const totalPages = Math.ceil(totalTests / limit);
     res.render("index", {
@@ -28,7 +33,9 @@ export const getIndex = async (req, res) => {
       categories,
       trending,
       totalPages,
-      currentPage : page
+      currentPage : page,
+      mostdownloads,
+      imgUrl : process.env.R2_CDN_URL,
     });
   } catch (err) {
     console.error(err);
@@ -61,13 +68,13 @@ export const getSingleCard = async (req, res) => {
   }
 };
 
-
 export const getExplore = async(req,res)=>{
   try {
     const page = parseInt(req.params.page) || 1;
-    const limit = 20;
+    const limit = 30;
     const skip = (page - 1) * limit;
     const cards = await Card.find().skip(skip).limit(limit).sort({ createdAt: -1 });
+    // const cards = await Card.find();
      const categories = await getAllCategories(req)
     const totalTests = await Card.countDocuments();
     // Calculate total pages
@@ -87,19 +94,85 @@ export const getExplore = async(req,res)=>{
 
 export const getCategory = async(req,res)=>{
   try {
+    const cat = req.params.cat;
     const page = parseInt(req.params.page) || 1;
     const limit = 12;
     const skip = (page - 1) * limit;
-    const cards = await Card.find().skip(skip).limit(limit).sort({ createdAt: -1 });
+    const cards = await Card.find();
      const categories = await getAllCategories(req)
     const totalTests = await Card.countDocuments();
     // Calculate total pages
     const totalPages = Math.ceil(totalTests / limit);
-    res.render("singleCategoryPage", {
+    res.render("category/_slug.html", {
       cards,
       categories,
       totalPages,
-      currentPage : page
+      currentPage : page,
+      categoryName : cat
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Internal Server Error");
+  }
+}
+
+// static pages 
+export const getAboutPage = async(req,res)=>{
+try {
+    const cards = await Card.find();
+    const categories = await getAllCategories(req)
+    res.render("about-us", {
+      cards,
+      categories,
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Internal Server Error");
+  }
+}
+
+export const getContactPage = async(req,res)=>{
+try {
+    const categories = await getAllCategories(req)
+    // res.render("terms-and-conditions", {
+    // res.render("privacy-policy", {
+    res.render("contact-us", {
+      categories,
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Internal Server Error");
+  }
+}
+
+export const getFaqPage = async(req,res)=>{
+  try {
+    const categories = await getAllCategories(req)
+    res.render("faq", {
+      categories,
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Internal Server Error");
+  }
+}
+export const getPrivacy = async(req,res)=>{
+  try {
+    const categories = await getAllCategories(req)
+    res.render("privacy-policy", {
+      categories,
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Internal Server Error");
+  }
+}
+
+export const getTerms = async(req,res)=>{
+  try {
+    const categories = await getAllCategories(req)
+    res.render("terms-and-conditions", {
+      categories,
     });
   } catch (err) {
     console.error(err);

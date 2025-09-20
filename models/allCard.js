@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 import slugify from "slugify";
-import Category from "./Category.js";
 
 const AllCardSchema = new mongoose.Schema({
   name: { type: String, required: true },

@@ -17,18 +17,18 @@
 
 <body class="min-h-screen outfit">
 
-      {% include '_include/header.html' %} 
-
-    
-      {% include '_include/sidebar.html' %} 
+  
+  
+  {% include '_include/sidebar2.html' %} 
+  {% include '_include/header.html' %} 
   
       
-      <main class="sm:ml-[230px] pb-40 bg-[#fdffde] pt-12 md:pt-0">
+      <main class="sm:ml-56 pt-12 md:pt-0">
         {% block body %} 
         
         {% endblock body %} 
+        {% include '_include/footer.html' %} 
       </main>
-       {% include '_include/footer.html' %} 
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 import express from "express";
-import { getCategory, getExplore, getIndex,getSingleCard } from "../controllers/index.js";
+import { getCategory, getExplore, getIndex,getSingleCard,getFaqPage,getAboutPage,getContactPage,getPrivacy,getTerms } from "../controllers/index.js";
 
 const router = express.Router();
 
@@ -7,10 +7,13 @@ const router = express.Router();
 
 router.get('/', getIndex);
 router.get('/fetchtemplate/:id', getSingleCard);
-router.get("/get-single-category", getCategory)
+// router.get("/get-single-category", getCategory)
+router.get("/categories/:cat", getCategory)
 router.get("/explore", getExplore)
-router.get("/about-us/",(req,res)=>{ res.render("about-us")})
-router.get("/contact-us/",(req,res)=>{ res.render("contact-us")})
-router.get("/frequently-asked-questions/",(req,res)=>{ res.render("faq")})
+router.get("/about-us/", getAboutPage)
+router.get("/contact-us/", getContactPage)
+router.get("/faq/", getFaqPage)
+router.get("/privacy-policy/", getPrivacy)
+router.get("/terms-and-conditions/", getTerms)
 
 export default router;

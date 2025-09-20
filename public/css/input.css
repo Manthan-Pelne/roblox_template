@@ -9,5 +9,6 @@
 
 .activate 
       {
-        @apply bg-white border-rose-50 shadow-lg text-gray-900
+        @apply bg-rose-50 border-rose-200 shadow-lg text-gray-900
+        /* @apply bg-white border-rose-50 shadow-lg text-gray-900 */
       }

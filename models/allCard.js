@@ -7,6 +7,7 @@ const AllCardSchema = new mongoose.Schema({
   slug: { type: String },
   code: { type: String },
   url: { type: String },
+  downloads : { type : Number },
   fileKey: { type: String },
 })
 

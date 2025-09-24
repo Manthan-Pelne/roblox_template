@@ -32,8 +32,8 @@
     </div> -->
 
 
-    <div class="max-w-6xl mx-auto flex items-center justify-center gap-16">
-      <div class="w-[300px] h-[300px]">
+    <div class="max-w-6xl mx-auto flex items-center justify-center gap-12">
+      <div class="w-[300px] h-[300px] bg-white  rounded-xl border border-black/10">
         <img class="w-full h-full" src="{{imgUrl}}/{{item.image.key}}" alt="{{item.name}}">
       </div>
       <div class="border border-black/10 h-[300px]"></div>
@@ -43,11 +43,11 @@
         <div class="flex items-center gap-3">
           <p id="itemCode" class="text-black/80 tracking-wide">{{item.code}}</p>
           <button onclick="navigator.clipboard.writeText(document.getElementById('itemCode').innerText)"
-            class="ml-4 px-2 py-1 text-sm cursor-pointer bg-orange-50 border border-orange-200 text-black/70 rounded-md hover:bg-white transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+            class="ml-4 px-2 py-1 text-sm cursor-pointer bg-[#fdf6cf] border border-[#FBE87D] text-black/70 rounded-md hover:bg-white transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
             Copy
           </button>
         </div>
-        <p class="text-sm text-black/60 mt-6">Use this template by downloading it for free</p>
+        <p class="text-sm text-black/60 mt-3">Use this template by downloading it for free</p>
         <button class="mt-4 shadow-2xl cursor-pointer px-4 py-2 bg-[#E45137] text-white rounded-md hover:bg-[#d5472e] transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Download Template</button>
       </div>
       <div>

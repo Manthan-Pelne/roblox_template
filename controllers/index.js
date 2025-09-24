@@ -22,9 +22,48 @@ export const getIndex = async (req, res) => {
     const categories = await getAllCategories(req)
     const totalTests = await Card.countDocuments();
     
-    // const tshirt = await Card.find({category : 't-shirts'}).sort({createdAt: -1 }).limit(6);
-    // const shirt = await Card.find({category : 'shirts'}).sort({createdAt: -1 }).limit(6);
-    // const pant = await Card.find({category : 'Pant'}).sort({createdAt: -1 }).limit(6);
+    const tshirt = await Card.aggregate([
+  {
+    $lookup: {
+      from: "categories", // collection name for Category
+      localField: "category",
+      foreignField: "_id",
+      as: "category"
+    }
+  },
+  { $unwind: "$category" },
+  { $match: { "category.title": "t-shirts" } },
+  { $sort: { createdAt: -1 } },
+  { $limit: 6 }
+]);
+    const shirt = await Card.aggregate([
+  {
+    $lookup: {
+      from: "categories", // collection name for Category
+      localField: "category",
+      foreignField: "_id",
+      as: "category"
+    }
+  },
+  { $unwind: "$category" },
+  { $match: { "category.title": "shirts" } },
+  { $sort: { createdAt: -1 } },
+  { $limit: 6 }
+]);
+    const pant = await Card.aggregate([
+  {
+    $lookup: {
+      from: "categories", // collection name for Category
+      localField: "category",
+      foreignField: "_id",
+      as: "category"
+    }
+  },
+  { $unwind: "$category" },
+  { $match: { "category.title": "Pant" } },
+  { $sort: { createdAt: -1 } },
+  { $limit: 6 }
+]);
     const mostdownloads = await Card.find().sort({ downloads: -1, createdAt: -1 }).limit(18).populate("category");
     // Calculate total pages
     const totalPages = Math.ceil(totalTests / limit);
@@ -32,6 +71,9 @@ export const getIndex = async (req, res) => {
       cards,
       categories,
       trending,
+      tshirt,
+      shirt,
+      pant,
       totalPages,
       currentPage : page,
       mostdownloads,
@@ -42,6 +84,8 @@ export const getIndex = async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 };
+
+
 
 export const getSingleCard = async (req, res) => {
   try {

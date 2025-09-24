@@ -17,15 +17,15 @@ export const getIndex = async (req, res) => {
     const page = parseInt(req.params.page) || 1;
     const limit = 6;
     const skip = (page - 1) * limit;
-    const cards = await Card.find().skip(skip).limit(limit).sort({ createdAt: -1 });
+    const cards = await Card.find().skip(skip).limit(limit).sort({ createdAt: -1 }).populate("category");
     const trending = await Card.find().limit(12)
     const categories = await getAllCategories(req)
     const totalTests = await Card.countDocuments();
+    
     // const tshirt = await Card.find({category : 't-shirts'}).sort({createdAt: -1 }).limit(6);
     // const shirt = await Card.find({category : 'shirts'}).sort({createdAt: -1 }).limit(6);
     // const pant = await Card.find({category : 'Pant'}).sort({createdAt: -1 }).limit(6);
-    const mostdownloads = await Card.find().sort({ downloads: -1, createdAt: -1 }).limit(18);
-
+    const mostdownloads = await Card.find().sort({ downloads: -1, createdAt: -1 }).limit(18).populate("category");
     // Calculate total pages
     const totalPages = Math.ceil(totalTests / limit);
     res.render("index", {
@@ -49,18 +49,19 @@ export const getSingleCard = async (req, res) => {
      const page = parseInt(req.params.page) || 1;
     const limit = 18;
     const skip = (page - 1) * limit;
-    const cards = await Card.find().skip(skip).limit(limit).sort({ createdAt: -1 });
+    const cards = await Card.find().skip(skip).limit(limit).sort({ createdAt: -1 }).populate("category");
      const categories = await getAllCategories(req)
     const totalTests = await Card.countDocuments();
     // Calculate total pages
     const totalPages = Math.ceil(totalTests / limit);
-    const card = await Card.find({_id : id });
+    const card = await Card.find({_id : id }).populate("category");
        res.render("getSingleCard", {
       card,
       categories,
       cards,
       totalPages,
-      currentPage : page
+      currentPage : page,
+      imgUrl : process.env.R2_CDN_URL,
     });
   } catch (err) {
     console.error(err);
@@ -73,7 +74,7 @@ export const getExplore = async(req,res)=>{
     const page = parseInt(req.params.page) || 1;
     const limit = 30;
     const skip = (page - 1) * limit;
-    const cards = await Card.find().skip(skip).limit(limit).sort({ createdAt: -1 });
+    const cards = await Card.find().skip(skip).limit(limit).sort({ createdAt: -1 }).populate("category");
     // const cards = await Card.find();
      const categories = await getAllCategories(req)
     const totalTests = await Card.countDocuments();
@@ -83,7 +84,8 @@ export const getExplore = async(req,res)=>{
       cards,
       categories,
       totalPages,
-      currentPage : page
+      currentPage : page,
+       imgUrl : process.env.R2_CDN_URL
     });
   } catch (err) {
     console.error(err);
@@ -98,7 +100,7 @@ export const getCategory = async(req,res)=>{
     const page = parseInt(req.params.page) || 1;
     const limit = 12;
     const skip = (page - 1) * limit;
-    const cards = await Card.find();
+    const cards = await Card.find().populate("category");
      const categories = await getAllCategories(req)
     const totalTests = await Card.countDocuments();
     // Calculate total pages
@@ -108,7 +110,8 @@ export const getCategory = async(req,res)=>{
       categories,
       totalPages,
       currentPage : page,
-      categoryName : cat
+      categoryName : cat,
+       imgUrl : process.env.R2_CDN_URL
     });
   } catch (err) {
     console.error(err);

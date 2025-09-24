@@ -28,3 +28,136 @@ transport
 waist
 
 npm install @tiptap/core@latest @tiptap/extension-horizontal-rule@latest
+
+
+To create a website for uploading and downloading Roblox templates with a vast library, focus on a minimalist, user-friendly layout emphasizing organized navigation and vibrant game-oriented color schemes. Here’s a comprehensive plan covering layout, navigation, UI flow, and color palette selection.webflow+3
+Website Layout Structure
+Header: Logo, Search bar (with filters for template type), Login/Register, Upload button.justinmind+1
+Main Navigation Menu:
+Home
+Browse Templates (Filters: Originals, Shirts, Pants, Accessories)
+Categories (Popular, Trending, New Arrivals, Featured Collections)
+Upload Template
+Library (Biggest collection, advanced filtering/sorting)
+Community (Showcase, Discussions, Help Center)
+Hero Section (Homepage): Catchy headline (“Biggest Roblox Template Library”), call-to-action (Browse/Upload), vibrant background illustration highlighting Roblox assets.
+Browse & Search:
+Left-side filters: Type, theme, color, collection, popularity, date added
+Grid/list view of templates with thumbnails, hover previews.justinmind
+Template Details Page: Large preview, Download/Upload buttons, metadata (creator, date, tags), related templates carousel, comments/reviews section.
+Upload Flow: Step-by-step wizard (Choose file, Add info/tags, Preview, Confirm).justinmind
+Sidebar Widgets: Popular searches, Quick upload wizard, Top contributors, Recent downloads.
+Footer: About, Terms, Privacy, Social links, Contact, FAQ.
+Web Flow and User Experience
+Simple onboarding with social login options and profile setup.webflow
+Smooth upload flow: Clear instructions, drag-and-drop support, file validation.
+Quick download: Prominent download buttons, instant access to files.
+Community areas for sharing, ratings, tips, and discussion about templates.
+Mobile-first responsive design for gamers on all devices.justinmind
+Navigation Principles
+Consistent menu placement and prominent search everywhere.
+Use grids and modular cards, avoid visual clutter (lots of white space, clear boundaries).webflow+1
+Each page should have breadcrumbs for easy backtracking.
+Filter/sort options always accessible on library pages.
+Secondary actions (report, share) on template detail pages.
+Suggested Color Schemes (2025 Trends)
+Pick colors that evoke energy and creativity:
+ThemeMain ColorsAccentsStyleRefNeon Brights#EC4186 (pink), #38124A (deep violet), #EE544A (red), #FFFFFF (white)Neon blue, greenBold & playfulthemehunkSophisticated Blue#252E8A (deep blue), #5A7FC8 (light blue), #F7F6F7 (soft white)Gold #FFD700, Slate blue #6A5ACDTech/game inspiredmilesweb+1Pastel Modern#F9FBC3 (soft yellow), #ECAAFB (lavender), #B4A2F6 (blue)#FCE54D (yellow), #989997 (grey)Clean, welcomingthemehunk
+Use bold colors for CTAs and highlights, softer shades for backgrounds and containers.
+Accent colors for filter chips, notifications, and active links.
+Consider dark mode toggle (black/dark gray background, vivid color highlights).milesweb
+Example Page Structure
+Home
+Hero headline, search, featured collections preview.
+Carousel of trending templates.
+Quick upload call-to-action.
+Browse Templates
+Filter panel (left), grid of template cards (center), sort options (top).
+Infinite scroll or pagination.
+Template Details
+Large preview image, download/upload controls, metadata, comments, tags.
+Upload Flow
+Steps: Drag/upload → Add details → Review/Preview → Publish.
+Community
+Forums/discussion threads, showcases, contests.
+References for Inspiration
+Use minimalist grids like Roblex SaaS Webflow Template.webflow
+Game UI databases and Dribbble for layout inspiration on asset libraries.dribbble+2
+Color palette resources from ThemeHunk, MilesWeb, Piktochart.themehunk+2
+UI icon style suggestions from Justinmind guide.justinmind
+This structure will give your Roblox Template downloader the professional, engaging feel gamers expect, with intuitive navigation and vibrant, memorable branding.milesweb+2
+https://webflow.com/templates/html/roblex-saas-website-template
+https://www.justinmind.com/ui-design/game
+https://www.milesweb.in/blog/website-design/best-color-palettes-for-websites/
+https://themehunk.com/color-combinations-for-website/
+https://piktochart.com/tips/gaming-color-palette
+https://dribbble.com/tags/roblox
+https://www.sprungstudios.com/top-5-sites-to-kickstart-your-day-as-a-ux-ui-game-designer/
+https://customuse.com/collections/roblox?isRemix=false
+https://pixlr.com/designer/template/roblox/60478b259cfbcd123795555d/
+https://create.roblox.com/docs/resources/templates
+https://mediamodifier.com/design-templates/roblox-clothing
+https://create.roblox.com/docs/art/classic-clothing
+https://www.postermywall.com/index.php/posters/search?s=roblox
+https://pageflows.com
+https://hookagency.com/blog/website-color-schemes-2020/
+https://uizard.io
+https://customuse.com/collections/roblox
+https://ingame.clothing
+https://www.reddit.com/r/gamedev/comments/15q2uhg/libraries_for_making_game_ui/
+https://colorhunt.co/palettes/popular
+https://www.toools.design/ui-web-design-inspiration-websites
+WebflowWebflow
+Roblex Website Page Template for Webflow
+A SaaS HTML5 responsive website template for your SaaS website. Customize it with Webflow's web design tools and connect it to our powerful CMS.
+Created by
+Basecom
+Published on
+Sep 12, 2025
+https://webflow.com/templates/html/roblex-saas-website-template
+
+Justinmind |Justinmind |
+Game UI: design principles, best practices, and examples
+A comprehensive guide to game UI design, covering essential elements like menus, icons, and HUDs. Learn all the factors and pitfalls of creating video games.
+7 Feb (13 kB)
+https://www.justinmind.com/ui-design/game
+
+ThemeHunk - Premium WordPress Theme ShopThemeHunk - Premium WordPress Theme Shop
+31 Best Color Combinations Or Schemes For Website Design In 2025
+Discover the perfect color combinations for your website design!, explore the best schemes to enhance aesthetics and user experience.
+Written by
+Aman Dubey
+Time to read
+13 minutes
+20 May
+https://themehunk.com/color-combinations-for-website/
+
+Web Hosting Blogs by MilesWeb | WordPress, Cloud &amp; SEO TipsWeb Hosting Blogs by MilesWeb | WordPress, Cloud & SEO Tips
+Best Color Palettes For Websites 2025
+Dive into the captivating world of color. Elevate your website style with our blog showcasing the trendiest color palettes.
+Written by
+Sommaya Singh
+Est. reading time
+12 minutes
+30 Jan 2024
+https://www.milesweb.in/blog/website-design/best-color-palettes-for-websites/
+
+
+
+sagar shelke
+  5:17 PM
+Roblox Shirt and Pants Templates | Customuse
+customuse.comcustomuse.com
+Roblox Shirt and Pants Templates | Customuse
+Design the perfect Roblox skin for yourself, your group, your game, and more with these professionally crafted Roblox clothing templates. (463 kB)
+https://customuse.com/collections/roblox?isRemix=false
+
+5:18
+Roblox Shop Interface - Main Page by Bang Bang Studio on Dribbble+
+5:19
+Roblox Shop Interface - Main Page by Bang Bang Studio on Dribbble
+
+
+
+
+

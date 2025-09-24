@@ -1,32 +1,56 @@
- <div class="max-w-3xl bg-white m-auto mt-5 p-10  rounded-3xl  cardShadow">
+ <!-- <div class="max-w-3xl bg-white m-auto mt-5 p-10  rounded-3xl  cardShadow">
       <div class="flex items-center justify-between gap-10">
-      <div class="flex flex-col gap-5 w-full text-purple-600">
-        <div class="bg-purple-50 border border-purple-300 rounded-xl w-full p-4 flex items-center gap-3">
+      <div class="flex flex-col gap-5 w-full text-[#E45137]">
+        <div class="bg-orange-100 border border-[#fabfb5] rounded-xl w-full p-4 flex items-center gap-3">
           <h2 class="w-16">Name</h2>
           <span>|</span>
           <p class="text-black">{{item.name}}</p>
         </div>
-        <div class="bg-purple-50 border border-purple-300 rounded-xl p-4 flex items-center gap-3">
+        <div class="bg-orange-100 border border-[#fabfb5] rounded-xl p-4 flex items-center gap-3">
           <h2 class="w-16">Category</h2>
           <span>|</span>
           <p class="text-black">{{item.slug}}</p>
         </div>
 
-        <div class="bg-purple-50 border border-purple-300 rounded-xl p-4 flex justify-between items-center gap-3">
+        <div class="bg-orange-100 border border-[#fabfb5] rounded-xl p-4 flex justify-between items-center gap-3">
           <div class="flex items-center gap-3">
             <h2 class="w-16">Code</h2>
             <span>|</span>
             <p class="text-black tracking-wide">{{item.code}}</p>
           </div>
           <button onclick="navigator.clipboard.writeText(document.getElementById('itemCode').innerText)"
-            class="ml-4 px-4 py-2 cursor-pointer bg-purple-700 text-white rounded-md hover:bg-purple-800 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+            class="ml-4 px-4 py-2 cursor-pointer bg-[#E45137] text-white rounded-md hover:bg-[#d5472e] transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
             Copy
           </button>
         </div>
       </div>
-      <div class="border border-purple-200 p-4 rounded-3xl">
-        <img class="w-[350px] drop-shadow-xl" src="{{item.url}}" alt="{{item.name}}">
+      <div class="border border-orange-200 p-4 rounded-3xl">
+        <img class="w-[350px] drop-shadow-xl" src="/imgs/skin.png" alt="{{item.name}}">
       </div>
     </div>
-    <button class="w-full mt-8 shadow-2xl cursor-pointer px-4 py-2 bg-purple-700 text-white rounded-md hover:bg-purple-800 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Download Template</button>
+    <button class="w-full mt-8 shadow-2xl cursor-pointer px-4 py-2 bg-[#E45137] text-white rounded-md hover:bg-[#d5472e] transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Download Template</button>
+    </div> -->
+
+
+    <div class="max-w-6xl mx-auto flex items-center justify-center gap-16">
+      <div class="w-[300px] h-[300px]">
+        <img class="w-full h-full" src="{{imgUrl}}/{{item.image.key}}" alt="{{item.name}}">
+      </div>
+      <div class="border border-black/10 h-[300px]"></div>
+      <div>
+        <h1 class="text-3xl font-semibold">{{item.name}}</h1>
+        <p class="text-[gray] mt-2 mb-3">{{item.category.title}}</p>
+        <div class="flex items-center gap-3">
+          <p id="itemCode" class="text-black/80 tracking-wide">{{item.code}}</p>
+          <button onclick="navigator.clipboard.writeText(document.getElementById('itemCode').innerText)"
+            class="ml-4 px-2 py-1 text-sm cursor-pointer bg-orange-50 border border-orange-200 text-black/70 rounded-md hover:bg-white transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+            Copy
+          </button>
+        </div>
+        <p class="text-sm text-black/60 mt-6">Use this template by downloading it for free</p>
+        <button class="mt-4 shadow-2xl cursor-pointer px-4 py-2 bg-[#E45137] text-white rounded-md hover:bg-[#d5472e] transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Download Template</button>
+      </div>
+      <div>
+           
+      </div>
     </div>

@@ -1,56 +1,52 @@
- <!-- <div class="max-w-3xl bg-white m-auto mt-5 p-10  rounded-3xl  cardShadow">
-      <div class="flex items-center justify-between gap-10">
-      <div class="flex flex-col gap-5 w-full text-[#E45137]">
-        <div class="bg-orange-100 border border-[#fabfb5] rounded-xl w-full p-4 flex items-center gap-3">
-          <h2 class="w-16">Name</h2>
-          <span>|</span>
-          <p class="text-black">{{item.name}}</p>
-        </div>
-        <div class="bg-orange-100 border border-[#fabfb5] rounded-xl p-4 flex items-center gap-3">
-          <h2 class="w-16">Category</h2>
-          <span>|</span>
-          <p class="text-black">{{item.slug}}</p>
-        </div>
-
-        <div class="bg-orange-100 border border-[#fabfb5] rounded-xl p-4 flex justify-between items-center gap-3">
-          <div class="flex items-center gap-3">
-            <h2 class="w-16">Code</h2>
-            <span>|</span>
-            <p class="text-black tracking-wide">{{item.code}}</p>
-          </div>
-          <button onclick="navigator.clipboard.writeText(document.getElementById('itemCode').innerText)"
-            class="ml-4 px-4 py-2 cursor-pointer bg-[#E45137] text-white rounded-md hover:bg-[#d5472e] transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-            Copy
-          </button>
-        </div>
-      </div>
-      <div class="border border-orange-200 p-4 rounded-3xl">
-        <img class="w-[350px] drop-shadow-xl" src="/imgs/skin.png" alt="{{item.name}}">
-      </div>
-    </div>
-    <button class="w-full mt-8 shadow-2xl cursor-pointer px-4 py-2 bg-[#E45137] text-white rounded-md hover:bg-[#d5472e] transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Download Template</button>
-    </div> -->
 
 
-    <div class="max-w-6xl mx-auto flex items-center justify-center gap-12">
-      <div class="w-[300px] h-[300px] bg-white  rounded-xl border border-black/10">
+    <div class="max-w-6xl flex items-center gap-8 p-5 dark:text-white">
+      <div class="w-[300px] h-[300px] p-1 dark:bg-[#110e0c] rounded-xl border border-black/10">
         <img class="w-full h-full" src="{{imgUrl}}/{{item.image.key}}" alt="{{item.name}}">
       </div>
-      <div class="border border-black/10 h-[300px]"></div>
+      <div class="border border-black/5 dark:border-white/5 h-[300px]"></div>
       <div>
-        <h1 class="text-3xl font-semibold">{{item.name}}</h1>
-        <p class="text-[gray] mt-2 mb-3">{{item.category.title}}</p>
+        <h1 class="text-3xl font-semibold">{{item.name.charAt(0).toUpperCase() + item.name.slice(1)}}</h1>
+        <p class="text-black/60 mt-2 dark:text-white/70">{{item.category.title.charAt(0).toUpperCase() + item.category.title.slice(1)}}</p>
+
+        <hr class="my-4 border border-black/10 dark:border-white/10">
+
         <div class="flex items-center gap-3">
-          <p id="itemCode" class="text-black/80 tracking-wide">{{item.code}}</p>
-          <button onclick="navigator.clipboard.writeText(document.getElementById('itemCode').innerText)"
-            class="ml-4 px-2 py-1 text-sm cursor-pointer bg-[#fdf6cf] border border-[#FBE87D] text-black/70 rounded-md hover:bg-white transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+          <p class="text-black/80 dark:text-white tracking-wide"><span class="text-[#E45137] font-semibold">CODE</span> <span id="itemCode">{{item.code}}</span></p>
+          <button onclick="copyBoard()"
+            class="ml-4 px-2 py-1 flex items-center justify-center gap-1 text-sm cursor-pointer border border-[#E45137]  dark:border-[#ffbdb1] text-black/70 dark:bg-[#3f2010] dark:hover:bg-[#552a14] dark:text-white rounded-md hover:bg-[#ffefec] transition duration-300">
             Copy
+             <svg class="w-5 h-5 hidden tick-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.5 13.833L6 17.5l1.024-1.073M16.5 6.5l-6.063 6.352m-2.937.981L11 17.5l10.5-11"/></svg>
           </button>
         </div>
-        <p class="text-sm text-black/60 mt-3">Use this template by downloading it for free</p>
-        <button class="mt-4 shadow-2xl cursor-pointer px-4 py-2 bg-[#E45137] text-white rounded-md hover:bg-[#d5472e] transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Download Template</button>
+
+        <hr class="my-4 border border-black/10 dark:border-white/10">
+
+        <p class="text-sm text-black/60 dark:text-white/70">Use this template by downloading it for free</p>
+        <button class="mt-3 shadow-2xl cursor-pointer px-4 py-2 bg-[#E45137] text-white rounded-md hover:bg-[#c13a23] transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Download Template</button>
       </div>
       <div>
            
       </div>
     </div>
+
+
+    <script>
+      function copyBoard() {
+        const itemCode = document.getElementById('itemCode').innerText;
+        const copyBtn = event.currentTarget;
+        const tickIcon = copyBtn.querySelector('.tick-icon');
+
+        navigator.clipboard.writeText(itemCode).then(() => {
+          tickIcon.classList.remove('hidden');
+
+          setTimeout(() => {
+            tickIcon.classList.add('hidden');
+
+          }, 2000);
+        }).catch(err => {
+          console.error('Failed to copy: ', err);
+        });
+      }
+
+    </script>

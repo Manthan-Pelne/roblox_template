@@ -1,20 +1,20 @@
-<div class="card flex-shrink-0 bg-white snap-center relative group cardShadow transition-colors duration-300 rounded-xl flex flex-col p-1">
-  <a href="/fetchtemplate/{{item.id}}" class="bg-gray-50 rounded-[10px] rounded- p-5 h-full hover:bg-white duration-300">
+<div class="card flex-shrink-0 bg-white shadow-md border border-black/10 dark:shadow-none dark:bg-black/70 snap-center relative group  transition-colors duration-300 rounded-xl flex flex-col p-1">
+  <a href="/fetchtemplate/{{ item.id or item._id }}" class="bg-gray-50 dark:bg-gradient-to-tr from-[#28230d] to-[#30140e] rounded-[10px] rounded- p-4 h-full hover:bg-white duration-300">
     <!-- src="{{imgUrl}}/{{item.image.key}}" -->
-    <img class="transition-all duration-400 group-hover:-translate-y-2 w-full h-full" src="{{imgUrl}}/{{item.image.key}}" alt="{{item.name}}">
+    <img class="transition-all duration-300 group-hover:scale-110 w-full h-full" src="{{imgUrl}}/{{item.image.key}}" alt="{{item.name}}">
   </a>
     <div class="my-1 px-1">
-      <h2 class="text-black/60 text-sm tracking-wide truncate"> {{item.name}}</h2>
+      <h2 class="text-black/60 dark:text-white/80 text-sm tracking-wide truncate"> {{item.name.charAt(0).toUpperCase() + item.name.slice(1)}}</h2>
     <div class="flex justify-between mt-1 items-center gap-3">
-    <span class="text-[#E45137] text-sm flex items-center gap-1 px-2 border border-[#E45137] bg-[#fff6f5] rounded-2xl">
+    <a href="/categories/{{item.category.title}}" class="text-[#E45137] text-sm flex items-center gap-1 px-2 border border-[#E45137] bg-[#fff6f5] dark:bg-[#320a07] rounded-2xl">
       {{item.category.title}}
-    </span>
+    </a>
     <div class="flex items-center gap-2">
-      <span class="bg-[#E45137] text-white p-1 rounded-md"><svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <a href="/fetchtemplate/{{ item.id or item._id }}" class="bg-[#E45137] hover:bg-[#c22b11] transition-all duration-200 text-white p-1 rounded-md"><svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2M7 11l5 5l5-5m-5-7v12" />
-        </svg></span>
-      <span onclick="shareItem('{{item.id}}', this)" class="cursor-pointer text-black/50 bg-[#ffe985] p-1 rounded-md">
+        </svg></a>
+      <span onclick="shareItem('{{item.id}}', this)" class="cursor-pointer text-black/70 bg-[#ffe985] hover:bg-[#f4d860] transition-all duration-200 p-1 rounded-md">
         <svg class="w-5 h-5 share-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
           <g fill="none">
             <path fill="currentColor" fill-opacity="0.16"

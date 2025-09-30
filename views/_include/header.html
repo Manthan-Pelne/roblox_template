@@ -3,11 +3,42 @@
         <div class="max-w-8xl mx-auto flex items-center justify-between">
             <div></div>
             <!-- Mobile Menu Toggle Button -->
+             <div class="flex items-center gap-4">
            <div id="desktop-searchbar" class="hidden sm:block">
                 <div class="flex items-center gap-2 w-[300px] md:w-[350px]">
-                    <span><svg class="w-6 h-6 opacity-25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="4"><path d="M21 38c9.389 0 17-7.611 17-17S30.389 4 21 4S4 11.611 4 21s7.611 17 17 17Z"/><path stroke-linecap="round" d="M26.657 14.343A7.98 7.98 0 0 0 21 12a7.98 7.98 0 0 0-5.657 2.343m17.879 18.879l8.485 8.485"/></g></svg></span>
-                    <input type="text" class="shadow-sm border border-[#dfdfdf] bg-white w-full rounded-xl p-2 placeholder:text-black/20 backdrop-blur-2xl focus:outline-none focus:ring-2 focus:ring-[#F14D87]" placeholder="Search templates...">
+                    <span><svg class="w-6 h-6 opacity-25 dark:opacity-35 dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="4"><path d="M21 38c9.389 0 17-7.611 17-17S30.389 4 21 4S4 11.611 4 21s7.611 17 17 17Z"/><path stroke-linecap="round" d="M26.657 14.343A7.98 7.98 0 0 0 21 12a7.98 7.98 0 0 0-5.657 2.343m17.879 18.879l8.485 8.485"/></g></svg></span>
+                    <input type="text" class="shadow-sm border-2 border-[#dfdfdf] dark:border-[#713f20] bg-white dark:bg-black w-full rounded-xl p-2 placeholder:text-black/20 dark:placeholder:text-white/40 backdrop-blur-2xl focus:outline-none focus:ring-2 focus:ring-[#F14D87]" placeholder="Search templates...">
                 </div>
+            </div>
+
+              <div id="theme-toggle">
+            <button
+               class="hidden dark:block p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+               aria-label="Toggle theme">
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-sun h-5 w-5">
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <path d="M12 2v2"></path>
+                  <path d="M12 20v2"></path>
+                  <path d="m4.93 4.93 1.41 1.41"></path>
+                  <path d="m17.66 17.66 1.41 1.41"></path>
+                  <path d="M2 12h2"></path>
+                  <path d="M20 12h2"></path>
+                  <path d="m6.34 17.66-1.41 1.41"></path>
+                  <path d="m19.07 4.93-1.41 1.41"></path>
+               </svg>
+            </button>
+            <button
+               class="block dark:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+               aria-label="Toggle theme">
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-moon h-5 w-5">
+                  <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+               </svg>
+            </button>
+         </div>
             </div>
 
             <div class="sm:hidden"> 

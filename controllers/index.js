@@ -18,7 +18,7 @@ export const getIndex = async (req, res) => {
     const limit = 6;
     const skip = (page - 1) * limit;
     const cards = await Card.find().skip(skip).limit(limit).sort({ createdAt: -1 }).populate("category");
-    const trending = await Card.find().limit(12)
+    const trending = await Card.find().limit(12).populate("category")
     const categories = await getAllCategories(req)
     const totalTests = await Card.countDocuments();
     

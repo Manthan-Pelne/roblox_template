@@ -9,49 +9,83 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
   <link
     href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rowdies:wght@300;400;700&family=Sora:wght@100..800&display=swap"
     rel="stylesheet">
   {% block meta %} {% endblock meta %}
 </head>
 
-<body class="min-h-screen outfit">
+<body class="min-h-screen outfit dark:bg-black/90">
 
-  
-  
-  {% include '_include/sidebar2.html' %} 
-  {% include '_include/header.html' %} 
-  
-      
-      <main class="sm:ml-56 pt-12 md:pt-0">
-        {% block body %} 
-        
-        {% endblock body %} 
-        {% include '_include/footer.html' %} 
-      </main>
+
+
+  {% include '_include/sidebar2.html' %}
+  {% include '_include/header.html' %}
+
+
+  <main class="sm:ml-56 pt-12 md:pt-0">
+    {% block body %}
+
+    {% endblock body %}
+    {% include '_include/footer.html' %}
+  </main>
 </body>
 
 </html>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+<script>
+  // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+  if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark')
+  }
 
-    <script>
-      //for desktop view
-    const currentLocation = window.location.pathname;
+
+  var themeToggleBtn = document.getElementById('theme-toggle');
+  themeToggleBtn.addEventListener('click', function () {
+    if (localStorage.getItem('color-theme')) {
+      if (localStorage.getItem('color-theme') === 'light') {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      }
+      // if NOT set via local storage previously
+    } else {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    }
+  });
+</script>
+
+
+
+<script>
+  //for desktop view
+  const currentLocation = window.location.pathname;
   const navLinks = document.querySelectorAll(".navBtn");
   //console.log(currentLocation)
 
-navLinks.forEach(link => {
-  let x = link.getAttribute("href") 
-  if (currentLocation == '/'+ x){
-    //console.log(x)
-    link.classList.add("activate");
-    link.classList.remove("navBtn")
-  }else if (x === currentLocation){
-    link.classList.add("activate");
-    link.classList.remove("navBtn")
-  }
-});
+  navLinks.forEach(link => {
+    let x = link.getAttribute("href")
+    if (currentLocation == '/' + x) {
+      //console.log(x)
+      link.classList.add("activate");
+      link.classList.remove("navBtn")
+    } else if (x === currentLocation) {
+      link.classList.add("activate");
+      link.classList.remove("navBtn")
+    }
+  });
 
 
-  </script>
-
+</script>

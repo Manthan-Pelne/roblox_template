@@ -3,31 +3,109 @@
   
 
 <section class="mx-auto p-5 pt-1.5 -z-10">
-    <div class="relative shadow-sm bg-white border overflow-hidden rounded-2xl">
-      <div class="absolute opacity-30 top-0 left-0 w-full h-full z-0">
-            <div class="hexagon absolute w-[120px] h-[104px] top-[6%] left-[31%] before:bg-gradient-to-br from-[#ff9a9e] to-[#fecfef]"></div>
-            <div class="hexagon absolute w-[120px] h-[104px] top-[15%] left-[23%] scale-80 before:bg-gradient-to-br from-[#a8edea] to-[#fed6e3]"></div>
-            <div class="hexagon absolute w-[120px] h-[104px] top-[30%] left-[14%] scale-125 before:bg-gradient-to-br from-[#667eea] to-[#764ba2]"></div>
-            <div class="hexagon absolute w-[120px] h-[104px] top-[60%] right-[20%] scale-90 before:bg-gradient-to-br from-[#f093fb] to-[#f5576c]"></div>
-            <div class="hexagon absolute w-[120px] h-[104px] top-[45%] right-[15%] scale-110 before:bg-gradient-to-br from-[#4facfe] to-[#00f2fe]"></div>
-            <div class="hexagon absolute w-[120px] h-[104px] top-[70%] right-[30%] scale-75 before:bg-gradient-to-br from-[#43e97b] to-[#38f9d7]"></div>
-            <div class="hexagon absolute w-[120px] h-[104px] bottom-[20%] left-[40%] scale-95 before:bg-gradient-to-br from-[#fa709a] to-[#fee140]"></div>
+      <div class="relative bg-white dark:bg-black/90 border border-black/10 shadow-md overflow-hidden rounded-2xl">
+        <div class="absolute opacity-20 top-0 left-0 w-full h-full z-0">
+            <div
+                class="hexagon absolute w-[120px] h-[104px] top-[60%] right-[20%] scale-90 before:bg-gradient-to-br from-[#ff7f24] to-[#e5ab81]">
+            </div>
+            <div
+                class="hexagon absolute w-[120px] h-[104px] top-[35%] right-[10%] scale-110 before:bg-gradient-to-br from-[#ff7f24] to-[#e5ab81]">
+            </div>
+            <div
+                class="hexagon absolute w-[120px] h-[104px] top-[70%] right-[30%] scale-75 before:bg-gradient-to-br from-[#ff7f24] to-[#e5ab81]">
+            </div>
+        </div>
 
-            <div class="connection-line absolute h-[2px] bg-gradient-to-r from-transparent via-white/30 to-transparent origin-left  top-[25%] left-[20%] w-[80px] rotate-[30deg]"></div>
-            <div class="connection-line absolute h-[2px] bg-gradient-to-r from-transparent via-white/30 to-transparent origin-left  top-[55%] right-[25%] w-[100px] -rotate-45"></div>
-            <div class="connection-line absolute h-[2px] bg-gradient-to-r from-transparent via-white/30 to-transparent origin-left  bottom-[35%] left-[35%] w-[120px] rotate-15"></div>
-      </div>
+        <div class="w-full text-center space-y-5 lg:space-y-6 py-8 2xl:py-16 z-10 relative p-5 ">
+            <h1 class="text-5xl dark:text-white drop-shadow-2xl font-extrabold after-element w-max mx-auto"> Frequently Asked Questions</h1>
+            <p class="text-lg w-full max-w-4xl mx-auto text-[gray] dark:text-white/80 ">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ipsam natus non, itaque odio magnam
+                veritatis, esse quidem consectetur sequi cumque?
+            </p>
+        </div>
+    </div>
 
-      <div class="w-full text-center space-y-5 lg:space-y-6 py-8 2xl:py-14 z-10 relative p-5 bg-white/80">
-        <h1 class="text-5xl drop-shadow-2xl font-extrabold after-element w-max mx-auto"> Frequently Asked Questions</h1>
-        <p class="text-lg w-full max-w-4xl mx-auto text-gray-600 ">
-         Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ipsam natus non, itaque odio magnam veritatis, esse quidem consectetur sequi cumque? 
-        </p>
+
+       <div class="mt-10 bg-gradient-to-br from-[#fbe3d9] via-[#ffffeb] dark:bg-gradient-to-br dark:from-[#020202] dark:to-[#020202] rounded-3xl p-6 md:p-10 flex flex-col md:flex-row items-center gap-5 md:gap-20 border border-black/10 shadow-md">
+          <div>
+            <p class="text-[gray] dark:text-white/80 mb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit aliquam, ratione placeat nisi pariatur repellendus numquam maxime dolore eveniet ipsum.</p>
+            <img class="w-1/2 mx-auto" src="/imgs/roblox.png" alt="">
+          </div>
+
+          <div class=" md:w-[70%] bg-white dark:bg-black/20 shadow-md rounded-3xl border-black/10  flex flex-col gap-10 p-4 md:p-10">
+                 <div id="faqContainer" class="space-y-5">
+                 </div>
+          </div>
       </div>
     </div>
 
         <div class="pt-20 pb-10 w-full grid place-content-center text-gray-500"> Content comming soon</div>
 </section>
+
+<script>
+    //faq script
+      // Array of FAQ objects
+  const faqs = [
+    {
+      id: 'faq1',
+      question: "Lorem ipsum dolor sit amet?",
+      answer: 'ng elit. Tempore odit blanditiis totam? Velit in, eos hic similique recusandae ex perspiciatis quas voluptas consequatur!'
+    },
+    {
+      id: 'faq2',
+     question: "Lorem ipsum dolor sit amet?",
+      answer: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv. Tempore odit blanditiis totam? Velit in, eos hic similique recusandae ex perspiciatis quas voluptas consequatur!'
+    },
+     {
+      id: 'faq3',
+     question: "Lorem ipsum dolor sit amet?",
+      answer: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore odit blanditiis totam? Velit in, eos hic similique recusandae ex perspiciatis quas voluptas consequatur!'
+    },
+     {
+      id: 'faq4',
+     question: "Lorem ipsum dolor sit amet?",
+      answer: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore odit blanditiis totam? Velit in, eos hic similique recusandae ex perspiciatis quas voluptas consequatur!'
+    }
+  ];
+
+ // Function to toggle the FAQ visibility smoothly
+function toggleFAQ(id) {
+  const faq = document.getElementById(id);
+  const arrow = document.getElementById('arrow-' + id);
+
+  // Toggle the 'open' class on the answer container to trigger the transition
+  faq.classList.toggle('open');
+  
+  // Toggle the 'rotate-180' class on the arrow
+  arrow.classList.toggle('rotate-180');
+}
+
+// Function to render FAQs
+function renderFAQs() {
+  const faqContainer = document.getElementById('faqContainer');
+  faqs.forEach(faq => {
+    const faqItem = `
+      <div class="rounded-2xl shadow-md border border-black/10 dark:border-white/40 dark:text-white overflow-hidden">
+        <button class="w-full cursor-pointer text-left p-4 focus:outline-none" onclick="toggleFAQ('${faq.id}')">
+          <div class="flex justify-between">
+            <span class="text-lg">${faq.question}</span>
+            <svg id="arrow-${faq.id}" class="h-6 w-6 transition-all transform duration-00 faq-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+        </button>
+        <div id="${faq.id}" class="px-4 faq-answer dark:text-white/90">
+          <p class="text-[gray] pb-5">${faq.answer}</p>
+        </div>
+      </div>
+    `;
+    faqContainer.innerHTML += faqItem;
+  });
+}
+
+  // Call renderFAQs when the DOM is loaded
+  document.addEventListener('DOMContentLoaded', renderFAQs);
+</script>
 
 
  <style>

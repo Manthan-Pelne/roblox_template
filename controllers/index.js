@@ -2,7 +2,6 @@ import Card from "../models/AllCard.js";
 import category from "../models/category.js";
 import Category from "../models/category.js";
 
-
 const getAllCategories = async (req,res)=>{
   try {
       const categories = await Category.find()
@@ -18,27 +17,67 @@ export const getIndex = async (req, res) => {
     const page = parseInt(req.params.page) || 1;
     const limit = 6;
     const skip = (page - 1) * limit;
-    const cards = await Card.find().skip(skip).limit(limit).sort({ createdAt: -1 });
-    const trending = await Card.find().limit(12)
+    const cards = await Card.find().skip(skip).limit(limit).sort({ createdAt: -1 }).populate("category");
+    const trending = await Card.find().limit(12).populate("category")
     const categories = await getAllCategories(req)
     const totalTests = await Card.countDocuments();
-    const tshirt = await Card.find({category : { $regex: '^t-shirts$', $options: 'i' }}).sort({createdAt: -1 }).limit(6);
-    const shirt = await Card.find({category : { $regex: '^shirts$', $options: 'i' }}).sort({createdAt: -1 }).limit(6);
-    const pant = await Card.find({category : { $regex: '^pant$', $options: 'i' }}).sort({createdAt: -1 }).limit(6);
-    const mostdownloads = await Card.find().sort({ downloads: -1, createdAt: -1 }).limit(18);
     
+    const tshirt = await Card.aggregate([
+  {
+    $lookup: {
+      from: "categories", // collection name for Category
+      localField: "category",
+      foreignField: "_id",
+      as: "category"
+    }
+  },
+  { $unwind: "$category" },
+  { $match: { "category.title": "t-shirts" } },
+  { $sort: { createdAt: -1 } },
+  { $limit: 6 }
+]);
+    const shirt = await Card.aggregate([
+  {
+    $lookup: {
+      from: "categories", // collection name for Category
+      localField: "category",
+      foreignField: "_id",
+      as: "category"
+    }
+  },
+  { $unwind: "$category" },
+  { $match: { "category.title": "shirts" } },
+  { $sort: { createdAt: -1 } },
+  { $limit: 6 }
+]);
+    const pant = await Card.aggregate([
+  {
+    $lookup: {
+      from: "categories", // collection name for Category
+      localField: "category",
+      foreignField: "_id",
+      as: "category"
+    }
+  },
+  { $unwind: "$category" },
+  { $match: { "category.title": "Pant" } },
+  { $sort: { createdAt: -1 } },
+  { $limit: 6 }
+]);
+    const mostdownloads = await Card.find().sort({ downloads: -1, createdAt: -1 }).limit(18).populate("category");
     // Calculate total pages
     const totalPages = Math.ceil(totalTests / limit);
     res.render("index", {
       cards,
       categories,
       trending,
+      tshirt,
+      shirt,
+      pant,
       totalPages,
       currentPage : page,
       mostdownloads,
-      tshirt,
-      shirt,
-      pant
+      imgUrl : process.env.R2_CDN_URL,
     });
   } catch (err) {
     console.error(err);
@@ -46,24 +85,27 @@ export const getIndex = async (req, res) => {
   }
 };
 
+
+
 export const getSingleCard = async (req, res) => {
   try {
     const id = req.params.id
      const page = parseInt(req.params.page) || 1;
     const limit = 18;
     const skip = (page - 1) * limit;
-    const cards = await Card.find().skip(skip).limit(limit).sort({ createdAt: -1 });
+    const cards = await Card.find().skip(skip).limit(limit).sort({ createdAt: -1 }).populate("category");
      const categories = await getAllCategories(req)
     const totalTests = await Card.countDocuments();
     // Calculate total pages
     const totalPages = Math.ceil(totalTests / limit);
-    const card = await Card.find({_id : id });
+    const card = await Card.find({_id : id }).populate("category");
        res.render("getSingleCard", {
       card,
       categories,
       cards,
       totalPages,
-      currentPage : page
+      currentPage : page,
+      imgUrl : process.env.R2_CDN_URL,
     });
   } catch (err) {
     console.error(err);
@@ -76,7 +118,7 @@ export const getExplore = async(req,res)=>{
     const page = parseInt(req.params.page) || 1;
     const limit = 30;
     const skip = (page - 1) * limit;
-    const cards = await Card.find().skip(skip).limit(limit).sort({ createdAt: -1 });
+    const cards = await Card.find().skip(skip).limit(limit).sort({ createdAt: -1 }).populate("category");
     // const cards = await Card.find();
      const categories = await getAllCategories(req)
     const totalTests = await Card.countDocuments();
@@ -86,7 +128,8 @@ export const getExplore = async(req,res)=>{
       cards,
       categories,
       totalPages,
-      currentPage : page
+      currentPage : page,
+       imgUrl : process.env.R2_CDN_URL
     });
   } catch (err) {
     console.error(err);
@@ -101,7 +144,7 @@ export const getCategory = async(req,res)=>{
     const page = parseInt(req.params.page) || 1;
     const limit = 12;
     const skip = (page - 1) * limit;
-    const cards = await Card.find();
+    const cards = await Card.find().populate("category");
      const categories = await getAllCategories(req)
     const totalTests = await Card.countDocuments();
     // Calculate total pages
@@ -111,7 +154,8 @@ export const getCategory = async(req,res)=>{
       categories,
       totalPages,
       currentPage : page,
-      categoryName : cat
+      categoryName : cat,
+       imgUrl : process.env.R2_CDN_URL
     });
   } catch (err) {
     console.error(err);

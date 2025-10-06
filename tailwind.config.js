@@ -9,3 +9,4 @@ export default {
   darkMode: 'class', // media for dark , class for light
   plugins: [],
 }
+

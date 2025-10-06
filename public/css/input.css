@@ -4,11 +4,13 @@
 
 
 @layer base {
-        body { @apply bg-gray-50 }       
+        body { @apply bg-zinc-50 dark:bg-zinc-900 }       
 }
 
-.activate 
+
+
+      .activate 
       {
-        @apply bg-yellow-50 dark:bg-[#584401] border-yellow-200 shadow-lg text-gray-900 dark:text-white
-        /* @apply bg-white border-yellow-50 shadow-lg text-gray-900 */
+        @apply bg-rose-50 border-rose-200 shadow-lg text-zinc-900 dark:bg-rose-100/20 dark:text-white dark:border-zinc-600
+        /* @apply bg-white border-rose-50 shadow-lg text-zinc-900 */
       }

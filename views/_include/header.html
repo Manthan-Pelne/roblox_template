@@ -1,47 +1,59 @@
+    
+    
+    
+    
     <header class="sm:ml-[230px] px-5 py-3">
+      <div class="flex items-center justify-between">
+        <a href="/" class="sm:hidden font-extrabold text-xl flex items-center gap-1 shrink-0 mb-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+                    <path fill="#F14D87" d="M12 12.3L3.5 7.05L12 1.8l8.5 5.25z"/>
+                    <path fill="#ffb4cd" d="M12 22.2v-9.9l8.5-5.25v9.9z" opacity="0.25"/>
+                    <path fill="#ffb4cd" d="m12 22.2l-8.5-5.25v-9.9L12 12.3z" opacity="0.5"/>
+                </svg> Roblox
+                <span class="text-[#F14D87]">Studio.</span>
+          </a>
 
-        <div class="max-w-8xl mx-auto flex items-center justify-between">
-            <div></div>
-            <!-- Mobile Menu Toggle Button -->
-             <div class="flex items-center gap-4">
-           <div id="desktop-searchbar" class="hidden sm:block">
-                <div class="flex items-center gap-2 w-[300px] md:w-[350px]">
-                    <span><svg class="w-6 h-6 opacity-25 dark:opacity-35 dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="4"><path d="M21 38c9.389 0 17-7.611 17-17S30.389 4 21 4S4 11.611 4 21s7.611 17 17 17Z"/><path stroke-linecap="round" d="M26.657 14.343A7.98 7.98 0 0 0 21 12a7.98 7.98 0 0 0-5.657 2.343m17.879 18.879l8.485 8.485"/></g></svg></span>
-                    <input type="text" class="shadow-sm border-2 border-[#dfdfdf] dark:border-[#713f20] bg-white dark:bg-black w-full rounded-xl p-2 placeholder:text-black/20 dark:placeholder:text-white/40 backdrop-blur-2xl focus:outline-none focus:ring-2 focus:ring-[#F14D87]" placeholder="Search templates...">
-                </div>
-            </div>
+          <div class="hidden sm:block ">
+              <div class="space-x-2 text-zinc-600">
+                <button class="bg-zinc-100 border border-zinc-200 p-1.5 rounded-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 " viewBox="0 0 24 24"><path fill="currentColor" d="M20.04 2.323c1.016-.355 1.992.621 1.637 1.637l-5.925 16.93c-.385 1.098-1.915 1.16-2.387.097l-2.859-6.432l4.024-4.025a.75.75 0 0 0-1.06-1.06l-4.025 4.024l-6.432-2.859c-1.063-.473-1-2.002.097-2.387z"/></svg>
+                </button>
+                <button class="bg-zinc-200 border border-zinc-300 p-1.5 rounded-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 " viewBox="0 0 24 24"><path fill="currentColor" d="M22 5.8a8.5 8.5 0 0 1-2.36.64a4.13 4.13 0 0 0 1.81-2.27a8.2 8.2 0 0 1-2.61 1a4.1 4.1 0 0 0-7 3.74a11.64 11.64 0 0 1-8.45-4.29a4.16 4.16 0 0 0-.55 2.07a4.09 4.09 0 0 0 1.82 3.41a4.05 4.05 0 0 1-1.86-.51v.05a4.1 4.1 0 0 0 3.3 4a4 4 0 0 1-1.1.17a5 5 0 0 1-.77-.07a4.11 4.11 0 0 0 3.83 2.84A8.22 8.22 0 0 1 3 18.34a8 8 0 0 1-1-.06a11.57 11.57 0 0 0 6.29 1.85A11.59 11.59 0 0 0 20 8.45v-.53a8.4 8.4 0 0 0 2-2.12"/></svg>
+                </button>
+              </div>
+          </div>
 
-              <div id="theme-toggle">
-            <button
-               class="hidden dark:block p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
-               aria-label="Toggle theme">
-               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="lucide lucide-sun h-5 w-5">
-                  <circle cx="12" cy="12" r="4"></circle>
-                  <path d="M12 2v2"></path>
-                  <path d="M12 20v2"></path>
-                  <path d="m4.93 4.93 1.41 1.41"></path>
-                  <path d="m17.66 17.66 1.41 1.41"></path>
-                  <path d="M2 12h2"></path>
-                  <path d="M20 12h2"></path>
-                  <path d="m6.34 17.66-1.41 1.41"></path>
-                  <path d="m19.07 4.93-1.41 1.41"></path>
-               </svg>
-            </button>
-            <button
-               class="block dark:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
-               aria-label="Toggle theme">
-               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="lucide lucide-moon h-5 w-5">
-                  <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
-               </svg>
-            </button>
-         </div>
-            </div>
-
-            <div class="sm:hidden"> 
+          <div class="flex items-center justify-center">
+             <div id="theme-toggle">
+                <button
+                  class="hidden dark:block p-2 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors duration-200"
+                  aria-label="Toggle theme">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-sun h-5 w-5">
+                      <circle cx="12" cy="12" r="4"></circle>
+                      <path d="M12 2v2"></path>
+                      <path d="M12 20v2"></path>
+                      <path d="m4.93 4.93 1.41 1.41"></path>
+                      <path d="m17.66 17.66 1.41 1.41"></path>
+                      <path d="M2 12h2"></path>
+                      <path d="M20 12h2"></path>
+                      <path d="m6.34 17.66-1.41 1.41"></path>
+                      <path d="m19.07 4.93-1.41 1.41"></path>
+                  </svg>
+                </button>
+                <button
+                  class="block dark:hidden p-2 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors duration-200"
+                  aria-label="Toggle theme">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-moon h-5 w-5">
+                      <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                  </svg>
+                </button>
+              </div>
+               <div class="sm:hidden"> 
                  <button id="mobile-search-toggle" class="cursor-pointer p-2 relative transition-transform duration-300">
                     <svg class="h-6 w-6 text-black/70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
                         <g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="4">
@@ -61,113 +73,18 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
-        </div>
+            </div>
+          </div>
 
       </div>
-
-          <!-- Full-screen Mobile Search Bar -->
-    <div id="mobile-search-bar" class="fixed top-0 left-0 w-full z-[100] bg-white/60 backdrop-blur-2xl transform -translate-x-full transition-transform duration-300 ease-in-out">
-        <div class="relative w-full h-full flex items-center p-4">
-            <input type="text" class="w-full text-lg p-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F14D87] border border-gray-300 placeholder:text-[black]/15" placeholder="Search templates...">
-            <button id="close-search-btn" class="absolute right-4 p-2 text-gray-500 hover:text-gray-700">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-        </div>
-    </div>
 
     </header>
-
-    <!-- Mobile Navigation Menu (Hidden by default) -->
-    <div id="mobile-menu" class="mobile-menu text-black/80 fixed top-0 left-0 w-full h-full bg-white backdrop-blur-sm z-40 transform -translate-x-full pt-6">
-      
-      <svg id="close-icon2" class="h-6 w-6 text-black/70 absolute top-4 right-4 transition-opacity duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-
-      <div class="no-scrollbar flex min-h-screen flex-1 flex-col overflow-y-auto overflow-x-hidden px-5 pt-3 h-full">
-          <a href="/" class="font-extrabold text-xl flex items-center gap-1 shrink-0 mb-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
-                    <path fill="#F14D87" d="M12 12.3L3.5 7.05L12 1.8l8.5 5.25z"/>
-                    <path fill="#ffb4cd" d="M12 22.2v-9.9l8.5-5.25v9.9z" opacity="0.25"/>
-                    <path fill="#ffb4cd" d="m12 22.2l-8.5-5.25v-9.9L12 12.3z" opacity="0.5"/>
-                </svg>
-                Roblox
-                <span class="text-[#F14D87]">Studio.</span>
-          </a>
-           <hr class="h-px px-5 my-3 bg-gray-200 border-0 ">
- 
-          <div>
-              <p class="text-gray-600 mb-3 text-sm font-semibold">Link</p>
-                <div class="space-y-2">
-                  <a href="/" class="navBtn flex space-x-2 border border-transparent hover:border-rose-200 hover:bg-rose-50 hover:shadow-lg px-3 py-2 rounded-xl group relative ">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-600 group-hover:text-gray-900"  viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c-.5 0-1 .19-1.41.59l-3.3 3.29l4.71 4.7l4.71-4.7l-3.3-3.29C13 2.19 12.5 2 12 2M5.88 7.29l-3.29 3.3c-.79.78-.79 2.04 0 2.82l3.29 3.3l4.7-4.71zm12.24 0L13.42 12l4.7 4.71l3.29-3.3c.79-.78.79-2.04 0-2.82zM12 13.42l-4.71 4.7l3.3 3.29c.78.79 2.04.79 2.82 0l3.3-3.29z"/></svg>
-                    <span class="">Collections</span>
-                  </a>
-                  <a href="/explore/" class="navBtn flex space-x-2 border border-transparent hover:border-rose-200 hover:bg-rose-50 hover:shadow-lg px-3 py-2 rounded-xl group relative">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-600 group-hover:text-gray-900" viewBox="0 0 24 24"><path fill="currentColor" d="M12 10.9c-.61 0-1.1.49-1.1 1.1s.49 1.1 1.1 1.1s1.1-.49 1.1-1.1s-.49-1.1-1.1-1.1M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m2.19 12.19L6 18l3.81-8.19L18 6z"/></svg>
-                    <span class="">Explore</span>
-                    <img src="/imgs/new.gif" alt="" class="absolute -top-1 right-0 w-12">
-                  </a>
-                </div>
-          </div>
-
-          <hr class="h-px px-5 my-3 bg-gray-200 border-0 ">
-          
-          <div>
-            <div class="text-gray-600 mb-3 flex items-center justify-between">
-              <p class="text-sm font-semibold ">Category</p>
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M4.43 8.512a.75.75 0 0 1 1.058-.081L12 14.012l6.512-5.581a.75.75 0 0 1 .976 1.138l-7 6a.75.75 0 0 1-.976 0l-7-6a.75.75 0 0 1-.081-1.057" clip-rule="evenodd"/></svg>
-            </div>
-            <div class="custom-max-h overflow-y-scroll [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-gray-700 dark:[&::-webkit-scrollbar-thumb]:bg-gray-500">
-            <div class="overflow-hidden transition-[max-height] duration-500 ease-in-out space-y-1">
-                {% for item in categories %}
-                <a href="/categories/{{item.slug}}/" class="navBtn flex space-x-2 border border-transparent hover:border-rose-200 hover:bg-rose-50 hover:shadow-lg px-3 py-1.5 rounded-xl group pl-5 capitalize">
-                 {{item.title}}
-                </a>
-                {% endfor %}
-            </div>
-            </div>
-
-            
-          </div>
-
-          <hr class="h-px px-5 my-3 bg-gray-200 border-0 ">
-
-            <div>
-              <p class="text-gray-600 mb-3 text-sm font-semibold">Info</p>
-                <div class="space-y-2">
-                  <a href="/about-us/" class="navBtn flex space-x-2 border border-transparent hover:border-rose-200 hover:bg-rose-50 hover:shadow-lg px-3 py-2 rounded-xl group">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-600 group-hover:text-gray-900" viewBox="0 0 24 24"><path fill="currentColor" d="M13 9h-2V7h2m0 10h-2v-6h2m-1-9A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>
-                    <span class="">About us</span>
-                  </a>
-                  <a href="/contact-us/" class="navBtn flex space-x-2 border border-transparent hover:border-rose-200 hover:bg-rose-50 hover:shadow-lg px-3 py-2 rounded-xl group">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-600 group-hover:text-gray-900" viewBox="0 0 24 24"><path fill="currentColor" d="M6 17c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6m9-9a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3a3 3 0 0 1 3 3M3 5v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2"/></svg>
-                    <span class="">Contact us</span>
-                  </a>
-                  <a href="/faq/" class="navBtn flex space-x-2 border border-transparent hover:border-rose-200 hover:bg-rose-50 hover:shadow-lg px-3 py-2 rounded-xl group">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-600 group-hover:text-gray-900" viewBox="0 0 48 48"><path fill="currentColor" fill-rule="evenodd" d="M6 20.5C6 12.492 12.492 6 20.5 6h7C35.508 6 42 12.492 42 20.5S35.508 35 27.5 35h-.7v7S6 38.5 6 20.5m21.691-8.018c1.03.684 1.807 1.793 1.807 3.28c0 1.578-.637 2.738-1.668 3.448a4.5 4.5 0 0 1-1.33.614v1.532a1.5 1.5 0 1 1-3 0v-2.797a1.5 1.5 0 0 1 1.4-1.497c.554-.037.974-.147 1.228-.322a.7.7 0 0 0 .24-.272c.06-.12.13-.334.13-.707c0-.312-.123-.552-.468-.782c-.392-.26-1.022-.452-1.779-.476c-.748-.024-1.475.122-2.01.381c-.536.26-.732.552-.788.767a1.5 1.5 0 1 1-2.905-.746c.344-1.341 1.348-2.217 2.385-2.72c1.04-.505 2.263-.718 3.414-.681c1.142.036 2.362.324 3.344.978M25 29a2 2 0 1 0 0-4a2 2 0 0 0 0 4" clip-rule="evenodd"/></svg>
-                    <span class="">FAQ's</span>
-                  </a>
-                     <a href="/explore/" class="flex space-x-2 justify-center border border-transparent bg-rose-500 text-white  hover:border-rose-100 hover:bg-white hover:text-gray-800 hover:shadow-lg px-3 py-2 rounded-xl group">
-                    
-                   Get started
-                  </a>
-                </div>
-          </div>
-          
-      </div>
-
-
-    </div>
 
 
   <script>
         document.addEventListener('DOMContentLoaded', () => {
             const toggleButton = document.getElementById('mobile-menu-toggle');
-            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenu = document.getElementById('sidebar-menu');
             const hamburgerIcon = document.getElementById('hamburger-icon');
             const closeIcon = document.getElementById('close-icon');
              const closeIcon2 = document.getElementById('close-icon2');

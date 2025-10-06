@@ -240,13 +240,7 @@ import routes from "./routes/index.js";
 app.use("/", routes);
 
 // Start the server
-app.listen(8000, () => {
-  console.log("Listening on port 8000");
+app.listen(3000, () => {
+  console.log("Listening on port 3000");
 });
 
-//  {% if currentPage == '1' and i <= 3  %}
-//         <a href="/tests-and-quizzes/{{i}}{% if sort %}?sort={{sort}}{% endif %}"
-//             class="page-number-btn py-2 px-4 rounded-lg font-semibold {% if i === currentPage %}bg-blue-600 text-white{% else %}bg-gray-200 dark:bg-[#484C67] dark:text-gray-200{% endif %}">
-//             {{ i }}
-//         </a>
-//    {% endif %}

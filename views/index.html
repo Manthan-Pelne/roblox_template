@@ -2,59 +2,50 @@
 {% block body %}
 
 
-<section class="mx-auto p-5 pt-1.5 -z-10">
+<section class="mx-auto p-5 pt-1.5 ">
 
   {% include '_include/hero.html' %}
-  <div class="mt-10 ">
 
-    <div class="space-y-10">
+     <div class="space-y-10 relative mt-10">
 
-      <section>
+
+    <section>
+
         <div class="flex justify-between items-center mb-2">
-          <h2 class="text-xl dark:text-white font-semibold tracking-wide">T-Shirts Collection</h2>
-           <a href="/explore/" class="text-white rounded-2xl bg-rose-600 hover:bg-rose-500 text-sm border border-purple-200 px-5 py-1">View All</a>
+          <h2 class="text-xl dark:text-white font-semibold tracking-wide"> 👕 T-Shirts Collection</h2>
+          <a href="/categories/t-shirts/"
+            class="text-white shadow-lg rounded-2xl bg-rose-500 hover:bg-rose-600 transition-all duration-200 active:scale-90 text-sm border border-purple-200 px-5 py-1">View
+            All</a>
         </div>
 
-        <div class="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-3 ">
-          {% for item in tshirt %}
-          {% include '_include/card.html' %}
-          {% endfor %}
-        </div>
-      </section>
+       {% include '_include/slider-t-shirt.html' %}
 
-      <section>
+    </section>
+
+       <section>
         <div class="flex justify-between  items-center mb-2">
-          <h2 class="text-xl dark:text-white font-semibold tracking-wide">Shirts Collection</h2>
+          <h2 class="text-xl dark:text-white font-semibold tracking-wide">🎽 Shirts Collection</h2>
           <a href="/categories/shirts/"
-            class="text-white shadow-lg rounded-2xl bg-[#E45137] hover:bg-[#d4452c] transition-all duration-200 active:scale-90 text-sm border border-purple-200 px-5 py-1">View
+            class="text-white shadow-lg rounded-2xl bg-rose-500 hover:bg-rose-600 transition-all duration-200 active:scale-90 text-sm border border-purple-200 px-5 py-1">View
             All</a>
         </div>
 
-        <div class="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-3 ">
-          {% for item in shirt %}
-          {% include '_include/card.html' %}
-          {% endfor %}
-        </div>
+        {% include '_include/slider-shirt.html' %}
       </section>
 
       <section>
         <div class="flex justify-between  items-center mb-2">
-          <h2 class="text-xl dark:text-white font-semibold tracking-wide">Pant Collection</h2>
+          <h2 class="text-xl dark:text-white font-semibold tracking-wide">🩳 Pant Collection</h2>
           <a href="/categories/pant/"
-            class="text-white shadow-lg rounded-2xl bg-[#E45137] hover:bg-[#d4452c] transition-all duration-200 active:scale-90 text-sm border border-purple-200 px-5 py-1">View
+            class="text-white shadow-lg rounded-2xl bg-rose-500 hover:bg-rose-600 transition-all duration-200 active:scale-90 text-sm border border-purple-200 px-5 py-1">View
             All</a>
         </div>
 
-        <div class="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-3 ">
-          {% for item in pant %}
-          {% include '_include/card.html' %}
-          {% endfor %}
-        </div>
+    {% include '_include/slider-pant.html' %}
       </section>
 
-    </div>
-
-    <div class="mt-20">
+      <section>
+         <div class="mt-20">
       <div class="flex items-center justify-center w-full gap-2">
         <h1 class="text-center dark:text-white mb-3 text-4xl font-semibold tracking-wide"> Most Downloaded</h1>
         <img src="/imgs/download.gif" class="w-16" alt="">
@@ -63,126 +54,36 @@
         adipisicing elit. Impedit velit iure omnis quo architecto sequi temporibus facere.</p>
     </div>
 
-    <div class="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4 gap-y-6 mt-5">
+    <div class="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4 gap-y-6 mt-5 mb-10">
       {% for item in mostdownloads %}
       {% include '_include/card.html' %}
       {% endfor %}
     </div>
-
-
-    <h2 class="text-2xl md:text-4xl font-semibold mt-20 mb-3 text-center dark:text-white">Trending Templates</h2>
-    <p class="text-black/50 text-center dark:text-white/70">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, qui.</p>
-    <div class=" m-auto relative overflow-hidden ">
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper flex items-center py-10">
-          {% for item in trending %}
-          <div class="swiper-slide">
-            {% include '_include/card.html' %}
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-      <!-- Custom Navigation Arrows (Placed Outside) -->
-      <div class="relative mt-8">
-        <div class="swiper-pagination slide"></div>
-        <div class="swiper-button-prev custom-swiper-button left-[-40px] text-xl"></div>
-        <div class="swiper-button-next custom-swiper-button right-[-40px]"></div>
-      </div>
+    <div class="w-max m-auto">
+        
+                     <a href="/explore/" class="flex space-x-2 justify-center border border-transparent bg-rose-500 hover:bg-rose-600 text-white transition-all duration-200 px-5 py-2 rounded-lg ">
+                   Get More...
+                  </a>
     </div>
+      </section>
 
-      
-
-  </div>
+      <section>
+        <h2 class="text-2xl md:text-4xl font-semibold mt-20 mb-3 text-center dark:text-white">Trending Templates</h2>
+          <p class="text-black/50 text-center dark:text-white/70">Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Soluta, qui.</p>
+          {% include '_include/slider.html' %}
+      </section>
+ 
+ </div>
 
 
 
 </section>
 
- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
 <style>
-  .custom-swiper-button {
-    position: absolute;
-    top: 100%;
-    transform: translateY(-50%);
-    color: #E45137;
-    /* text-zinc-700 */
-    width: 2rem;
-    /* w-8 */
-    height: 2rem;
-    /* h-8 */
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-  }
-
-
-
-  .swiper-pagination-bullet {
-    background-color: #E45137;
-    width: 10px;
-    height: 10px;
-    margin: 11px
-  }
-
-
-  /* This is the default style for all screen sizes, which will be the desktop view. */
-  .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
-  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-    margin: 10px;
-  }
-
-  /* This media query targets screens with a maximum width of 768px (a common breakpoint for mobile devices) and overrides the margin. */
-  @media (max-width: 768px) {
-
-    .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
-    .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-      margin: 5px;
-    }
-  }
-
-  .swiper-button-prev::after,
-  .swiper-button-next::after {
-    color: rgb(5, 77, 186);
-    font-size: 16px !important;
-    /* Make arrow smaller */
+  .swiper{
+overflow: visible !important;
   }
 </style>
-
-
-<script>
-  var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    speed: 900, // ⬅️ Controls slide transition speed (ms). Higher = smoother.
-    // freeMode: true,
-    loop: true, // Infinite looping
-    autoplay: {
-      delay: 3500, // Auto-slide every 2.5s
-      disableOnInteraction: false, // Keeps autoplay active after interactions
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    breakpoints: {
-      640: {
-        slidesPerView: 2, // Tablets: Show 2 slides
-      },
-      768: {
-        slidesPerView: 4, // Small desktops: Show 2 slides
-      },
-      1024: {
-        slidesPerView: 5, // Desktops: Show 3 slides
-      },
-    },
-  });
-</script>
-
-
-
 
 
 

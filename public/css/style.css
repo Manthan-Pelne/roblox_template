@@ -75,18 +75,6 @@ box-shadow: rgba(149, 157, 165, 0.2) 0px 1px 15px;
         }
 
 
-         .horizontal-scroller::-webkit-scrollbar {
-            height: 6px;
-        }
-        .horizontal-scroller::-webkit-scrollbar-thumb {
-            background-color: #c084fc;
-            border-radius: 4px;
-        }
-        .horizontal-scroller::-webkit-scrollbar-track {
-            background-color: #f3e8ff;
-            border-radius: 4px;
-        }
-
 
    .card h2 {
   white-space: nowrap;
@@ -118,3 +106,12 @@ box-shadow: rgba(149, 157, 165, 0.2) 0px 1px 15px;
      .custom-max-h{
     max-height: calc(100vh - 525px);
   }
+
+  .bodyscrollbar::-webkit-scrollbar {
+    width: 2px !important;
+}
+
+.bodyscrollbar::-webkit-scrollbar-thumb, .navbar::-webkit-scrollbar-thumb {
+    background: transparent !important;
+    transition: background 0.3s !important;
+}

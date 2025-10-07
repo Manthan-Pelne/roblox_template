@@ -4,7 +4,7 @@
 
 
 @layer base {
-        body { @apply bg-zinc-50 dark:bg-zinc-900 }       
+        body { @apply bg-white dark:bg-zinc-900 }       
 }
 
 
@@ -14,3 +14,6 @@
         @apply bg-rose-50 border-rose-200 shadow-lg text-zinc-900 dark:bg-rose-100/20 dark:text-white dark:border-zinc-600
         /* @apply bg-white border-rose-50 shadow-lg text-zinc-900 */
       }
+       .activate svg {
+        @apply dark:text-white
+       }

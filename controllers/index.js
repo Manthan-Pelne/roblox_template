@@ -34,7 +34,7 @@ export const getIndex = async (req, res) => {
   { $unwind: "$category" },
   { $match: { "category.title": "t-shirts" } },
   { $sort: { createdAt: -1 } },
-  { $limit: 6 }
+  { $limit: 12 }
 ]);
     const shirt = await Card.aggregate([
   {
@@ -48,7 +48,7 @@ export const getIndex = async (req, res) => {
   { $unwind: "$category" },
   { $match: { "category.title": "shirts" } },
   { $sort: { createdAt: -1 } },
-  { $limit: 6 }
+  { $limit: 12 }
 ]);
     const pant = await Card.aggregate([
   {
@@ -62,7 +62,7 @@ export const getIndex = async (req, res) => {
   { $unwind: "$category" },
   { $match: { "category.title": "Pant" } },
   { $sort: { createdAt: -1 } },
-  { $limit: 6 }
+  { $limit: 12 }
 ]);
     const mostdownloads = await Card.find().sort({ downloads: -1, createdAt: -1 }).limit(18).populate("category");
     // Calculate total pages
@@ -89,8 +89,8 @@ export const getIndex = async (req, res) => {
 
 export const getSingleCard = async (req, res) => {
   try {
-    const id = req.params.id
-     const page = parseInt(req.params.page) || 1;
+    const slug = req.params.slug
+    const page = parseInt(req.params.page) || 1;
     const limit = 18;
     const skip = (page - 1) * limit;
     const cards = await Card.find().skip(skip).limit(limit).sort({ createdAt: -1 }).populate("category");
@@ -98,7 +98,7 @@ export const getSingleCard = async (req, res) => {
     const totalTests = await Card.countDocuments();
     // Calculate total pages
     const totalPages = Math.ceil(totalTests / limit);
-    const card = await Card.find({_id : id }).populate("category");
+    const card = await Card.find({slug : slug }).populate("category");
        res.render("getSingleCard", {
       card,
       categories,
@@ -116,7 +116,7 @@ export const getSingleCard = async (req, res) => {
 export const getExplore = async(req,res)=>{
   try {
     const page = parseInt(req.params.page) || 1;
-    const limit = 30;
+    const limit = 18;
     const skip = (page - 1) * limit;
     const cards = await Card.find().skip(skip).limit(limit).sort({ createdAt: -1 }).populate("category");
     // const cards = await Card.find();
@@ -136,7 +136,6 @@ export const getExplore = async(req,res)=>{
     res.status(500).send("Internal Server Error");
   }
 }
-
 
 export const getCategory = async(req,res)=>{
   try {
@@ -163,7 +162,6 @@ export const getCategory = async(req,res)=>{
   }
 }
 
-// static pages 
 export const getAboutPage = async(req,res)=>{
 try {
     const cards = await Card.find();
@@ -203,6 +201,7 @@ export const getFaqPage = async(req,res)=>{
     res.status(500).send("Internal Server Error");
   }
 }
+
 export const getPrivacy = async(req,res)=>{
   try {
     const categories = await getAllCategories(req)

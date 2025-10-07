@@ -1,0 +1,91 @@
+<div class=" m-auto relative overflow-hidden py-2">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper flex items-center py-10">
+          {% for item in trending %}
+          <div class="swiper-slide">
+            {% include '_include/card.html' %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <!-- Custom Navigation Arrows (Placed Outside) -->
+  <div class="mt-8">
+        <div class="swiper-pagination slide"></div>
+        <div class="swiper-button-prev custom-swiper-button left-[-40px] text-xl">
+          <svg class="text-[5px]" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="m15 4l2 2l-6 6l6 6l-2 2l-8-8z"/></svg>
+        </div>
+        <div class="swiper-button-next custom-swiper-button right-[-40px]">
+           <svg class="text-[5px]" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="m9.005 4l8 8l-8 8L7 18l6.005-6L7 6z"/></svg>
+        </div>
+  </div>
+ <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<style>
+
+    .custom-swiper-button {
+    position: absolute;
+    top: 100%;
+    transform: translateY(-50%);
+    color: #E45137;
+    /* text-gray-700 */
+    width: 22px;
+    /* w-8 */
+    height: 22px;
+    /* h-8 */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+ 
+  .swiper-pagination-bullet {
+    background-color: #E45137;
+    width: 10px;
+    height: 10px;
+    margin: 11px
+  }
+  /* This is the default style for all screen sizes, which will be the desktop view. */
+  .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 10px;
+  }
+  /* This media query targets screens with a maximum width of 768px (a common breakpoint for mobile devices) and overrides the margin. */
+  @media (max-width: 768px) {
+    .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+    .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+      margin: 5px;
+    }
+  }
+  
+</style>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 2,
+    spaceBetween: 10,
+    speed: 900, // :arrow_left: Controls slide transition speed (ms). Higher = smoother.
+    // freeMode: true,
+    loop: true, // Infinite looping
+    autoplay: {
+      delay: 3500, // Auto-slide every 2.5s
+      disableOnInteraction: false, // Keeps autoplay active after interactions
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+     navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    breakpoints: {
+      640: {
+        slidesPerView: 2, // Tablets: Show 2 slides
+      },
+      768: {
+        slidesPerView: 4, // Small desktops: Show 2 slides
+      },
+      1024: {
+        slidesPerView: 6, // Desktops: Show 3 slides
+      },
+    },
+  });
+</script>

@@ -18,22 +18,21 @@
 
 <body class="min-h-screen outfit">
 
-
-
   {% include '_include/sidebar.html' %}
-  {% include '_include/header.html' %}
 
+  <div class=" overflow-hidden min-h-screen">
+      <main class="sm:ml-56 m-2 bg-zinc-50 dark:bg-zinc-900 rounded-2xl border border-zinc-200 dark:border-zinc-700 h-[calc(100vh-14px)] overflow-y-auto relative bodyscrollbar">
+        {% include '_include/header.html' %}
+        {% block body %}
 
-  <main class="sm:ml-56 pt-12 md:pt-0">
-    {% block body %}
+        {% endblock body %}
+        {% include '_include/footer.html' %}
+      </main>
+  </div>
 
-    {% endblock body %}
-    {% include '_include/footer.html' %}
-  </main>
 </body>
 
 </html>
-
 <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 <script>
   // On page load or when changing themes, best to add inline in `head` to avoid FOUC

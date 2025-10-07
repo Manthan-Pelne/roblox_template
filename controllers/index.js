@@ -34,7 +34,7 @@ export const getIndex = async (req, res) => {
   { $unwind: "$category" },
   { $match: { "category.title": "t-shirts" } },
   { $sort: { createdAt: -1 } },
-  { $limit: 6 }
+  { $limit: 12 }
 ]);
     const shirt = await Card.aggregate([
   {
@@ -48,7 +48,7 @@ export const getIndex = async (req, res) => {
   { $unwind: "$category" },
   { $match: { "category.title": "shirts" } },
   { $sort: { createdAt: -1 } },
-  { $limit: 6 }
+  { $limit: 12 }
 ]);
     const pant = await Card.aggregate([
   {
@@ -62,7 +62,7 @@ export const getIndex = async (req, res) => {
   { $unwind: "$category" },
   { $match: { "category.title": "Pant" } },
   { $sort: { createdAt: -1 } },
-  { $limit: 6 }
+  { $limit: 12 }
 ]);
     const mostdownloads = await Card.find().sort({ downloads: -1, createdAt: -1 }).limit(18).populate("category");
     // Calculate total pages
@@ -113,10 +113,12 @@ export const getSingleCard = async (req, res) => {
   }
 };
 
+
+
 export const getExplore = async(req,res)=>{
   try {
     const page = parseInt(req.params.page) || 1;
-    const limit = 30;
+    const limit = 18;
     const skip = (page - 1) * limit;
     const cards = await Card.find().skip(skip).limit(limit).sort({ createdAt: -1 }).populate("category");
     // const cards = await Card.find();

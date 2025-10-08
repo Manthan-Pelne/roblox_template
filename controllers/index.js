@@ -140,19 +140,48 @@ export const getExplore = async(req,res)=>{
 }
 
 
+// export const getCategory = async(req,res)=>{
+//   try {
+//     const cat = req.params.cat;
+//     const page = parseInt(req.params.page) || 1;
+//     const limit = 12;
+//     const skip = (page - 1) * limit;
+//     const cards = await Card.find().populate("category");
+//      const categories = await getAllCategories(req)
+//     const totalTests = await Card.countDocuments();
+//     // Calculate total pages
+//     const totalPages = Math.ceil(totalTests / limit);
+//     res.render("category/_slug.html", {
+//       cards,
+//       categories,
+//       totalPages,
+//       currentPage : page,
+//       categoryName : cat,
+//        imgUrl : process.env.R2_CDN_URL
+//     });
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).send("Internal Server Error");
+//   }
+// }
+
+
 export const getCategory = async(req,res)=>{
   try {
     const cat = req.params.cat;
     const page = parseInt(req.params.page) || 1;
     const limit = 12;
     const skip = (page - 1) * limit;
-    const cards = await Card.find().populate("category");
-     const categories = await getAllCategories(req)
+    const cards = await Card.find().skip(skip).limit(limit).sort({ createdAt: -1 }).populate("category");
+    const filteredCards = cards.filter(card => card.category && card.category.title.toLowerCase() === cat.toLowerCase()
+    );
+    const categories = await getAllCategories(req)
     const totalTests = await Card.countDocuments();
     // Calculate total pages
     const totalPages = Math.ceil(totalTests / limit);
     res.render("category/_slug.html", {
-      cards,
+      cards : filteredCards ,
+      length: filteredCards.length,
       categories,
       totalPages,
       currentPage : page,

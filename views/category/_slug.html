@@ -26,11 +26,23 @@
       </div>
     </div>
 
-          <div class="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4 gap-y-6 mt-5">
+      
+        {% if length > 0 %}
+    <div class="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-8 mt-10">
           {% for item in cards %}
-            {% include '_include/card.html' %}
+               {% include '_include/card.html' %}
           {% endfor %}
-    </div>
+        </div>
+           {% else %}
+      <div class="text-center py-12">
+         <div class="text-gray-400 dark:text-gray-500 text-6xl mb-4">🔍</div>
+         <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">No item found</h3>
+         <p class="text-gray-600 dark:text-gray-300">Try adjusting your search terms or filters</p>
+      </div>
+      {% endif %}
+
+        {% include 'category/pagination.html' %}
+
 </section>
 
 

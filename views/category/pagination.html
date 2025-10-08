@@ -1,6 +1,6 @@
 <div class="m-auto mt-[70px] flex flex-wrap sm:justify-center items-center gap-4">
     {# Previous Button #}
-    <a href="/explore/{{ currentPage - 1 if currentPage > 1 else 1 }}"
+    <a href="/categories/{{categoryName}}/{{ currentPage - 1 if currentPage > 1 else 1 }}"
         class="bg-[#E45137] text-white py-2 px-4 rounded-lg hover:bg-[#ff6c52] transition-all duration-200 font-semibold
         {% if currentPage == 1 %} opacity-30 border-[2px] backdrop-blur-md cursor-not-allowed pointer-events-none {% endif %}">
         Prev
@@ -25,7 +25,7 @@
         {% endif %}
         {% for i in range(start_page, end_page + 1) %}
             {% if i >= 1 and i <= totalPages %} {# Ensure we don't go out of bounds #}
-                <a href="/explore/{{i}}"
+                <a href="/categories/{{categoryName}}/{{i}}"
                     class="page-number-btn py-2 px-4 rounded-lg  font-semibold
                     {% if i == currentPage %} bg-[#E45137] hover:bg-[#ff6c52] transition-all duration-200  text-white{% else %}bg-[#E45137] hover:bg-[#ff6c52] transition-all duration-200 text-white{% endif %}">
                     {{ i }}
@@ -34,7 +34,7 @@
         {% endfor %}
     </div>
     {# Next Button #}
-    <a href="/explore/{{ currentPage + 1 }}"
+    <a href="/categories/{{categoryName}}/{{ currentPage + 1 }}"
         class="bg-[#E45137] hover:bg-[#ff6c52] transition-all duration-200 text-white py-2 px-4 rounded-lg font-semibold
         {% if currentPage >= totalPages %} opacity-30 border-[2px] backdrop-blur-md cursor-not-allowed pointer-events-none {% endif %}">
         Next

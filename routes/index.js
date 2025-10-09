@@ -8,7 +8,7 @@ const router = express.Router();
 router.get('/', getIndex);
 router.get('/fetchtemplate/:id', getSingleCard);
 // router.get("/get-single-category", getCategory)
-router.get("/categories/:cat", getCategory)
+router.get("/categories/:cat/:page?", getCategory)
 router.get("/explore/:page?", getExplore)
 router.get("/about-us/", getAboutPage)
 router.get("/contact-us/", getContactPage)

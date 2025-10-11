@@ -1,8 +1,9 @@
 
-
+<section class="flex flex-row justify-between">
     <div class="max-w-6xl flex items-center gap-8 p-5 dark:text-white">
-      <div class="w-[300px] h-[300px] p-1 dark:bg-[#110e0c] rounded-xl border border-black/10">
-        <img class="w-full h-full" src="{{imgUrl}}/{{item.image.key}}" alt="{{item.name}}">
+      <div class="w-[300px] h-[300px] p-1 bg-gray-50 dark:bg-[#110e0c] rounded-xl border border-black/10">
+        <img id="mainImage" class="w-full h-full" src="{{imgUrl}}/{{item.image.key}}" alt="{{item.name}}">
+        <div id="zoomLens" class="hidden absolute w-28 h-28 border-2 border-[#E45137] rounded-full pointer-events-none"></div>
       </div>
       <div class="border border-black/5 dark:border-white/5 h-[300px]"></div>
       <div>
@@ -12,24 +13,23 @@
         <hr class="my-4 border border-black/10 dark:border-white/10">
 
         <div class="flex items-center gap-3">
-          <p class="text-black/80 dark:text-white tracking-wide"><span class="text-[#E45137] font-semibold">CODE</span> <span id="itemCode">{{item.code}}</span></p>
-          <button onclick="copyBoard()"
-            class="ml-4 px-2 py-1 flex items-center justify-center gap-1 text-sm cursor-pointer border border-[#E45137]  dark:border-[#ffbdb1] text-black/70 dark:bg-[#3f2010] dark:hover:bg-[#552a14] dark:text-white rounded-md hover:bg-[#ffefec] transition duration-300">
-            Copy
-             <svg class="w-5 h-5 hidden tick-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.5 13.833L6 17.5l1.024-1.073M16.5 6.5l-6.063 6.352m-2.937.981L11 17.5l10.5-11"/></svg>
-          </button>
+          <p class="text-black/80 dark:text-white tracking-wide"><span class="text-rose-500 font-semibold">CODE</span> <span id="itemCode">{{item.code}}</span></p>
+          <button onclick="copyBoard()" class="ml-4 px-2 py-1 flex items-center justify-center gap-1 text-sm cursor-pointer border border-rose-600  dark:border-[#ffbdb1] text-black/70 dark:bg-600/50 dark:hover:bg-[#552a14] dark:text-white rounded-md hover:bg-[#ffefec] transition duration-300"> Copy <svg class="w-5 h-5 hidden tick-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.5 13.833L6 17.5l1.024-1.073M16.5 6.5l-6.063 6.352m-2.937.981L11 17.5l10.5-11"/></svg> </button>
         </div>
 
         <hr class="my-4 border border-black/10 dark:border-white/10">
 
         <p class="text-sm text-black/60 dark:text-white/70">Use this template by downloading it for free</p>
-        <button class="mt-3 shadow-2xl cursor-pointer px-4 py-2 bg-[#E45137] text-white rounded-md hover:bg-[#c13a23] transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Download Template</button>
+        <button class="mt-3 shadow-2xl cursor-pointer px-4 py-2 bg-rose-500 text-white rounded-lg hover:bg-rose-600 transition focus:outline-none active:scale-90 duration-300">Download Template</button>
       </div>
       <div>
            
       </div>
     </div>
 
+   <!-- Zoomed Image Preview -->
+    <div id="zoomResult" class="hidden absolute right-0 w-[300px] h-full  bg-no-repeat bg-cover rounded-xl"></div>
+</section>
 
     <script>
       function copyBoard() {
@@ -50,3 +50,51 @@
       }
 
     </script>
+
+    <style>
+      #zoomLens {
+  background: rgba(255, 255, 255, 0.3);
+  cursor: none;
+}
+
+#zoomResult {
+  background-repeat: no-repeat;
+  background-size: 800px 800px; /* Zoom level (increase for more zoom) */
+}
+    </style>
+
+    <script>
+  const img = document.getElementById("mainImage");
+  const lens = document.getElementById("zoomLens");
+  const result = document.getElementById("zoomResult");
+
+  img.addEventListener("mousemove", moveLens);
+  img.addEventListener("mouseenter", () => {
+    lens.classList.remove("hidden");
+    result.classList.remove("hidden");
+    result.style.backgroundImage = `url(${img.src})`;
+  });
+  img.addEventListener("mouseleave", () => {
+    lens.classList.add("hidden");
+    result.classList.add("hidden");
+  });
+
+  function moveLens(e) {
+    const rect = img.getBoundingClientRect();
+    const lensSize = lens.offsetWidth / 3;
+
+    let x = e.clientX - rect.left;
+    let y = e.clientY - rect.top;
+
+    x = Math.max(lensSize, Math.min(x, rect.width - lensSize));
+    y = Math.max(lensSize, Math.min(y, rect.height - lensSize));
+
+    lens.style.left = (x - lensSize) + "px";
+    lens.style.top = (y - lensSize) + "px";
+
+    const zoomX = (x / rect.width) * 100;
+    const zoomY = (y / rect.height) * 100;
+
+    result.style.backgroundPosition = `${zoomX}% ${zoomY}%`;
+  }
+</script>

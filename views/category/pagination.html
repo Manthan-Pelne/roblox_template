@@ -1,13 +1,15 @@
-<div class="m-auto mt-[70px] flex flex-wrap sm:justify-center items-center gap-4">
+
+{% if totalPages > 1 %}
+<div class="m-auto mt-[40px] flex flex-wrap sm:justify-center items-center gap-4">
     {# Previous Button #}
-    <a href="/categories/{{categoryName}}/{{ currentPage - 1 if currentPage > 1 else 1 }}"
-        class="bg-[#E45137] text-white py-2 px-4 rounded-lg hover:bg-[#ff6c52] transition-all duration-200 font-semibold
+    <a href="/categories/{{categoryName}}/{{ currentPage - 1 if currentPage > 1 else 1 }}/"
+        class="bg-rose-200 text-zinc-800 py-2 px-4 rounded-lg font-semibold
         {% if currentPage == 1 %} opacity-30 border-[2px] backdrop-blur-md cursor-not-allowed pointer-events-none {% endif %}">
         Prev
     </a>
     {# Pagination Numbers #}
     <div id="paginationNumbers" class="flex flex-wrap gap-2">
-         {% set start_page = currentPage - 1 %}
+        {% set start_page = currentPage - 1 %}
         {% set end_page = currentPage + 1 %}
         {# Adjust start_page and end_page to consistently show 3 numbers if totalPages allows #}
         {% if totalPages < 3 %}
@@ -25,23 +27,19 @@
         {% endif %}
         {% for i in range(start_page, end_page + 1) %}
             {% if i >= 1 and i <= totalPages %} {# Ensure we don't go out of bounds #}
-                <a href="/categories/{{categoryName}}/{{i}}"
-                    class="page-number-btn py-2 px-4 rounded-lg  font-semibold
-                    {% if i == currentPage %} bg-[#E45137] hover:bg-[#ff6c52] transition-all duration-200  text-white{% else %}bg-[#E45137] hover:bg-[#ff6c52] transition-all duration-200 text-white{% endif %}">
+                <a href="/categories/{{categoryName}}/{{i}}/"
+                    class="page-number-btn py-2 px-4 rounded-lg font-semibold
+                    {% if i == currentPage %} bg-rose-500 text-white{% else %}bg-rose-200 text-zinc-800{% endif %}">
                     {{ i }}
                 </a>
             {% endif %}
         {% endfor %}
     </div>
     {# Next Button #}
-    <a href="/categories/{{categoryName}}/{{ currentPage + 1 }}"
-        class="bg-[#E45137] hover:bg-[#ff6c52] transition-all duration-200 text-white py-2 px-4 rounded-lg font-semibold
+    <a href="/categories/{{categoryName}}/{{ currentPage + 1 }}/"
+        class="bg-rose-200  text-zinc-800 py-2 px-4 rounded-lg font-semibold
         {% if currentPage >= totalPages %} opacity-30 border-[2px] backdrop-blur-md cursor-not-allowed pointer-events-none {% endif %}">
         Next
     </a>
 </div>
-
-
-
-
-   
+{% endif %}

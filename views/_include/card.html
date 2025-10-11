@@ -1,6 +1,4 @@
-
-
-  <div class="card flex-shrink-0 bg-white shadow-md border border-zinc-200 dark:border-zinc-700 dark:shadow-none dark:bg-zinc-950/70 snap-center relative group  transition-colors duration-300 rounded-xl flex flex-col p-1">
+<div class="card flex-shrink-0 bg-white shadow-md border border-zinc-200 dark:border-zinc-700 dark:shadow-none dark:bg-zinc-950/70 snap-center relative group  transition-colors duration-300 rounded-xl flex flex-col p-1">
     <a href="/fetchtemplate/{{ item.slug }}" class="bg-gray-50 dark:bg-white/10 rounded-[10px] rounded- p-4 h-full group-hover:bg-white dark:group-hover:bg-zinc-900 duration-300">
       <!-- src="{{imgUrl}}/{{item.image.key}}" -->
       <img class="transition-all duration-300 group-hover:scale-110 w-full h-full" src="{{imgUrl}}/{{item.image.key}}" alt="{{item.name}}">
@@ -18,7 +16,7 @@
                 d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2M7 11l5 5l5-5m-5-7v12" />
             </svg>
           </a>
-          <span onclick="shareItem('{{item.id}}', this)" class="cursor-pointer text-zinc-950/70 bg-[#ffe985] hover:bg-[#f4d860] transition-all duration-200 p-1 rounded-md">
+          <span onclick="shareItem('{{item.slug}}', this)" class="cursor-pointer text-zinc-950/70 bg-[#ffe985] hover:bg-[#f4d860] transition-all duration-200 p-1 rounded-md">
             <svg class="w-5 h-5 share-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <g fill="none">
                 <path fill="currentColor" fill-opacity="0.16"
@@ -36,28 +34,6 @@
         </div>
       </div>
     </div>
-  </div>
 
-<script>
-  async function shareItem(itemId, shareBtn) {
-    const shareableUrl = `${window.location.origin}/fetchtemplate/${itemId}`;
-    const shareIcon = shareBtn.querySelector('.share-icon');
-    const tickIcon = shareBtn.querySelector('.tick-icon');
-
-    try {
-      await navigator.clipboard.writeText(shareableUrl);
-      shareIcon.classList.add('hidden');
-      tickIcon.classList.remove('hidden');
-
-      setTimeout(() => {
-        tickIcon.classList.add('hidden');
-        shareIcon.classList.remove('hidden');
-      }, 2000);
-
-    } catch (err) {
-      console.error('Failed to copy: ', err);
-      // Optional: Add a visual indicator to the user that the copy failed.
-    }
-  }
-</script>
+</div>
 

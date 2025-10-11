@@ -164,8 +164,6 @@ export const getCategory = async (req, res) => {
   }
 };
 
-
-
 export const getAboutPage = async(req,res)=>{
 try {
     const cards = await Card.find();
@@ -229,3 +227,41 @@ export const getTerms = async(req,res)=>{
     res.status(500).send("Internal Server Error");
   }
 }
+
+export const searchTemplate = async (req, res) => {
+  try {
+    const query = req.query.q?.trim().toLowerCase();
+      if (!query) {
+        return res.render("_include/blank/filtercard", { 
+          filteredcards: [],
+           query: "",
+         });
+      }
+
+    // Build MongoDB query to match by name, category.title, or description
+    const filteredcards = await Card.find({
+      $or: [
+        { name: { $regex: query, $options: 'i' } },
+        { description: { $regex: query, $options: 'i' } },
+      ]
+    })
+    .populate({
+      path: 'category',
+      match: { title: { $regex: query, $options: 'i' } } // search in populated category title
+    })
+    .limit(20); // prevent too many results, adjust as needed
+
+    // Remove cards where category didn’t match (populate returns null)
+    const visibleCards = filteredcards.filter(c => c.category !== null || c.name || c.description);
+
+    res.render("_include/blank/filtercard", { 
+      filteredcards: visibleCards ,   
+        query,
+      imgUrl : process.env.R2_CDN_URL,
+      });
+
+  } catch (err) {
+    console.error("Error during search:", err);
+    res.status(500).json({ error: 'Search failed', details: err.message });
+  }
+};

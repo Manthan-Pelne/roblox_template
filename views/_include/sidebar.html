@@ -1,5 +1,5 @@
 
-<aside id="sidebar-menu" class="fixed left-0 z-40 w-full sm:w-56 h-screen transition-transform -translate-x-full  sm:translate-x-0 bg-white dark:bg-zinc-800 dark:text-zinc-200 ">
+<aside id="sidebar-menu" class="fixed left-0 z-20 w-full sm:w-56 h-screen transition-transform -translate-x-full  sm:translate-x-0 bg-white dark:bg-zinc-800 dark:text-zinc-200 ">
      <div class="no-scrollbar flex min-h-screen flex-1 flex-col overflow-y-auto overflow-x-hidden px-5 pt-7 h-full">
           <a href="/" class="font-extrabold text-xl flex items-center gap-1 shrink-0 mb-1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
@@ -35,9 +35,7 @@
             <div class="custom-max-h overflow-y-scroll [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-zinc-100 [&::-webkit-scrollbar-thumb]:bg-zinc-300 dark:[&::-webkit-scrollbar-track]:bg-zinc-700 dark:[&::-webkit-scrollbar-thumb]:bg-zinc-500">
               <div class="overflow-hidden transition-[max-height] duration-500 ease-in-out space-y-1">
                   {% for item in categories %}
-                  <a href="/categories/{{item.slug}}/" class="navBtn flex space-x-2 border border-transparent hover:border-rose-100 hover:dark:border-zinc-600 hover:bg-white dark:hover:bg-rose-100/20 hover:text-rose-500 dark:hover:text-rose-400 hover:shadow-lg px-3 py-1.5 rounded-xl group pl-5 capitalize hover:translate-x-3 duration-300 w-11/12">
-                  {{item.title}}
-                  </a>
+                    <a href="/categories/{{item.slug}}/" class="navBtn flex space-x-2 border border-transparent hover:border-rose-100 hover:dark:border-zinc-600 hover:bg-white dark:hover:bg-rose-100/20 hover:text-rose-500 dark:hover:text-rose-400 hover:shadow-lg px-3 py-1.5 rounded-xl group pl-5 capitalize hover:translate-x-3 duration-300 w-11/12"> {{item.title}} </a>
                   {% endfor %}
               </div>
             </div>
@@ -84,7 +82,7 @@
 
 
 
-<script>
+<!-- <script>
 
   //  onclick="copyCode(this)">copy</span>
 
@@ -109,4 +107,4 @@
       }
     });
   });
-</script>
+</script> -->

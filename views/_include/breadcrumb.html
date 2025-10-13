@@ -1,0 +1,30 @@
+
+<div class="mb-2 w-full text-xs font-semibold text-zinc-600 dark:text-zinc-300 rounded-lg lg:text-sm breadcrumbs">
+  <ul class="flex items-center">
+    <li><a href="/">Home</a></li>
+    <li>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 8l6 4l-6 4" />
+      </svg>
+    </li>
+    <li><a href="/{{ navigation }}/" class="capitalize">{{ navigation }}</a></li>
+
+    {% if categoryName or template %}
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 8l6 4l-6 4" />
+        </svg>
+      </li>
+
+      {% if categoryName %}
+        <li>{{ categoryName }}</li>
+      {% endif %}
+      
+      {% if template %}
+         <li class="capitalize">{{template.name}} </li>
+      {% endif %}
+    {% endif %}
+  </ul>
+</div>

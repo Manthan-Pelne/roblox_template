@@ -1,24 +1,57 @@
-<div><a href="/fetchtemplate/{{item.id}}" class="card flex-shrink-0 bg-white snap-center relative group cardShadow transition-colors duration-300 rounded-2xl flex flex-col p-1">
-  <div class="bg-gray-50 rounded-xl rounded- p-5 h-full hover:bg-white duration-300 relative">
-    
-    <img class="transition-all duration-500 group-hover:scale-105  w-full h-full" src="{{item.url}}" alt="{{item.name}}">
-     <!-- <span class="text-[#F14D87] text-sm flex items-center gap-1 px-2 py-0.5 border border-rose-300 bg-rose-50 rounded-2xl absolute bottom-1 left-1"> shirt </span> -->
-  </div>
-  </a>
-    <div class="pr-2 mt-2">
-       
-      <div class="flex justify-between items-start gap-1">
-         <div class="flex items-center gap-1 truncate">
-            <div class="w-2 h-2 rounded-full bg-rose-500"></div>
-           <a href="/fetchtemplate/{{item.id}}" class="text-gray-500 text-sm tracking-wide truncate capitalize hover:text-rose-500"> {{item.name}}  </a>
-        </div>
-         <div class="flex items-center gap-1">
-             <span class="text-gray-500 cursor-pointer hover:text-gray-800"><svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path fill="currentColor" d="m12.1 18.55l-.1.1l-.11-.1C7.14 14.24 4 11.39 4 8.5C4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5c0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3C4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5C22 5.41 19.58 3 16.5 3" /></svg></span>
-             <span class="text-gray-500 cursor-pointer hover:text-gray-800"><svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2M7 11l5 5l5-5m-5-7v12"/></svg></span>
-         </div>
+<div class="card flex-shrink-0 bg-white shadow-md border border-zinc-200 dark:border-zinc-700 dark:shadow-none dark:bg-zinc-950/70 snap-center relative group  transition-colors duration-300 rounded-xl flex flex-col p-1">
+    <a href="/template/{{ item.slug }}" class="bg-gray-50 dark:bg-white/10 rounded-[10px] rounded- p-4 h-full group-hover:bg-white dark:group-hover:bg-zinc-900 duration-300">
+      <!-- src="{{imgUrl}}/{{item.image.key}}" -->
+      <img class="transition-all duration-300 group-hover:scale-110 w-full h-full" src="{{imgUrl}}/{{item.image.key}}" alt="{{item.name}}">
 
+       <div class="flex justify-between mt-1 items-center gap-3 bg-gray-50 dark:bg-white/10">
+        <a href="/categories/{{item.category.title}}" class="text-[#F14D87] text-sm truncate px-1.5 border border-rose-300 bg-rose-50 dark:bg-[#320a07] rounded-2xl whitespace-nowrap">
+         {{item.category.title}}
+        </a>
+        
+        <div class="flex items-center gap-2">
+          <a href="/template/{{ item.slug }}" class="bg-rose-500 hover:bg-rose-600 transition-all duration-200 text-white p-1 rounded-md">
+            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2M7 11l5 5l5-5m-5-7v12" />
+            </svg>
+          </a>
+          <span onclick="shareItem('{{item.slug}}', this)" class="cursor-pointer text-zinc-950/70 bg-[#ffe985] hover:bg-[#f4d860] transition-all duration-200 p-1 rounded-md">
+            <svg class="w-5 h-5 share-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <g fill="none">
+                <path fill="currentColor" fill-opacity="0.16"
+                  d="M18.6 9h-7.2A2.4 2.4 0 0 0 9 11.4v7.2a2.4 2.4 0 0 0 2.4 2.4h7.2a2.4 2.4 0 0 0 2.4-2.4v-7.2A2.4 2.4 0 0 0 18.6 9" />
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                  stroke-width="1.5"
+                  d="M6 15h-.6C4.07 15 3 13.93 3 12.6V5.4C3 4.07 4.07 3 5.4 3h7.2C13.93 3 15 4.07 15 5.4V6m-3.6 3h7.2a2.4 2.4 0 0 1 2.4 2.4v7.2a2.4 2.4 0 0 1-2.4 2.4h-7.2A2.4 2.4 0 0 1 9 18.6v-7.2A2.4 2.4 0 0 1 11.4 9" />
+              </g>
+            </svg>
+            <svg class="w-5 h-5 hidden tick-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M2.5 13.833L6 17.5l1.024-1.073M16.5 6.5l-6.063 6.352m-2.937.981L11 17.5l10.5-11" />
+            </svg>
+          </span>
+        </div>
       </div>
+
+
+    </a>
+    <div class="my-2 px-1 ">
+          <div class="w-full relative">
+            <!-- Light mode image -->
+            <img src="/imgs/title3.png" alt="" class="h-8 w-full absolute -bottom-2 left-0 right-0 mx-0 block dark:hidden">
+            
+            <!-- Dark mode image -->
+            <img src="/imgs/title2.png" alt="" class="h-8 w-full absolute -bottom-2 left-0 right-0 mx-0 hidden dark:block">
+            
+            <a href="/template/{{ item.slug }}" 
+              class="block truncate capitalize text-center relative text-zinc-950/60 dark:text-white/80 text-sm tracking-wide">
+              {{ item.name.charAt(0).toUpperCase() + item.name.slice(1) }}
+            </a>
+          </div>
+
+
+     
     </div>
 
-
 </div>
+

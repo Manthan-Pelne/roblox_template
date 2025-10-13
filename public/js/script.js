@@ -1,5 +1,5 @@
   async function shareItem(itemId, shareBtn) {
-    const shareableUrl = `${window.location.origin}/fetchtemplate/${itemId}`;
+    const shareableUrl = `${window.location.origin}/template/${itemId}`;
     const shareIcon = shareBtn.querySelector('.share-icon');
     const tickIcon = shareBtn.querySelector('.tick-icon');
 

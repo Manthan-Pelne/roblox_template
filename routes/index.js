@@ -1,15 +1,16 @@
 import express from "express";
-import { getCategory, getExplore, getIndex,getSingleCard,getFaqPage,getAboutPage,getContactPage,getPrivacy,getTerms,searchTemplate } from "../controllers/index.js";
+import { getCategory, getAllCategory ,getTemplate, getSingleTemplate , getIndex,getFaqPage,getAboutPage,getContactPage,getPrivacy,getTerms,searchTemplate } from "../controllers/index.js";
 
 const router = express.Router();
 
 
 
 router.get('/', getIndex);
-router.get('/fetchtemplate/:slug', getSingleCard);
+router.get('/template/:slug', getSingleTemplate);
 // router.get("/get-single-category", getCategory)
+router.get("/categories/", getAllCategory)
 router.get("/categories/:cat/:page?", getCategory)
-router.get("/explore/:page?", getExplore)
+router.get("/template/:page?", getTemplate)
 router.get("/about-us/", getAboutPage)
 router.get("/contact-us/", getContactPage)
 router.get("/faq/", getFaqPage)

@@ -85,7 +85,7 @@ export const getIndex = async (req, res) => {
   }
 };
 
-export const getSingleCard = async (req, res) => {
+export const getSingleTemplate = async (req, res) => {
   try {
     const slug = req.params.slug
     const page = parseInt(req.params.page) || 1;
@@ -96,14 +96,15 @@ export const getSingleCard = async (req, res) => {
     const totalTests = await Card.countDocuments();
     // Calculate total pages
     const totalPages = Math.ceil(totalTests / limit);
-    const card = await Card.find({slug : slug }).populate("category");
-       res.render("getSingleCard", {
-      card,
+    const template = await Card.findOne({slug : slug }).populate("category");
+       res.render("template/_slug.html", {
+      template,
       categories,
       cards,
       totalPages,
       currentPage : page,
       imgUrl : process.env.R2_CDN_URL,
+      navigation : 'template'
     });
   } catch (err) {
     console.error(err);
@@ -111,7 +112,7 @@ export const getSingleCard = async (req, res) => {
   }
 };
 
-export const getExplore = async(req,res)=>{
+export const getTemplate = async(req,res)=>{
   try {
     const page = parseInt(req.params.page) || 1;
     const limit = 18;
@@ -122,12 +123,13 @@ export const getExplore = async(req,res)=>{
     const totalTests = await Card.countDocuments();
     // Calculate total pages
     const totalPages = Math.ceil(totalTests / limit);
-    res.render("explore", {
+    res.render("template/index.html", {
       cards,
       categories,
       totalPages,
       currentPage : page,
-       imgUrl : process.env.R2_CDN_URL
+       imgUrl : process.env.R2_CDN_URL,
+      navigation : 'template'
     });
   } catch (err) {
     console.error(err);
@@ -157,6 +159,22 @@ export const getCategory = async (req, res) => {
       currentPage: page,
       categoryName: cat,
       imgUrl: process.env.R2_CDN_URL,
+      navigation : 'categories'
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Internal Server Error");
+  }
+};
+
+export const getAllCategory = async (req, res) => {
+  try {
+    
+    const categories = await getAllCategories(req);
+
+    res.render("category/index.html", {
+      categories,
+      navigation : 'categories'
     });
   } catch (err) {
     console.error(err);
@@ -171,6 +189,7 @@ try {
     res.render("about-us", {
       cards,
       categories,
+      navigation : 'About us'
     });
   } catch (err) {
     console.error(err);
@@ -185,6 +204,7 @@ try {
     // res.render("privacy-policy", {
     res.render("contact-us", {
       categories,
+       navigation : 'Contact us'
     });
   } catch (err) {
     console.error(err);
@@ -197,6 +217,7 @@ export const getFaqPage = async(req,res)=>{
     const categories = await getAllCategories(req)
     res.render("faq", {
       categories,
+       navigation : 'faq'
     });
   } catch (err) {
     console.error(err);
@@ -209,6 +230,7 @@ export const getPrivacy = async(req,res)=>{
     const categories = await getAllCategories(req)
     res.render("privacy-policy", {
       categories,
+       navigation : 'privacy policy'
     });
   } catch (err) {
     console.error(err);
@@ -221,6 +243,7 @@ export const getTerms = async(req,res)=>{
     const categories = await getAllCategories(req)
     res.render("terms-and-conditions", {
       categories,
+       navigation : 'terms and condition'
     });
   } catch (err) {
     console.error(err);

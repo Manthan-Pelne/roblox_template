@@ -1,20 +1,22 @@
 
+
+
 <section class="flex flex-row justify-between">
-    <div class="max-w-6xl flex items-center gap-8 p-5 dark:text-white">
+    <div class="max-w-6xl flex templates-center gap-8 p-5 dark:text-white">
       <div class="w-[300px] h-[300px] p-1 bg-gray-50 dark:bg-[#110e0c] rounded-xl border border-black/10">
-        <img id="mainImage" class="w-full h-full" src="{{imgUrl}}/{{item.image.key}}" alt="{{item.name}}">
+        <img id="mainImage" class="w-full h-full" src="{{imgUrl}}/{{template.image.key}}" alt="{{template.name}}">
         <div id="zoomLens" class="hidden absolute w-28 h-28 border-2 border-[#E45137] rounded-full pointer-events-none"></div>
       </div>
       <div class="border border-black/5 dark:border-white/5 h-[300px]"></div>
       <div>
-        <h1 class="text-3xl font-semibold">{{item.name.charAt(0).toUpperCase() + item.name.slice(1)}}</h1>
-        <p class="text-black/60 mt-2 dark:text-white/70">{{item.category.title.charAt(0).toUpperCase() + item.category.title.slice(1)}}</p>
+        <h1 class="text-3xl font-semibold">{{template.name.charAt(0).toUpperCase() + template.name.slice(1)}}</h1>
+        <p class="text-black/60 mt-2 dark:text-white/70">{{template.category.icon}} {{template.category.title.charAt(0).toUpperCase() + template.category.title.slice(1)}}</p>
 
         <hr class="my-4 border border-black/10 dark:border-white/10">
 
-        <div class="flex items-center gap-3">
-          <p class="text-black/80 dark:text-white tracking-wide"><span class="text-rose-500 font-semibold">CODE</span> <span id="itemCode">{{item.code}}</span></p>
-          <button onclick="copyBoard()" class="ml-4 px-2 py-1 flex items-center justify-center gap-1 text-sm cursor-pointer border border-rose-600  dark:border-[#ffbdb1] text-black/70 dark:bg-600/50 dark:hover:bg-[#552a14] dark:text-white rounded-md hover:bg-[#ffefec] transition duration-300"> Copy <svg class="w-5 h-5 hidden tick-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.5 13.833L6 17.5l1.024-1.073M16.5 6.5l-6.063 6.352m-2.937.981L11 17.5l10.5-11"/></svg> </button>
+        <div class="flex templates-center gap-3">
+          <p class="text-black/80 dark:text-white tracking-wide"><span class="text-rose-500 font-semibold">CODE</span> <span id="templateCode">{{template.code}}</span></p>
+          <button onclick="copyBoard()" class="ml-4 px-2 py-1 flex templates-center justify-center gap-1 text-sm cursor-pointer border border-rose-600  dark:border-[#ffbdb1] text-black/70 dark:bg-600/50 dark:hover:bg-[#552a14] dark:text-white rounded-md hover:bg-[#ffefec] transition duration-300"> Copy <svg class="w-5 h-5 hidden tick-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.5 13.833L6 17.5l1.024-1.073M16.5 6.5l-6.063 6.352m-2.937.981L11 17.5l10.5-11"/></svg> </button>
         </div>
 
         <hr class="my-4 border border-black/10 dark:border-white/10">
@@ -33,11 +35,11 @@
 
     <script>
       function copyBoard() {
-        const itemCode = document.getElementById('itemCode').innerText;
+        const templateCode = document.getElementById('templateCode').innerText;
         const copyBtn = event.currentTarget;
         const tickIcon = copyBtn.querySelector('.tick-icon');
 
-        navigator.clipboard.writeText(itemCode).then(() => {
+        navigator.clipboard.writeText(templateCode).then(() => {
           tickIcon.classList.remove('hidden');
 
           setTimeout(() => {

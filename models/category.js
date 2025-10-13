@@ -3,18 +3,10 @@ import slugify from 'slugify';
 
 // Define the schema
 const categorySchema = new mongoose.Schema({
-    title: {
-        type: String,
-        required: true,
-    },
-    slug: {
-        type: String,
-        unique: true, // Ensure slugs are unique
-    },
-    description: {
-        type: String,
-    },
-  
+    title: { type: String, required: true,},
+    icon : { type:String },
+    slug: { type: String, unique: true, },
+    description: { type: String,},
 });
 
 // Middleware to generate slug from title before saving

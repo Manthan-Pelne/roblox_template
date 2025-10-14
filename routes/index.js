@@ -1,5 +1,5 @@
 import express from "express";
-import { getCategory, getAllCategory ,getTemplate, getSingleTemplate , getIndex,getFaqPage,getAboutPage,getContactPage,getPrivacy,getTerms,searchTemplate } from "../controllers/index.js";
+import { getCategory, getAllCategory ,getTemplate, getSingleTemplate , getIndex,getFaqPage,getAboutPage,getContactPage,getPrivacy,getTerms,searchTemplate,download } from "../controllers/index.js";
 
 const router = express.Router();
 
@@ -17,5 +17,8 @@ router.get("/faq/", getFaqPage)
 router.get("/privacy-policy/", getPrivacy)
 router.get("/terms-and-conditions/", getTerms)
 router.get("/search-query/", searchTemplate)
+router.get("/download/*", download)
+
+
 
 export default router;

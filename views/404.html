@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+  <style>
+    /* ---- custom utilities (gradients, shapes, animations) ---- */
+    @layer utilities {
+      .bg-space { background: linear-gradient(90deg, #2f3640 23%, #181b20 100%); }
+      .moon {
+        background: linear-gradient(90deg,#d0d0d0 48%,#919191 100%);
+        box-shadow: 0 0 30px -4px rgba(0,0,0,0.5);
+      }
+      .moon-crater {
+        background: linear-gradient(90deg,#7a7a7a 38%,#c3c3c3 100%);
+        opacity: 0.6;
+      }
+      .star {
+        background: grey;
+        border-radius: 9999px;
+        opacity: 0.4;
+        animation: shimmer 1.5s infinite alternate;
+      }
+      @keyframes shimmer { from { opacity: 0; } to { opacity: 0.7; } }
+
+      /* astronaut bob (gentle float) */
+      .astronaut-bob { animation: bob 3.6s ease-in-out infinite; transform-origin: center; }
+      @keyframes bob {
+        0%   { transform: translate(-50%, -50%) rotate(20deg) translateY(-6px) scale(1.18); }
+        50%  { transform: translate(-50%, -50%) rotate(20deg) translateY(6px)  scale(1.21); }
+        100% { transform: translate(-50%, -50%) rotate(20deg) translateY(-6px) scale(1.18); }
+      }
+    }
+
+    /* explicit animation-delay for stars */
+    .star1 { animation-delay: 1s; }
+    .star2 { animation-delay: 3s; }
+    .star3 { animation-delay: 2s; }
+    .star5 { animation-delay: 0.5s; }
+
+    /* small canvas reset to avoid blurriness on HiDPI screens */
+    canvas { display:block; }
+  </style>
+
+
+<div class="bg-space w-full h-screen overflow-hidden relative text-white">
+
+  <!-- Moon and craters -->
+  <div class="moon absolute -top-24 -left-72 w-[900px] h-[900px] rounded-full"></div>
+  <div class="moon-crater absolute top-[250px] left-[500px] w-[60px] h-[180px] rounded-full"></div>
+  <div class="moon-crater absolute top-[650px] left-[340px] w-[40px] h-[80px] rounded-full rotate-[55deg]"></div>
+  <div class="moon-crater absolute top-[-20px] left-[40px] w-[65px] h-[120px] rounded-full rotate-[250deg]"></div>
+
+  <!-- Stars -->
+  <div class="star star1 absolute top-[40%] left-[50%] w-[5px] h-[5px]"></div>
+  <div class="star star2 absolute top-[60%] left-[90%] w-[5px] h-[5px]"></div>
+  <div class="star star3 absolute top-[10%] left-[70%] w-[5px] h-[5px]"></div>
+  <div class="star star4 absolute top-[90%] left-[40%] w-[5px] h-[5px]"></div>
+  <div class="star star5 absolute top-[20%] left-[30%] w-[5px] h-[5px]"></div>
+
+  <!-- Error block (left) -->
+  <div class="absolute left-24 top-1/2 -translate-y-1/2 text-[#363e49] font-[Righteous]">
+    <div class="text-[10rem] leading-none select-none">404</div>
+    <div class="text-2xl">Hmmm...</div>
+    <div class="opacity-50 mt-2">It looks like page not found</div>
+    <div class="mt-8 flex gap-3 font-semibold">
+      <button class="px-6 py-2 rounded-full bg-rose-400 border-2 border-rose-600  text-white">Go back</button>
+      <button class="px-6 py-2 rounded-full border-2 border-[#2f3640] text-[#576375]">CONTACT</button>
+    </div>
+  </div>
+
+  <!-- Astronaut (right) -->
+  <div class="astronaut absolute left-[70%] top-1/2 w-[185px] h-[300px] astronaut-bob">
+    <!-- backpack / body / head — simplified shapes using Tailwind utilities -->
+    <div class="absolute top-[90px] left-[47px] w-[86px] h-[90px] bg-[#bfbfbf] rounded-lg"></div>
+    <div class="absolute top-[115px] left-[55px] w-[70px] h-[80px] bg-[#e6e6e6] rounded-lg"></div>
+    <div class="absolute top-[140px] left-[68px] w-[45px] h-[25px] bg-[#d9d9d9] rounded-md"></div>
+
+    <!-- arms, legs, wrist, feet, etc. (kept as positioned divs) -->
+    <div class="absolute top-[127px] left-[9px] w-[65px] h-[20px] bg-[#e6e6e6] rounded-md -rotate-30"></div>
+    <div class="absolute top-[102px] left-[7px] w-[20px] h-[45px] bg-[#e6e6e6] rounded-md -rotate-[12deg]"></div>
+    <div class="absolute top-[113px] left-[100px] w-[65px] h-[20px] bg-[#e6e6e6] rounded-md -rotate-[10deg]"></div>
+    <div class="absolute top-[78px] left-[141px] w-[20px] h-[45px] bg-[#e6e6e6] rounded-md -rotate-[10deg]"></div>
+
+    <div class="absolute top-[110px] left-[21px] w-[10px] h-[6px] bg-[#e6e6e6] rounded-full -rotate-[35deg]"></div>
+    <div class="absolute top-[90px] left-[133px] w-[10px] h-[6px] bg-[#e6e6e6] rounded-full rotate-[20deg]"></div>
+
+    <div class="absolute top-[122px] left-[6.5px] w-[21px] h-[4px] bg-[#e67e22] rounded-full -rotate-[15deg]"></div>
+    <div class="absolute top-[98px] left-[141px] w-[21px] h-[4px] bg-[#e67e22] rounded-full -rotate-[10deg]"></div>
+
+    <div class="absolute top-[188px] left-[50px] w-[23px] h-[75px] bg-[#e6e6e6] rounded-sm rotate-[10deg]"></div>
+    <div class="absolute top-[188px] left-[108px] w-[23px] h-[75px] bg-[#e6e6e6] rounded-sm -rotate-[10deg]"></div>
+
+    <div class="absolute top-[240px] left-[43px] w-[28px] h-[20px] bg-white rounded-sm rotate-[10deg]" style="border-bottom:4px solid #e67e22;"></div>
+    <div class="absolute top-[240px] left-[111px] w-[28px] h-[20px] bg-white rounded-sm -rotate-[10deg]" style="border-bottom:4px solid #e67e22;"></div>
+
+    <!-- wrist and cords -->
+    <div class="absolute top-[0] left-[0] w-full h-full pointer-events-none">
+      <canvas id="cord" width="500" height="500" class="absolute -left-[60px] -top-[30px]"></canvas>
+    </div>
+
+    <!-- head + visor -->
+    <div class="absolute top-[60px] left-[60px] w-[60px] h-[60px] bg-white rounded-2xl">
+      <canvas id="visor" width="60" height="60" class="block"></canvas>
+      <div class="absolute top-[28px] left-[40px] w-[10px] h-[10px] bg-[#7f8fa6] rounded-full opacity-50"></div>
+      <div class="absolute top-[40px] left-[38px] w-[5px] h-[5px] bg-[#718093] rounded-full opacity-30"></div>
+    </div>
+  </div>
+</div>
+  <script>
+    // ensure DOM is ready
+    document.addEventListener('DOMContentLoaded', () => {
+      // draw visor
+      (function drawVisor() {
+        const canvas = document.getElementById('visor');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0,0, canvas.width, canvas.height);
+        ctx.beginPath();
+        ctx.moveTo(5, 45);
+        ctx.bezierCurveTo(15, 64, 45, 64, 55, 45);
+        ctx.lineTo(55, 20);
+        ctx.bezierCurveTo(55, 15, 50, 10, 45, 10);
+        ctx.lineTo(15, 10);
+        ctx.bezierCurveTo(15, 10, 5, 10, 5, 20);
+        ctx.closePath();
+        ctx.fillStyle = '#2f3640';
+        ctx.strokeStyle = '#f5f6fa';
+        ctx.fill();
+        ctx.stroke();
+      })();
+
+      // cord animation (uses canvas width/height correctly)
+      (function cordAnimate() {
+        const canvas = document.getElementById('cord');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+
+        // Adjust for devicePixelRatio for crisp canvas
+        const DPR = window.devicePixelRatio || 1;
+        const W = canvas.width;
+        const H = canvas.height;
+        canvas.style.width = W + 'px';
+        canvas.style.height = H + 'px';
+        canvas.width = W * DPR;
+        canvas.height = H * DPR;
+        ctx.scale(DPR, DPR);
+
+        // positions relative to canvas coords (tweakable)
+        let y1 = 160, y2 = 100, y3 = 100;
+        let y1Forward = true, y2Forward = false, y3Forward = true;
+
+        function animate() {
+          requestAnimationFrame(animate);
+          // clear using canvas displayed size
+          ctx.clearRect(0, 0, W, H);
+
+          ctx.beginPath();
+          ctx.moveTo(130, 170);
+          ctx.bezierCurveTo(250, y1, 345, y2, 400, y3);
+          ctx.strokeStyle = 'white';
+          ctx.lineWidth = 8;
+          ctx.lineCap = 'round';
+          ctx.stroke();
+
+          // bounds - mirror original logic but with inclusive ranges
+          if (y1 <= 100) y1Forward = true;
+          if (y1 >= 300) y1Forward = false;
+          if (y2 <= 100) y2Forward = true;
+          if (y2 >= 310) y2Forward = false;
+          if (y3 <= 100) y3Forward = true;
+          if (y3 >= 317) y3Forward = false;
+
+          y1Forward ? y1 += 1 : y1 -= 1;
+          y2Forward ? y2 += 1 : y2 -= 1;
+          y3Forward ? y3 += 1 : y3 -= 1;
+        }
+
+        animate();
+      })();
+    });
+  </script>
+{% endblock body %}

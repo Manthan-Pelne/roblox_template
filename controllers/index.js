@@ -89,14 +89,17 @@ export const getSingleTemplate = async (req, res) => {
   try {
     const slug = req.params.slug
     const page = parseInt(req.params.page) || 1;
-    const limit = 18;
+    const limit = 12;
     const skip = (page - 1) * limit;
-    const cards = await Card.find().skip(skip).limit(limit).sort({ createdAt: -1 }).populate("category");
-     const categories = await getAllCategories(req)
+    const template = await Card.findOne({slug : slug }).populate("category");
+
+    if (!template) return res.render('404.html');
+
+    const cards = await Card.find({ category: template.category._id }).populate("category").sort({ createdAt: -1, _id: -1  }).skip(skip).limit(limit);
+    const categories = await getAllCategories(req)
     const totalTests = await Card.countDocuments();
     // Calculate total pages
     const totalPages = Math.ceil(totalTests / limit);
-    const template = await Card.findOne({slug : slug }).populate("category");
        res.render("template/_slug.html", {
       template,
       categories,
@@ -144,7 +147,8 @@ export const getCategory = async (req, res) => {
     const limit = 6;
     const skip = (page - 1) * limit;
     const catId = await category.findOne({ slug: cat });
-    if (!catId) return res.status(404).send("Category not found");
+    
+    if (!catId) return res.render('404.html');
     const cards = await Card.find({ category: catId._id }).sort({ createdAt: -1, _id: -1  }).skip(skip).limit(limit).populate("category");
     
     const categories = await getAllCategories(req);
@@ -286,5 +290,30 @@ export const searchTemplate = async (req, res) => {
   } catch (err) {
     console.error("Error during search:", err);
     res.status(500).json({ error: 'Search failed', details: err.message });
+  }
+};
+
+
+export const download = async (req, res) => {
+  try {
+    const filePath = req.params[0]; // this gets everything after /download/
+    const imageUrl = `https://pub-adea3c1c384d44aa8e5a76fd9362a6e3.r2.dev/${filePath}`;
+
+    const response = await fetch(imageUrl);
+    if (!response.ok) {
+      return res.status(404).send('File not found');
+    }
+
+    const buffer = await response.arrayBuffer();
+
+    const filename = filePath.split('/').pop(); // get last part of path
+    res.set({
+      'Content-Disposition': `attachment; filename="${filename}"`,
+      'Content-Type': 'image/png'
+    });
+    res.send(Buffer.from(buffer));
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server error');
   }
 };

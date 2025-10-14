@@ -1,0 +1,60 @@
+<div class="space-y-10 relative overflow-hidden py-2">
+
+  {% set id = "tShirtSwiper" %}
+  {% set title = "👕 T-Shirts Collection" %}
+  {% set viewAllUrl = "/categories/t-shirts/" %}
+  {% set items = tshirt %}
+  {% include "_include/cat-slider.html" %}
+
+  {% set id = "shirtSwiper" %}
+  {% set title = "🎽 Shirts Collection" %}
+  {% set viewAllUrl = "/categories/shirts/" %}
+  {% set items = shirt %}
+  {% include "_include/cat-slider.html" %}
+
+  {% set id = "pantSwiper" %}
+  {% set title = "🩳 Pant Collection" %}
+  {% set viewAllUrl = "/categories/pant/" %}
+  {% set items = pant %}
+  {% include "_include/cat-slider.html" %}
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sliderConfigs = [
+     { id: "tShirtSwiper", reverse: true }, // normal direction
+      { id: "shirtSwiper", reverse: false },    // reversed direction
+      { id: "pantSwiper", reverse: true },    // reversed direction
+    ];
+
+    sliderConfigs.forEach(({ id, reverse }) => {
+      const swiperEl = document.querySelector(`.${id}`);
+      if (!swiperEl) return; // skip if slider not found
+
+      new Swiper(`.${id}`, {
+        slidesPerView: 2,
+        spaceBetween: 10,
+        speed: 900,
+        loop: true,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+          reverseDirection: reverse, // 👈 key line
+        },
+        navigation: {
+          nextEl: `.${id}-next`,
+          prevEl: `.${id}-prev`,
+        },
+        breakpoints: {
+          640: { slidesPerView: 2 },
+          768: { slidesPerView: 3 },
+          1024: { slidesPerView: 6 },
+          1350: { slidesPerView: 6 },
+        },
+      });
+    });
+  });
+</script>

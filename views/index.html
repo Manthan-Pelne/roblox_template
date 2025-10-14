@@ -6,43 +6,9 @@
 
   {% include '_include/hero.html' %}
 
-     <div class="space-y-10 relative mt-10">
-
-
-    <section>
-
-        <div class="flex justify-between items-center mb-2">
-          <h2 class="text-xl dark:text-white font-semibold tracking-wide"> 👕 T-Shirts Collection</h2>
-          <a href="/categories/t-shirts/"
-            class="text-white shadow-lg rounded-2xl bg-rose-500 hover:bg-rose-600 transition-all duration-200 active:scale-90 text-sm border border-purple-200 px-5 py-1">View
-            All</a>
-        </div>
-
-       {% include '_include/slider-t-shirt.html' %}
-
-    </section>
-
-       <section>
-        <div class="flex justify-between  items-center mb-2">
-          <h2 class="text-xl dark:text-white font-semibold tracking-wide">🎽 Shirts Collection</h2>
-          <a href="/categories/shirts/"
-            class="text-white shadow-lg rounded-2xl bg-rose-500 hover:bg-rose-600 transition-all duration-200 active:scale-90 text-sm border border-purple-200 px-5 py-1">View
-            All</a>
-        </div>
-
-        {% include '_include/slider-shirt.html' %}
-      </section>
-
-      <section>
-        <div class="flex justify-between  items-center mb-2">
-          <h2 class="text-xl dark:text-white font-semibold tracking-wide">🩳 Pant Collection</h2>
-          <a href="/categories/pant/"
-            class="text-white shadow-lg rounded-2xl bg-rose-500 hover:bg-rose-600 transition-all duration-200 active:scale-90 text-sm border border-purple-200 px-5 py-1">View
-            All</a>
-        </div>
-
-    {% include '_include/slider-pant.html' %}
-      </section>
+  
+  <div class="relative mt-10">
+    {% include '_include/content.html' %}
 
       <section>
          <div class="mt-20">
@@ -60,10 +26,9 @@
       {% endfor %}
     </div>
     <div class="w-max m-auto">
-        
-                     <a href="/template/" class="flex space-x-2 justify-center border border-transparent bg-rose-500 hover:bg-rose-600 text-white transition-all duration-200 px-5 py-2 rounded-lg ">
-                   Get More...
-                  </a>
+          <a href="/template/" class="flex space-x-2 justify-center border border-transparent bg-rose-500 hover:bg-rose-600 text-white transition-all duration-200 px-5 py-2 rounded-lg ">
+            Get More... 
+          </a>
     </div>
       </section>
 

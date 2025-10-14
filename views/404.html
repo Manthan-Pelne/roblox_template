@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base_full.html' %}
 {% block body %}
 
 
@@ -60,16 +60,16 @@
   <!-- Error block (left) -->
   <div class="absolute left-24 top-1/2 -translate-y-1/2 text-[#363e49] font-[Righteous]">
     <div class="text-[10rem] leading-none select-none">404</div>
-    <div class="text-2xl">Hmmm...</div>
+    <div class="text-2xl"> Something get error </div>
     <div class="opacity-50 mt-2">It looks like page not found</div>
     <div class="mt-8 flex gap-3 font-semibold">
-      <button class="px-6 py-2 rounded-full bg-rose-400 border-2 border-rose-600  text-white">Go back</button>
-      <button class="px-6 py-2 rounded-full border-2 border-[#2f3640] text-[#576375]">CONTACT</button>
+      <a href="/template/" class="flex space-x-2 justify-center border border-transparent bg-rose-500 text-white  hover:border-rose-100 hover:bg-white dark:hover:bg-rose-100/20 dark:hover:border-zinc-600 hover:text-zinc-800 hover:shadow-lg px-5 py-2 rounded-xl group">Get back </a>
+      <!-- <button class="px-6 py-2 rounded-full border-2 border-[#2f3640] text-[#576375]">CONTACT</button> -->
     </div>
   </div>
 
   <!-- Astronaut (right) -->
-  <div class="astronaut absolute left-[70%] top-1/2 w-[185px] h-[300px] astronaut-bob">
+  <div class="astronaut absolute left-[70%] top-1/4 md:top-1/2 w-[185px] h-[300px] astronaut-bob">
     <!-- backpack / body / head — simplified shapes using Tailwind utilities -->
     <div class="absolute top-[90px] left-[47px] w-[86px] h-[90px] bg-[#bfbfbf] rounded-lg"></div>
     <div class="absolute top-[115px] left-[55px] w-[70px] h-[80px] bg-[#e6e6e6] rounded-lg"></div>

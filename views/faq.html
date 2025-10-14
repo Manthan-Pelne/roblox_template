@@ -1,138 +1,119 @@
 {% extends 'base.html' %}
 {% block body %}
-  
 
-<section class="mx-auto p-5 pt-1.5 -z-10">
-    {% include '_include/breadcrumb.html' %}
-      <div class="relative bg-white dark:bg-black/90 border border-black/10 shadow-md overflow-hidden rounded-2xl">
-        <div class="absolute opacity-20 top-0 left-0 w-full h-full z-0">
-            <div
-                class="hexagon absolute w-[120px] h-[104px] top-[60%] right-[20%] scale-90 before:bg-gradient-to-br from-[#ff7f24] to-[#e5ab81]">
-            </div>
-            <div
-                class="hexagon absolute w-[120px] h-[104px] top-[35%] right-[10%] scale-110 before:bg-gradient-to-br from-[#ff7f24] to-[#e5ab81]">
-            </div>
-            <div
-                class="hexagon absolute w-[120px] h-[104px] top-[70%] right-[30%] scale-75 before:bg-gradient-to-br from-[#ff7f24] to-[#e5ab81]">
-            </div>
-        </div>
 
-        <div class="w-full text-center space-y-5 lg:space-y-6 py-8 2xl:py-16 z-10 relative p-5 ">
-            <h1 class="text-5xl dark:text-white drop-shadow-2xl font-extrabold after-element w-max mx-auto"> Frequently Asked Questions</h1>
-            <p class="text-lg w-full max-w-4xl mx-auto text-[gray] dark:text-white/80 ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ipsam natus non, itaque odio magnam
-                veritatis, esse quidem consectetur sequi cumque?
-            </p>
-        </div>
+<section class="mx-auto p-5 pt-0 -z-10">
+  {% include '_include/breadcrumb.html' %}
+
+
+  <div class="relative shadow-sm bg-white dark:bg-zinc-900 border dark:border-zinc-700 overflow-hidden rounded-2xl mb-10">
+    <div class="absolute opacity-30 top-0 left-0 w-full h-full z-0">
+      <div class="hexagon absolute w-[110px] h-[94px] top-[8%] left-[28%] before:bg-gradient-to-br from-[#ff9a9e] to-[#fecfef] animate-[float_10s_infinite_ease-in-out]"></div>
+      <div class="hexagon absolute w-[110px] h-[94px] top-[18%] left-[20%] scale-80 before:bg-gradient-to-br from-[#a8edea] to-[#fed6e3] animate-[float_8s_infinite_reverse_ease-in-out]"></div>
+      <div class="hexagon absolute w-[110px] h-[94px] top-[40%] left-[10%] scale-125 before:bg-gradient-to-br from-[#667eea] to-[#764ba2] animate-[float_12s_infinite_ease-in-out]"></div>
+      <div class="hexagon absolute w-[110px] h-[94px] top-[50%] right-[20%] scale-90 before:bg-gradient-to-br from-[#f093fb] to-[#f5576c] animate-[float_11s_infinite_reverse_ease-in-out]"></div>
+      <div class="hexagon absolute w-[110px] h-[94px] top-[65%] right-[10%] scale-110 before:bg-gradient-to-br from-[#4facfe] to-[#00f2fe] animate-[float_9s_infinite_ease-in-out]"></div>
     </div>
 
+    <div class="w-full text-center space-y-4 lg:space-y-6 py-10 2xl:py-14 relative p-5 bg-white/60 dark:bg-white/10">
+      <h1 class="text-4xl md:text-5xl font-extrabold dark:text-zinc-100 drop-shadow-lg after-element w-max mx-auto">
+        Frequently Asked Questions
+      </h1>
+      <p class="text-base md:text-lg w-full max-w-3xl mx-auto text-zinc-600 dark:text-zinc-300 leading-relaxed"> Have questions? You’re not alone. Here you’ll find quick answers, helpful tips, and important details about how we work, what we offer, and how we support our users.</p>
+    </div>
+  </div>
 
-       <div class="mt-10 bg-gradient-to-br from-[#fbe3d9] via-[#ffffeb] dark:bg-gradient-to-br dark:from-[#020202] dark:to-[#020202] rounded-3xl p-6 md:p-10 flex flex-col md:flex-row items-center gap-5 md:gap-20 border border-black/10 shadow-md">
-          <div>
-            <p class="text-[gray] dark:text-white/80 mb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit aliquam, ratione placeat nisi pariatur repellendus numquam maxime dolore eveniet ipsum.</p>
-            <img class="w-1/2 mx-auto" src="/imgs/roblox.png" alt="">
-          </div>
+    <div class="max-w-screen-xl mx-auto p-5 md:p-10 mt-10">
+    <div class="">
+      <h2 class="text-4xl font-extrabold bg-gradient-to-r from-rose-600 to-zinc-700 dark:from-rose-400 dark:to-zinc-100 bg-clip-text text-transparent mb-4 drop-shadow-sm">
+        Why Our FAQ Section Matters
+      </h2>
+      <p class="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed">
+        We understand your time is valuable. Our FAQ page is designed to give you clear and concise information about our services, policies, and support processes. 
+        Whether you’re a new visitor or a returning customer, this is your one-stop section for quick assistance.
+      </p>
+    </div>
+    <div id="faqContainer" class="space-y-4 text-sm md:text-base mt-10"></div>
 
-          <div class=" md:w-[70%] bg-white dark:bg-black/20 shadow-md rounded-3xl border-black/10  flex flex-col gap-10 p-4 md:p-10">
-                 <div id="faqContainer" class="space-y-5">
-                 </div>
-          </div>
-      </div>
-
-
-        <div class="pt-20 pb-10 w-full grid place-content-center text-gray-500"> Content comming soon</div>
-</section>
-
-<script>
-    //faq script
-      // Array of FAQ objects
-  const faqs = [
-    {
-      id: 'faq1',
-      question: "Lorem ipsum dolor sit amet?",
-      answer: 'ng elit. Tempore odit blanditiis totam? Velit in, eos hic similique recusandae ex perspiciatis quas voluptas consequatur!'
-    },
-    {
-      id: 'faq2',
-     question: "Lorem ipsum dolor sit amet?",
-      answer: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv. Tempore odit blanditiis totam? Velit in, eos hic similique recusandae ex perspiciatis quas voluptas consequatur!'
-    },
-     {
-      id: 'faq3',
-     question: "Lorem ipsum dolor sit amet?",
-      answer: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore odit blanditiis totam? Velit in, eos hic similique recusandae ex perspiciatis quas voluptas consequatur!'
-    },
-     {
-      id: 'faq4',
-     question: "Lorem ipsum dolor sit amet?",
-      answer: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore odit blanditiis totam? Velit in, eos hic similique recusandae ex perspiciatis quas voluptas consequatur!'
-    }
-  ];
-
- // Function to toggle the FAQ visibility smoothly
-function toggleFAQ(id) {
-  const faq = document.getElementById(id);
-  const arrow = document.getElementById('arrow-' + id);
-
-  // Toggle the 'open' class on the answer container to trigger the transition
-  faq.classList.toggle('open');
-  
-  // Toggle the 'rotate-180' class on the arrow
-  arrow.classList.toggle('rotate-180');
-}
-
-// Function to render FAQs
-function renderFAQs() {
-  const faqContainer = document.getElementById('faqContainer');
-  faqs.forEach(faq => {
-    const faqItem = `
-      <div class="rounded-2xl shadow-md border border-black/10 dark:border-white/40 dark:text-white overflow-hidden">
-        <button class="w-full cursor-pointer text-left p-4 focus:outline-none" onclick="toggleFAQ('${faq.id}')">
-          <div class="flex justify-between">
-            <span class="text-lg">${faq.question}</span>
-            <svg id="arrow-${faq.id}" class="h-6 w-6 transition-all transform duration-00 faq-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </div>
-        </button>
-        <div id="${faq.id}" class="px-4 faq-answer dark:text-white/90">
-          <p class="text-[gray] pb-5">${faq.answer}</p>
+    <div class="bg-white/80 dark:bg-white/5 backdrop-blur-sm rounded-3xl shadow-2xl border border-zinc-200 dark:border-zinc-700 p-6 md:p-12 text-center max-w-2xl mx-auto mt-10">
+        <h2 class="text-2xl font-bold text-zinc-900 dark:text-white mb-4">Still have questions?</h2>
+        <p class="text-zinc-600 dark:text-zinc-300 mb-6 text-sm md:text-base">
+           If you didn’t find what you were looking for, our support team is here to help. Send us a message, and we’ll respond within 24 hours.
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+          <a href="/contact-us" class="bg-gradient-to-br from-rose-600 to-pink-600 hover:from-pink-600 hover:to-rose-600 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 shadow-lg">
+            Contact Us
+          </a>
+          <a href="/faq" class="bg-gradient-to-tr from-rose-500 to-orange-500 hover:from-pink-600 hover:to-red-600 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 shadow-lg">
+            Visit FAQ’s
+          </a>
         </div>
       </div>
-    `;
-    faqContainer.innerHTML += faqItem;
-  });
-}
 
-  // Call renderFAQs when the DOM is loaded
+    </div>
+
+  </section>
+
+
+<!-- FAQ Script -->
+<script>
+  const faqs = [
+    { id: 'faq1', question: "How can I contact customer support?", answer: "You can reach us anytime via our contact form or support email. We typically respond within 24 hours." },
+    { id: 'faq2', question: "Do you offer refunds or returns?", answer: "Yes, we provide a 7-day return window for eligible products. Please refer to our Return Policy page for complete details." },
+    { id: 'faq3', question: "Can I change or cancel my order?", answer: "Orders can be modified or canceled within 2 hours of placement. Contact us immediately if you need assistance." },
+    { id: 'faq4', question: "Is my personal information secure?", answer: "Absolutely. We use end-to-end encryption and adhere to strict data protection standards to keep your information safe." },
+    { id: 'faq5', question: "Do you provide international support?", answer: "Yes, we serve customers globally. Shipping times and services may vary depending on your location." },
+    { id: 'faq6', question: "How often is the FAQ updated?", answer: "We update this page monthly to include new questions and feedback collected from our community." }
+  ];
+
+  function toggleFAQ(id) {
+    const faq = document.getElementById(id);
+    const arrow = document.getElementById('arrow-' + id);
+    faq.classList.toggle('open');
+    arrow.classList.toggle('rotate-180');
+  }
+
+  function renderFAQs() {
+    const faqContainer = document.getElementById('faqContainer');
+    faqs.forEach(faq => {
+      faqContainer.innerHTML += `
+        <div class="rounded-2xl border border-zinc-200 dark:border-zinc-700 shadow-sm bg-white dark:bg-zinc-800 overflow-hidden transition-all hover:shadow-rose-200/50 dark:hover:shadow-rose-400/20">
+          <button class="w-full text-left p-4 flex justify-between items-center focus:outline-none" onclick="toggleFAQ('${faq.id}')">
+            <span class="text-[15px] font-medium text-zinc-800 dark:text-zinc-100">${faq.question}</span>
+            <svg id="arrow-${faq.id}" class="h-5 w-5 transition-transform duration-300 text-rose-600 dark:text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div id="${faq.id}" class="faq-answer overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+            <p class="text-zinc-600 dark:text-zinc-300 text-sm px-5 pb-4">${faq.answer}</p>
+          </div>
+        </div>
+      `;
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', renderFAQs);
 </script>
 
+<style>
+  .hexagon::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  }
 
- <style>
-    .hexagon::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            25% { transform: translateY(-20px) rotate(5deg); }
-            50% { transform: translateY(-10px) rotate(-3deg); }
-            75% { transform: translateY(-30px) rotate(3deg); }
-        }
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 0.3; transform: scaleX(1); }
-            50% { opacity: 0.8; transform: scaleX(1.2); }
-        }
-    
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-20px) rotate(5deg); }
+    50% { transform: translateY(-10px) rotate(-3deg); }
+    75% { transform: translateY(-30px) rotate(3deg); }
+  }
+
+  .faq-answer.open {
+    max-height: 400px;
+  }
 </style>
 
-    {% endblock body %}
+{% endblock body %}

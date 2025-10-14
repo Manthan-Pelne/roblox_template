@@ -143,14 +143,20 @@ export const getTemplate = async(req,res)=>{
 export const getCategory = async (req, res) => {
   try {
     const cat = req.params.cat;
-    const page = parseInt(req.params.page) || 1;
+    const pageParam = req.params.page;
+      if (pageParam && isNaN(pageParam)) {
+      return res.status(404).render("404.html", { url: req.originalUrl });
+    }
+
+    
+    const page = Math.max(parseInt(pageParam) || 1, 1);
     const limit = 6;
     const skip = (page - 1) * limit;
     const catId = await category.findOne({ slug: cat });
-    
+
     if (!catId) return res.render('404.html');
     const cards = await Card.find({ category: catId._id }).sort({ createdAt: -1, _id: -1  }).skip(skip).limit(limit).populate("category");
-    
+
     const categories = await getAllCategories(req);
     const totalTests = await Card.countDocuments({ category: catId._id });
     const totalPages = Math.ceil(totalTests / limit);

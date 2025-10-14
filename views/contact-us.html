@@ -1,91 +1,105 @@
 {% extends 'base.html' %}
 {% block body %}
-  
 
-<section class="mx-auto p-5 pt-1.5 -z-10">
-      {% include '_include/breadcrumb.html' %}
-    <div class="relative bg-white dark:bg-black/90 border border-black/10 shadow-md overflow-hidden rounded-2xl">
-        <div class="absolute opacity-20 top-0 left-0 w-full h-full z-0">
-            <div
-                class="hexagon absolute w-[120px] h-[104px] top-[60%] right-[20%] scale-90 before:bg-gradient-to-br from-[#ff7f24] to-[#e5ab81]">
-            </div>
-            <div
-                class="hexagon absolute w-[120px] h-[104px] top-[35%] right-[10%] scale-110 before:bg-gradient-to-br from-[#ff7f24] to-[#e5ab81]">
-            </div>
-            <div
-                class="hexagon absolute w-[120px] h-[104px] top-[70%] right-[30%] scale-75 before:bg-gradient-to-br from-[#ff7f24] to-[#e5ab81]">
-            </div>
-        </div>
+<section class="mx-auto p-5 pt-0 -z-10">
 
-        <div class="w-full text-center space-y-5 lg:space-y-6 py-8 2xl:py-16 z-10 relative p-5 ">
-            <h1 class="text-5xl dark:text-white drop-shadow-2xl font-extrabold after-element w-max mx-auto"> Contact Us</h1>
-            <p class="text-lg w-full max-w-4xl mx-auto text-[gray] dark:text-white/70 ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ipsam natus non, itaque odio magnam
-                veritatis, esse quidem consectetur sequi cumque?
-            </p>
-        </div>
+  {% include '_include/breadcrumb.html' %}
+
+  <div class="relative shadow-sm bg-white dark:bg-zinc-900 border dark:border-zinc-700 overflow-hidden rounded-2xl">
+    <div class="absolute opacity-30 top-0 left-0 w-full h-full z-0">
+      <div class="hexagon absolute w-[110px] h-[94px] top-[6%] left-[31%] before:bg-gradient-to-br from-[#ff9a9e] to-[#fecfef] animate-[float_10s_infinite_ease-in-out]"></div>
+      <div class="hexagon absolute w-[110px] h-[94px] top-[15%] left-[23%] scale-80 before:bg-gradient-to-br from-[#a8edea] to-[#fed6e3] animate-[float_8s_infinite_reverse_ease-in-out]"></div>
+      <div class="hexagon absolute w-[110px] h-[94px] top-[30%] left-[14%] scale-125 before:bg-gradient-to-br from-[#667eea] to-[#764ba2] animate-[float_12s_infinite_ease-in-out]"></div>
+      <div class="hexagon absolute w-[110px] h-[94px] top-[60%] right-[20%] scale-90 before:bg-gradient-to-br from-[#f093fb] to-[#f5576c] animate-[float_11s_infinite_reverse_ease-in-out]"></div>
+      <div class="hexagon absolute w-[110px] h-[94px] top-[45%] right-[15%] scale-110 before:bg-gradient-to-br from-[#4facfe] to-[#00f2fe] animate-[float_9s_infinite_ease-in-out]"></div>
     </div>
 
-<section class="mt-10">
+    <div class="w-full text-center space-y-5 lg:space-y-6 py-10 2xl:py-14 relative p-5 bg-white/60 dark:bg-white/10">
+      <h1 class="text-5xl drop-shadow-2xl font-extrabold dark:text-zinc-100 after-element w-max mx-auto">
+        Contact Us
+      </h1>
+      <p class="text-lg w-full max-w-3xl mx-auto text-zinc-600 dark:text-zinc-300 leading-relaxed">
+        We’d love to hear from you! Whether you have a question about features, feedback, or need help with your Roblox Studio experience — our team is here to assist you every step of the way.
+      </p>
+    </div>
+  </div>
 
 
-      <div class=" shadow-md border dark:text-white border-black/10 bg-gradient-to-br from-[#fbe3d9] via-[#ffffeb] dark:bg-gradient-to-br dark:from-[#020202] dark:to-[#020202] rounded-3xl p-10 flex gap-20">
-          <div class="w-1/2">
-            <h1 class=" text-4xl mb-4 pt-5">CONNECT WITH US</h1>
-            <p class="text-black/50 dark:text-white/70 mb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit aliquam, ratione placeat nisi pariatur repellendus numquam maxime dolore eveniet ipsum.</p>
-            <img class="w-1/2 mx-auto" src="/imgs/roblox.png" alt="">
-          </div>
+  <div class="max-w-screen-xl mx-auto mt-8">
+    <section class="text-zinc-800 dark:text-zinc-100">
+      <div class="max-w-6xl mx-auto">
 
-          <div class=" w-full bg-white dark:bg-black/5 shadow-md rounded-3xl border border-black/10 flex flex-col gap-10 p-10">
-            <div class="w-[90%] py-5 flex flex-col gap-6 mx-auto">
-            <div class="flex w-full justify-between gap-5">
-              <label class="w-[200px] text-lg" for="">Name</label>
-              <input class="border-b-[1px] dark:text-white/60 border-black/20 dark:border-white/50 dark:bg-black w-full focus:outline-none focus:ring-0 transition-all duration-400 hover:translate-y-1" type="text">
+
+        <!-- Main Grid -->
+        <div class="max-w-2xl mx-auto">
+          
+          <!-- Contact Form -->
+          <form id="contact-form" class="space-y-6 bg-white dark:bg-zinc-800 p-8 rounded-2xl shadow-xl border border-zinc-200 dark:border-zinc-700">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label for="name" class="block text-sm font-semibold text-zinc-700 dark:text-zinc-200 mb-2">Name</label>
+                <input type="text" id="name" name="name"
+                  class="w-full px-4 py-3 border border-zinc-300 dark:border-zinc-600 rounded-xl bg-zinc-50 dark:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-rose-500 transition-all duration-200"
+                  placeholder="Your full name" required autocomplete="off">
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-semibold text-zinc-700 dark:text-zinc-200 mb-2">Email</label>
+                <input type="email" id="email" name="email"
+                  class="w-full px-4 py-3 border border-zinc-300 dark:border-zinc-600 rounded-xl bg-zinc-50 dark:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-rose-500 transition-all duration-200"
+                  placeholder="your@email.com" required autocomplete="off">
+              </div>
             </div>
-             <div class="flex w-full mb-5 justify-between gap-5">
-              <label class="w-[200px] text-lg" for="">Email</label>
-              <input class="border-b-[1px]  dark:text-white/60 border-black/20 dark:border-white/50 dark:bg-black w-full focus:outline-none focus:ring-0 transition-all duration-400 hover:translate-y-1" type="text">
+
+            <div>
+              <label for="subject" class="block text-sm font-semibold text-zinc-700 dark:text-zinc-200 mb-2">Subject</label>
+              <input type="text" id="subject" name="subject"
+                class="w-full px-4 py-3 border border-zinc-300 dark:border-zinc-600 rounded-xl bg-zinc-50 dark:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-rose-500 transition-all duration-200"
+                placeholder="What’s this about?" required autocomplete="off">
             </div>
-             <div class="flex w-full justify-between mb-5 gap-5">
-              <label class="w-[200px] text-lg" for="">Message</label>
-             <textarea class="border   dark:text-white/60 border-black/20 dark:border-white/50 dark:bg-black rounded-2xl  h-40 w-full focus:outline-none focus:ring-0 transition-all duration-400 hover:translate-y-1 p-4" name="" id=""></textarea>
+
+            <div>
+              <label for="message" class="block text-sm font-semibold text-zinc-700 dark:text-zinc-200 mb-2">Message</label>
+              <textarea id="message" name="message" rows="6"
+                class="w-full px-4 py-3 border border-zinc-300 dark:border-zinc-600 rounded-xl bg-zinc-50 dark:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-rose-500 transition-all duration-200 resize-none"
+                placeholder="Write your message here..." required></textarea>
             </div>
-              <button class="border py-2 rounded-xl bg-[#E45137] hover:bg-[#ff6044] transition-all duration-200 text-white text-lg">Send</button>
-            </div>
-          </div>
+
+            <button type="submit"
+              class="w-full bg-gradient-to-r from-rose-600 to-rose-800 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-rose-400/30 transition-all duration-200 transform hover:-translate-y-0.5 flex items-center justify-center space-x-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path>
+                <path d="m21.854 2.147-10.94 10.939"></path>
+              </svg>
+              <span>Send Message</span>
+            </button>
+
+            <p class="text-center text-sm text-zinc-500 dark:text-zinc-400 pt-4">
+              By submitting this form, you agree to our <a href="/privacy" class="text-rose-600 hover:underline">Privacy Policy</a>.
+            </p>
+          </form>
+
+        </div>
       </div>
-   
-
-        <div class="pt-20 pb-10 w-full grid place-content-center text-gray-500"> Content comming soon</div>
-</section>
+    </section>
+  </div>
 
 </section>
 
-
- <style>
-    .hexagon::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            25% { transform: translateY(-20px) rotate(5deg); }
-            50% { transform: translateY(-10px) rotate(-3deg); }
-            75% { transform: translateY(-30px) rotate(3deg); }
-        }
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 0.3; transform: scaleX(1); }
-            50% { opacity: 0.8; transform: scaleX(1.2); }
-        }
-    
+<style>
+  .hexagon::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-20px) rotate(5deg); }
+    50% { transform: translateY(-10px) rotate(-3deg); }
+    75% { transform: translateY(-30px) rotate(3deg); }
+  }
 </style>
 
-    {% endblock body %}
+{% endblock body %}

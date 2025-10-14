@@ -1,5 +1,6 @@
 <header class="px-5 py-3 sticky top-0 bg-zinc-50 dark:bg-zinc-900 z-20">
    <div class="flex items-center justify-between">
+      
       <a href="/" class="sm:hidden font-extrabold text-xl flex items-center gap-1 shrink-0 mb-1">
          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
             <path fill="#F14D87" d="M12 12.3L3.5 7.05L12 1.8l8.5 5.25z"/>
@@ -10,6 +11,7 @@
          <span class="text-zinc-900 dark:text-zinc-50">Roblox</span>
          <span class="text-[#F14D87]">Studio</span>
       </a>
+
       <div class="hidden sm:block ">
          <div class="space-x-2 text-zinc-600">
             <button  class="p-1.5 rounded-lg bg-zinc-100 border border-zinc-200 dark:border-zinc-700 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors duration-200">
@@ -36,16 +38,20 @@
             </button>
          </div>
       </div>
-      <div class="hidden md:flex flex-1 max-w-md mx-8">
+
+      <div id="mobile-search-bar" class="fixed top-0 p-2 md:p-0 left-0 w-full z-[100] bg-white/60  dark:bg-zinc-900 flex flex-1 max-w-md transition-transform duration-300 ease-in-out transform -translate-x-full md:static md:translate-x-0 md:transform-none md:mx-8 ">
          <div class="w-full relative">
             <div class="relative flex items-center bg-white dark:bg-zinc-800 rounded-full border border-zinc-200 dark:border-zinc-700 hover:shadow-md transition-shadow dark:text-zinc-300 z-30">
                <input id="searchInput" type="text" placeholder="Search destinations, properties..." class="w-full py-2 px-6 bg-transparent rounded-full focus:outline-none" value="">
-               <button type="submit" class="absolute right-2 p-2 bg-rose-500 text-white rounded-full hover:bg-rose-600 transition-colors">
+               <button type="submit" class="hidden md:block absolute right-2 p-2 bg-rose-500 text-white rounded-full hover:bg-rose-600 transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search w-4 h-4">
                      <circle cx="11" cy="11" r="8"></circle>
                      <path d="m21 21-4.3-4.3"></path>
                   </svg>
                </button>
+               <svg id="close-search-btn" xmlns="http://www.w3.org/2000/svg" class="block md:hidden  cursor-pointer absolute right-2 top-1 p-1.5 w-8 h-8 z-30 bg-rose-500 text-white rounded-full hover:bg-rose-600 transition-colors" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M5.293 5.293a1 1 0 0 1 1.414 0L12 10.586l5.293-5.293a1 1 0 1 1 1.414 1.414L13.414 12l5.293 5.293a1 1 0 0 1-1.414 1.414L12 13.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L10.586 12L5.293 6.707a1 1 0 0 1 0-1.414"></path>
+               </svg>
             </div>
             <section class="searchbox hidden opacity-0 transition-opacity duration-500">
                <div  class="absolute left-0 mt-1 z-50 w-full overflow-y-auto text-zinc-900 border border-zinc-300 rounded-lg bg-primary border-tertiary max-h-96 bg-zinc-50 dark:bg-zinc-700 dark:border-zinc-600 dark:text-white group [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-zinc-100 [&::-webkit-scrollbar-thumb]:bg-zinc-300 dark:[&::-webkit-scrollbar-track]:bg-zinc-700 dark:[&::-webkit-scrollbar-thumb]:bg-zinc-500">
@@ -61,13 +67,14 @@
                      </svg>
                   </p>
                </div>
-               <svg xmlns="http://www.w3.org/2000/svg" class="closesearch cursor-pointer absolute right-2 top-1 p-1.5 w-8 h-8 z-30 bg-rose-500 text-white rounded-full hover:bg-rose-600 transition-colors" viewBox="0 0 24 24">
+               <svg xmlns="http://www.w3.org/2000/svg" class="closesearch hidden md:block cursor-pointer absolute right-2 top-1 p-1.5 w-8 h-8 z-30 bg-rose-500 text-white rounded-full hover:bg-rose-600 transition-colors" viewBox="0 0 24 24">
                   <path fill="currentColor" d="M5.293 5.293a1 1 0 0 1 1.414 0L12 10.586l5.293-5.293a1 1 0 1 1 1.414 1.414L13.414 12l5.293 5.293a1 1 0 0 1-1.414 1.414L12 13.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L10.586 12L5.293 6.707a1 1 0 0 1 0-1.414"></path>
                </svg>
-               <div class="w-full h-full bg-black z-20 fixed top-0 left-0 bg-opacity-50"></div>
+               <div class="w-full bg-black z-20 fixed top-0 left-0 bg-opacity-50 h-screen"></div>
             </section>
          </div>
       </div>
+
       <div class="flex items-center justify-center">
          <div id="theme-toggle">
             <button
@@ -118,17 +125,7 @@
             </button>
          </div>
       </div>
-   </div>
-   <div id="mobile-search-bar" class="fixed top-0 left-0 w-full z-[100] bg-white/60 backdrop-blur-2xl transform transition-transform duration-300 ease-in-out -translate-x-full">
-      <div class="relative w-full h-full flex items-center p-4">
-         <input type="text" class="w-full text-lg p-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F14D87] border border-zinc-300 placeholder:text-[black]/15" placeholder="Search templates...">
-         <button id="close-search-btn" class="absolute right-4 p-2 text-zinc-500 hover:text-zinc-700">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-               <line x1="18" y1="6" x2="6" y2="18"></line>
-               <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-         </button>
-      </div>
+
    </div>
 </header>
 <script>
@@ -158,16 +155,7 @@
                toggleButton.classList.add('rotate-90');
            }
        });
-   
-   
-       closeIcon2.addEventListener('click', () => {
-           mobileMenu.classList.add('-translate-x-full');
-           hamburgerIcon.classList.remove('opacity-0');
-           closeIcon.classList.add('hidden');
-           toggleButton.classList.remove('rotate-90');
-       })
-   
-   
+      
    
          // Function to handle opening the mobile search bar
        const openMobileSearch = () => {
@@ -179,6 +167,7 @@
        const closeMobileSearch = () => {
            mobileSearchBar.classList.add('-translate-x-full');
            mobileSearchBar.classList.remove('search-slide-in');
+           hideSearchBox(true)
        };
    
    
@@ -186,11 +175,9 @@
        closeSearchButton.addEventListener('click', closeMobileSearch);
        
        // Initial state: hide search bar on load
-       closeMobileSearch();
+      //  closeMobileSearch();
    });
-</script>
-<!-- script is  -->
-<script>
+
    const searchInput = document.getElementById('searchInput');
    const searchBox = document.querySelector('.searchbox');
    const searchResults = document.querySelector('#searchResults');

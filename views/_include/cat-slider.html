@@ -1,9 +1,9 @@
 <section class="relative">
 
   <div class="flex justify-between items-center mb-3">
-    <h2 class="text-xl dark:text-white font-semibold tracking-wide">{{ title }}</h2>
+    <h2 class="text-xl dark:text-white font-semibold tracking-wide truncate">{{ title }}</h2>
     <a href="{{ viewAllUrl }}"
-      class="text-white shadow-lg rounded-2xl bg-rose-500 hover:bg-rose-600 transition-all duration-200 active:scale-90 text-sm border border-purple-200 px-5 py-1 mr-16">
+      class="text-white shadow-lg rounded-2xl bg-rose-500 hover:bg-rose-600 transition-all duration-200 active:scale-90 text-sm border border-purple-200 px-5 py-1 md:mr-16 whitespace-nowrap">
       View All
     </a>
   </div>
@@ -18,7 +18,7 @@
     </div>
   </div>
 
-  <div class="mt-8 absolute right-8 -top-5 flex items-center">
+  <div class="hidden md:flex mt-8 absolute right-8 -top-5 items-center">
     <div class="{{ id }}-prev custom-swiper-button text-xl bg-rose-100 rounded-full p-0.5 -left-8 w-5 h-5"
       style="left:-30px;color:#F43F5E;width:25px;height:25px;">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="m15 4l2 2l-6 6l6 6l-2 2l-8-8z"/></svg>

@@ -17,7 +17,7 @@ router.get("/faq/", getFaqPage)
 router.get("/privacy-policy/", getPrivacy)
 router.get("/terms-and-conditions/", getTerms)
 router.get("/search-query/", searchTemplate)
-router.get("/download/*", download)
+router.get("/download/:id/*", download)
 router.get('*', (req, res) => res.render('404.html'));
 
 

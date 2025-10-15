@@ -1,23 +1,31 @@
 {% extends 'base.html' %}
+{% block meta %}
+{% 
+  set seometa = { 
+    title: "Roblox Template", 
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, esse.", 
+    canonical: "https://robloxtemplate.com/",
+    image: "https://robloxtemplate.com/img/social.png"
+  } 
+%} 
+
+{% include '_include/meta.html' %}
+{% endblock meta %}
 {% block body %}
 
 
 <section class="mx-auto p-5 pt-1.5 ">
-
   {% include '_include/hero.html' %}
-
-  
   <div class="relative mt-10">
     {% include '_include/content.html' %}
 
       <section>
-         <div class="mt-20">
+         <div class="mt-10 md:mt-20">
       <div class="flex items-center justify-center w-full gap-2">
-        <h1 class="text-center dark:text-white mb-3 text-4xl font-semibold tracking-wide"> Most Downloaded</h1>
-        <img src="/imgs/download.gif" class="w-16" alt="">
+        <h1 class="text-center dark:text-white mb-3 text-3xl md:text-4xl font-semibold tracking-wide"> Most Downloaded</h1>
+        <img src="/imgs/download.gif" class="w-10 md:w-16" alt="">
       </div>
-      <p class=" text-center md:w-1/2 mx-auto text-[gray] dark:text-white/70">Lorem Lorem ipsum dolor sit. ipsum dolor sit amet consectetur
-        adipisicing elit. Impedit velit iure omnis quo architecto sequi temporibus facere.</p>
+      <p class=" text-center md:w-1/2 mx-auto text-zinc-600 dark:text-zinc-400">Discover the most downloaded Roblox template — fully optimized, stylish, and ready to customize. Perfect for creators who want to launch their game faster with a professional design.</p>
     </div>
 
     <div class="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-3 gap-y-6 mt-5 mb-10">
@@ -33,8 +41,8 @@
       </section>
 
       <section>
-        <h2 class="text-2xl md:text-4xl font-semibold mt-20 mb-3 text-center dark:text-white">Trending Templates</h2>
-          <p class="text-black/50 text-center dark:text-white/70">Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Soluta, qui.</p>
+        <h2 class="text-3xl md:text-4xl font-semibold mt-10 md:mt-20 mb-3 text-center dark:text-white">Trending Templates</h2>
+          <p class="text-center text-zinc-600 dark:text-zinc-400">Explore the trending Roblox templates everyone’s using! Fresh, creative, and easy to customize — perfect for building your next hit experience.</p>
           {% include '_include/slider.html' %}
       </section>
  

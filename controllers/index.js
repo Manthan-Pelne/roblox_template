@@ -11,7 +11,6 @@ const getAllCategories = async (req,res)=>{
   }
 }
 
-
 export const getIndex = async (req, res) => {
   try {
     const page = parseInt(req.params.page) || 1;
@@ -100,6 +99,7 @@ export const getSingleTemplate = async (req, res) => {
     const totalTests = await Card.countDocuments();
     // Calculate total pages
     const totalPages = Math.ceil(totalTests / limit);
+    await Card.findByIdAndUpdate(template._id, { $inc: { viewcount: 1 }, });
        res.render("template/_slug.html", {
       template,
       categories,
@@ -299,25 +299,25 @@ export const searchTemplate = async (req, res) => {
   }
 };
 
-
 export const download = async (req, res) => {
   try {
-    const filePath = req.params[0]; // this gets everything after /download/
-    const imageUrl = `https://pub-adea3c1c384d44aa8e5a76fd9362a6e3.r2.dev/${filePath}`;
+    const fileId = req.params.id; 
 
+    const filePath = req.params[0]; // this gets everything after /download/
+
+    const imageUrl = `https://pub-adea3c1c384d44aa8e5a76fd9362a6e3.r2.dev/${filePath}`;
     const response = await fetch(imageUrl);
     if (!response.ok) {
       return res.status(404).send('File not found');
     }
-
     const buffer = await response.arrayBuffer();
-
     const filename = filePath.split('/').pop(); // get last part of path
     res.set({
       'Content-Disposition': `attachment; filename="${filename}"`,
       'Content-Type': 'image/png'
     });
     res.send(Buffer.from(buffer));
+     await Card.findByIdAndUpdate(fileId, { $inc: { downloadcount: 1 }, });
   } catch (err) {
     console.error(err);
     res.status(500).send('Server error');

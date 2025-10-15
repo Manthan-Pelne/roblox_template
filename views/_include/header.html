@@ -155,11 +155,22 @@
                toggleButton.classList.add('rotate-90');
            }
        });
+
+          closeIcon2.addEventListener('click', () => {
+      mobileMenu.classList.add('-translate-x-full');
+      hamburgerIcon.classList.remove('opacity-0');
+      closeIcon.classList.add('hidden');
+      toggleButton.classList.remove('rotate-90');
+    })
+    
          // Function to handle opening the mobile search bar
        const openMobileSearch = () => {
            mobileSearchBar.classList.remove('-translate-x-full');
            mobileSearchBar.classList.add('search-slide-in');
        };
+
+    
+
        
        // Function to handle closing the mobile search bar
        const closeMobileSearch = () => {

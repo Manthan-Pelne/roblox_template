@@ -1,5 +1,19 @@
 {% extends 'base.html' %}
+{% set canonical_url = "https://robloxtemplate.org/" ~ template.slug ~ "/" %}
+
+{% 
+  set seometa = { 
+    title: "Download Free " ~ template.name | title ~ " roblox template  {HIGH QUALITY}",
+    description: "Download high-quality " ~ template.name ~ " roblox template  for free. " ~ template.name ~ " sound buttons are perfect for " ~ template.name ~ " soundboard contents or any audio project.",
+    canonical: canonical_url,
+    image: "https://robloxtemplate.org/og-image/" ~ "/" ~ template.name | urlencode | safe
+  } 
+%}
+{% block meta %}
+  {% include '_include/meta.html' %}
+{% endblock meta %}
 {% block body %}
+
 
 <section class="px-5 pt-0">
 

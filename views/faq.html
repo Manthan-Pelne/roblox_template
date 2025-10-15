@@ -1,4 +1,72 @@
+
 {% extends 'base.html' %}
+{% block meta %}
+{% 
+  set seometa = { 
+    title: "FAQ - robloxtemplate", 
+    description: "Find answers to common questions about the robloxtemplate, how it works, data privacy, scoring methods, and more.", 
+    canonical: "https://robloxtemplate.com/",
+    image: "https://robloxtemplate.com/img/social.png"
+  } 
+%} 
+{% include '_include/meta.html' %}
+<script type=application/ld+json>
+    {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How can I contact customer support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can reach us anytime via our contact form or support email. We typically respond within 24 hours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer refunds or returns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we provide a 7-day return window for eligible products. Please refer to our Return Policy page for complete details."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I change or cancel my order?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Orders can be modified or canceled within 2 hours of placement. Contact us immediately if you need assistance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my personal information secure?Is my personal information secure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. We use end-to-end encryption and adhere to strict data protection standards to keep your information safe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide international support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we serve customers globally. Shipping times and services may vary depending on your location."
+      }
+    },
+     {
+      "@type": "Question",
+      "name": "How often is the FAQ updated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We update this page monthly to include new questions and feedback collected from our community."
+      }
+    },
+  ]
+}
+</script>
+{% endblock meta %}
 {% block body %}
 
 

@@ -1,4 +1,16 @@
+
 {% extends 'base.html' %}
+{% block meta %}
+{% 
+  set seometa = { 
+    title: "Privacy Policy – robloxtemplate", 
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, esse.", 
+    canonical: "https://robloxtemplate.com/",
+    image: "https://robloxtemplate.com/img/social.png"
+  } 
+%} 
+{% include 'include/meta.html' %}
+{% endblock meta %}
 {% block body %}
 
 <section class="mx-auto p-5 pt-0 -z-10">

@@ -8,6 +8,8 @@ const AllCardSchema = new mongoose.Schema(
     slug: { type: String },
     code: { type: String },
     image: { type: Object },
+    viewcount: {type : Number , default : 0},
+    downloadcount :{ type : Number , default : 0}
   },
   { timestamps: true } // ✅ this line fixes the issue
 );

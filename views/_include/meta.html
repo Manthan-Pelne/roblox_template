@@ -1,0 +1,31 @@
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="format-detection" content="telephone=no">
+<title>{{seometa.title if seometa.title else 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus, quasi!'}}</title>
+<meta name="description" content="{{seometa.description if seometa.description else 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus, quasi!'}}">
+<meta name="robots" content="{{seometa.robots if seometa.robots else 'index, follow'}}">
+<link rel="canonical" href="{{seometa.canonical if seometa.canonical else 'https://robloxtemplate.com'}}">
+{% if seometa.prev %}
+<link rel="prev" href="{{seometa.prev}}">
+{% endif %}
+{% if seometa.next %}
+<link rel="next" href="{{seometa.next}}">
+{% endif %}
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{seometa.title if seometa.title else 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus, quasi!'}}">
+<meta property="og:description" content="{{seometa.description if seometa.description else 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus, quasi!'}}">
+<meta property="og:url" content="{{seometa.canonical if seometa.canonical else 'https://robloxtemplate.com'}}">
+<meta property="og:site_name" content="robloxtemplate">
+<meta property="og:updated_time" content="2023-01-27T08:38:42+00:00">
+<meta property="og:image" content="{{seometa.image if seometa.image else 'https://robloxtemplate.com/img/robloxtemplate-social.jpg'}}">
+<meta property="og:image:secure_url" content="{{seometa.image if seometa.image else 'https://robloxtemplate.com/img/robloxtemplate-social.jpg'}}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{seometa.title if seometa.title else 'robloxtemplate'}}">
+<meta property="og:image:type" content="image/jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{seometa.title if seometa.title else 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus, quasi!'}}">
+<meta name="twitter:description" content="{{seometa.description if seometa.description else 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus, quasi!'}}">
+<meta name="twitter:image" content="{{seometa.image if seometa.image else 'https://robloxtemplate.com/img/robloxtemplate-social.jpg'}}">
+<meta name="twitter:site" content="@robloxtemplate">
+<meta name="twitter:creator" content="@robloxtemplate">

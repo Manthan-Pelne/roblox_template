@@ -1,4 +1,41 @@
+
+
 {% extends 'base.html' %}
+{% set page_num = "" %}
+
+{% set canonical_url = "https://robloxtemplate.org/template/" %}
+
+{% if currentPage and currentPage != 1 %}
+  {% set canonical_url = canonical_url ~ currentPage ~ "/" %}
+{% endif %}
+{% set prev_url = "" %}
+{% set next_url = "" %}
+{% if currentPage and currentPage != 1 %}
+  {% set page_num = "| Page " ~ currentPage %}
+  {% if currentPage == 2 %}
+    {% set prev_url = "https://robloxtemplate.org/template/" %}
+  {% else %}
+    {% set prev_url = "https://robloxtemplate.org/template/" ~ (currentPage - 1) ~ "/" %}
+  {% endif %}
+{% endif %}
+{% if currentPage and currentPage < totalPages %}
+  {% set next_url = "https://robloxtemplate.org/template/" ~ (currentPage + 1) ~ "/" %}
+{% endif %}
+
+{% 
+  set seometa = { 
+    title: "Explore more – Roblox Template", 
+    description: "Explore more Roblox templates — discover new, trending, and unique designs to enhance your Roblox creations. Download and build today!", 
+    canonical: canonical_url,
+    image: "https://Robloxtemplate.com/img/social.png",
+    prev: prev_url,
+    next: next_url
+  } 
+%} 
+
+{% block meta %}
+  {% include '_include/meta.html' %}
+{% endblock meta %}
 {% block body %}
 
     <section class="mx-auto p-5 pt-0 -z-10">
@@ -21,7 +58,7 @@
           {% endfor %}
     </div>
     
-     {% include '_include/pagination.html' %}
+     {% include 'template/pagination.html' %}
 
 </section>
 {% endblock body %}

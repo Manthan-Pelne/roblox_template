@@ -1,4 +1,4 @@
-{% if totalPages > 1 %}
+{% if totalPages > 1 and totalPages >= currentPage  %}
 <div class="m-auto mt-[40px] flex flex-wrap sm:justify-center items-center gap-4">
     {# Previous Button #}
     <a href="/template/{{ currentPage - 1 if currentPage > 1 else 1 }}/"
@@ -26,7 +26,7 @@
         {% endif %}
         {% for i in range(start_page, end_page + 1) %}
             {% if i >= 1 and i <= totalPages %} {# Ensure we don't go out of bounds #}
-                <a href="/template/{{i}}/"
+                <a href="/template/{{i}}"
                     class="page-number-btn py-2 px-4 rounded-lg font-semibold
                     {% if i == currentPage %} bg-rose-500 text-white{% else %}bg-rose-200 text-zinc-800{% endif %}">
                     {{ i }}
@@ -35,7 +35,7 @@
         {% endfor %}
     </div>
     {# Next Button #}
-    <a href="/template/{{ currentPage + 1 }}/"
+    <a href="/template/{{ currentPage + 1 }}"
         class="bg-rose-200  text-zinc-800 py-2 px-4 rounded-lg font-semibold
         {% if currentPage >= totalPages %} opacity-30 border-[2px] backdrop-blur-md cursor-not-allowed pointer-events-none {% endif %}">
         Next

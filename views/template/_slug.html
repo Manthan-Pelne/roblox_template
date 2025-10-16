@@ -1,17 +1,19 @@
 {% extends 'base.html' %}
-{% set canonical_url = "https://robloxtemplate.org/" ~ template.slug ~ "/" %}
+{% set canonical_url = "https://robloxtemplate.org/template/" ~ template.slug ~ "/" %}
 
 {% 
   set seometa = { 
-    title: "Download Free " ~ template.name | title ~ " roblox template  {HIGH QUALITY}",
-    description: "Download high-quality " ~ template.name ~ " roblox template  for free. " ~ template.name ~ " sound buttons are perfect for " ~ template.name ~ " soundboard contents or any audio project.",
+    title: "Download Free " ~ (template.name | title) ~ " Roblox Template | High Quality",
+    description: "Download the high-quality " ~ template.name ~ " Roblox template for free. Perfect for creating amazing Roblox content and games.",
     canonical: canonical_url,
-    image: "https://robloxtemplate.org/og-image/" ~ "/" ~ template.name | urlencode | safe
+    image: "https://robloxtemplate.org/og-image/" ~ (template.name | urlencode)
   } 
 %}
+
 {% block meta %}
   {% include '_include/meta.html' %}
 {% endblock meta %}
+
 {% block body %}
 
 

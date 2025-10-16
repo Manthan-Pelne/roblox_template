@@ -1,22 +1,22 @@
 <div class="card flex-shrink-0 bg-white shadow-md border border-zinc-200 dark:border-zinc-700 dark:shadow-none dark:bg-zinc-950/70 snap-center relative group  transition-colors duration-300 rounded-xl flex flex-col p-1">
-    <a href="/template/{{ item.slug }}" class="bg-gray-50 dark:bg-white/10 rounded-[10px] rounded- p-4 h-full group-hover:bg-white dark:group-hover:bg-zinc-900 duration-300">
+    <a href="/{{ item.slug }}/" class="bg-gray-50 dark:bg-white/10 rounded-[10px] rounded- p-4 h-full group-hover:bg-white dark:group-hover:bg-zinc-900 duration-300">
       <!-- src="{{imgUrl}}/{{item.image.key}}" -->
       <img class="transition-all duration-300 group-hover:scale-110 w-full h-full" src="{{imgUrl}}/{{item.image.key}}" alt="{{item.name}}">
     </a>
     <div class="my-1 px-1 ">
       <div class="w-full"> 
-        <a href="/template/{{ item.slug }}" class="block truncate text-zinc-950/60 dark:text-white/80 text-sm tracking-wide">
+        <a href="/{{ item.slug }}/" class="block truncate text-zinc-950/60 dark:text-white/80 text-sm tracking-wide">
           {{ item.name.charAt(0).toUpperCase() + item.name.slice(1) }}
         </a>
       </div>
 
       <div class="flex justify-between mt-1 items-center gap-3">
-        <a href="/categories/{{item.category.slug}}" class="text-[#F14D87] text-sm truncate px-1.5 border border-rose-300 bg-rose-50 dark:bg-[#320a07] rounded-2xl whitespace-nowrap">
+        <a href="/categories/{{item.category.slug}}/" class="text-[#F14D87] text-sm truncate px-1.5 border border-rose-300 bg-rose-50 dark:bg-[#320a07] rounded-2xl whitespace-nowrap">
          {{item.category.title}}
         </a>
         
         <div class="flex items-center gap-2">
-          <a href="/template/{{ item.slug }}" class="bg-rose-500 hover:bg-rose-600 transition-all duration-200 text-white p-1 rounded-md">
+          <a href="/{{ item.slug }}/" class="bg-rose-500 hover:bg-rose-600 transition-all duration-200 text-white p-1 rounded-md">
             <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2M7 11l5 5l5-5m-5-7v12" />

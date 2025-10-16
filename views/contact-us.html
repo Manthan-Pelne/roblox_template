@@ -2,15 +2,17 @@
 {% block meta %}
 {% 
   set seometa = { 
-    title: "Contact Us – robloxtemplate", 
-    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, esse.", 
-    canonical: "https://robloxtemplate.com/",
-    image: "https://robloxtemplate.com/img/social.png"
+    title: "Contact Us – Roblox Template",
+    description: "Get in touch with RobloxTemplate. Reach out for support, suggestions, or inquiries about free, high-quality Roblox templates.",
+    canonical: "https://robloxtemplate.org/contact-us",
+    image: "https://robloxtemplate.org/img/social.png"
   } 
-%} 
+%}
 {% include '_include/meta.html' %}
 {% endblock meta %}
+
 {% block body %}
+
 <section class="mx-auto p-5 pt-0 -z-10">
 
   {% include '_include/breadcrumb.html' %}
@@ -81,16 +83,26 @@
               </svg>
               <span>Send Message</span>
             </button>
+             <p id="form-message" class="text-center hidden mt-3"></p>
 
             <p class="text-center text-sm text-zinc-500 dark:text-zinc-400 pt-4">
-              By submitting this form, you agree to our <a href="/privacy" class="text-rose-600 hover:underline">Privacy Policy</a>.
+              By submitting this form, you agree to our <a href="/privacy-policy/" class="text-rose-600 hover:underline">Privacy Policy</a>.
             </p>
           </form>
+          
 
         </div>
       </div>
     </section>
   </div>
+
+  <!-- Popup for feedback message -->
+<div id="popup-message" 
+class="fixed right-0 flex items-center justify-between w-64 p-4 mb-4 mr-4 mt-5 z-10 text-white bg-green-600 rounded-lg shadow-lg top-16 hidden">
+<span id="popup-text"></span>
+<button id="popup-close" class="text-white">✕</button>
+</div>
+
 
 </section>
 
@@ -109,5 +121,62 @@
     75% { transform: translateY(-30px) rotate(3deg); }
   }
 </style>
+
+<script>
+const FORM_URL = "https://submit-form.com/HxBwfpeSt";
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contact-form");
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const messageInput = document.getElementById("message");
+    const submitBtn = document.getElementById("submit-btn");
+    const formMessage = document.getElementById("form-message");
+    const popup = document.getElementById("popup-message");
+    const popupText = document.getElementById("popup-text");
+    const popupClose = document.getElementById("popup-close");
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form from submitting normally
+
+        formMessage.textContent = "Submitting...";
+        formMessage.classList.remove("hidden");
+
+        const formData = {
+            name: nameInput.value.trim(),
+            email: emailInput.value.trim(),
+            message: messageInput.value.trim(),
+        };
+
+        fetch(FORM_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Accept: "application/json" },
+            body: JSON.stringify(formData),
+        })
+        .then(() => {
+            form.reset(); // Clear form fields
+            formMessage.textContent = "";
+            showPopup("Thank you for your feedback!");
+        })
+        .catch(() => {
+            showPopup("Something went wrong!", true);
+        });
+    });
+
+    popupClose.addEventListener("click", function () {
+        popup.classList.add("hidden");
+    });
+
+    function showPopup(message, isError = false) {
+        popupText.textContent = message;
+        popup.classList.remove("hidden");
+        popup.classList.toggle("bg-red-600", isError);
+        popup.classList.toggle("bg-green-600", !isError);
+
+        setTimeout(() => {
+            popup.classList.add("hidden");
+        }, 5000);
+    }
+});
+</script>
 
 {% endblock body %}
